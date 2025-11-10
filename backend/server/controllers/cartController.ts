@@ -41,6 +41,7 @@ export const removeFromCart = async (req: Request, res: Response) => {
   res.json(cart);
 };
 
+
 // Clear cart
 export const clearCart = async (_req: Request, res: Response) => {
   let cart = await Cart.findOne({ userId: USER_ID });

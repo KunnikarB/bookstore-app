@@ -1,30 +1,56 @@
-import { useCart } from '../context/CartContext.tsx';
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
+import { checkoutCart } from '../api/checkoutapi'; // import your API function
 
 export default function Checkout() {
   const { cart, total, clearCart } = useCart();
-  const [completed, setCompleted] = useState(false);
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleCheckout = () => {
-    clearCart();
-    setCompleted(true);
+  const handleCheckout = async () => {
+    if (!cart.length) {
+      setError('Cart is empty');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    setMessage('');
+
+    try {
+      const data = await checkoutCart(cart); // send cart to backend
+      setMessage(`✅ ${data.message}. Total: $${data.total}`);
+      clearCart();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      setError(err.message || 'Checkout failed');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  if (completed)
-    return <h2>🎉 Thank you for your purchase! Your order is complete.</h2>;
+  if (!cart.length) return <p>Your cart is empty</p>;
 
   return (
     <div>
       <h2>Checkout</h2>
       <ul>
         {cart.map((item) => (
-          <li key={item._id}>
-            {item.title} × {item.quantity} = ${item.price * item.quantity}
+          <li key={item.book._id}>
+            {item.book.title} - ${item.book.price} × {item.quantity}
           </li>
         ))}
       </ul>
-      <p>Total: ${total.toFixed(2)}</p>
-      <button onClick={handleCheckout}>Confirm Payment</button>
+
+      <p>Subtotal: ${total?.toFixed(2) || 0}</p>
+
+      <button onClick={handleCheckout} disabled={loading}>
+        {loading ? 'Processing...' : 'Complete Purchase'}
+      </button>
+
+      {message && <p style={{ color: 'green' }}>{message}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }
