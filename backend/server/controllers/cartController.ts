@@ -8,7 +8,8 @@ export const addToCart = async (req: Request, res: Response) => {
   try {
     const book = await Book.findById(bookId);
     if (!book) return res.status(404).json({ error: 'Book not found' });
-    if (book.stock < quantity)
+    // treat missing stock as 0 to avoid runtime and compile errors
+    if ((book.stock ?? 0) < quantity)
       return res.status(400).json({ error: 'Not enough stock' });
 
     const existingItem = cart.find((item) => item.book._id.equals(book._id));
@@ -24,3 +25,4 @@ export const addToCart = async (req: Request, res: Response) => {
 export const getCart = (_req: Request, res: Response) => {
   res.json(cart);
 };
+

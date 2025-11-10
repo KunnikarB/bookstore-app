@@ -6,4 +6,5 @@ const router = express.Router();
 router.post('/', addToCart);
 router.get('/', getCart);
 
+
 export default router;
