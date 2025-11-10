@@ -4,6 +4,7 @@ import Home from './pages/Home.tsx';
 import Cart from './components/Cart.tsx';
 import Checkout from './pages/Checkout.tsx';
 import { Toaster } from 'react-hot-toast';
+import './index.css';
 
 export default function App() {
   return (

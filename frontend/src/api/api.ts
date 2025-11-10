@@ -1,17 +1,19 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 import axios from 'axios';
 
 const API = axios.create({
   baseURL: 'http://localhost:3000/api',
 });
 
-export const getBooks = (query?: string) =>
-  API.get('/books').then((res) => {
-    if (!query) return res.data;
-    return res.data.filter((book: any) =>
-      book.title.toLowerCase().includes(query.toLowerCase())
-    );
-  });
+export const getBooks =  async (query?: string) => {
+  try {
+  const res = await API.get('/books', { params: query ? { search: query } : {} });
+  return res.data;
+} catch (error) {
+  console.error('Error fetching books:', error);
+  return [];
+  }
+};
 
 export const addToCart = (bookId: string, quantity: number) =>
   API.post('/cart', { bookId, quantity });
