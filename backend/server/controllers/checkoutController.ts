@@ -5,13 +5,10 @@ let cart: { book: any; quantity: number }[] = []; // your in-memory cart
 
 export const checkoutCart = async (req: Request, res: Response) => {
   try {
-    console.log('Received cart:', req.body.cart); // DEBUG
+    const { cart, discountCode } = req.body;
 
-    const cart = req.body.cart;
-
-    if (!Array.isArray(cart) || !cart.length) {
+    if (!Array.isArray(cart) || !cart.length)
       return res.status(400).json({ error: 'Cart is empty' });
-    }
 
     for (const item of cart) {
       const book = await Book.findById(item.book._id);
@@ -21,7 +18,7 @@ export const checkoutCart = async (req: Request, res: Response) => {
       if (typeof book.stock !== 'number')
         return res
           .status(500)
-          .json({ error: `Stock information missing for ${book.title}` });
+          .json({ error: `Stock info missing for ${book.title}` });
 
       if (book.stock < item.quantity)
         return res
@@ -32,15 +29,25 @@ export const checkoutCart = async (req: Request, res: Response) => {
       await book.save();
     }
 
-    const total = cart.reduce(
+    // Calculate total
+    let total = cart.reduce(
       (sum, item) => sum + item.book.price * item.quantity,
       0
     );
+
+    // Apply discount rules
+    if (discountCode === 'SAVE10') total *= 0.9;
+    if (discountCode === 'SAVE20') total *= 0.8;
+    if (total > 300) total *= 0.7; // 30% off for orders > $300
+
+    // Prevent negative total
+    if (total < 0) total = 0;
+
     const orderId = `TXN-${Math.floor(Math.random() * 10000)}`;
 
     return res.json({
       message: 'Purchase completed successfully',
-      total,
+      total: total.toFixed(2),
       orderId,
     });
   } catch (err) {
@@ -48,4 +55,5 @@ export const checkoutCart = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Checkout failed' });
   }
 };
+
 

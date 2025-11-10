@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   createContext,
   useContext,
@@ -10,6 +12,7 @@ import {
   addToCart as addToCartApi,
   removeFromCart as removeFromCartApi,
   clearCart as clearCartApi,
+  updateCartItem as updateCartItemApi, // new backend endpoint to update quantity
 } from '../api/cartApi';
 
 type Book = {
@@ -28,6 +31,7 @@ type CartContextType = {
   cart: CartItem[];
   addItem: (bookId: string) => Promise<void>;
   removeItem: (bookId: string) => Promise<void>;
+  updateQuantity: (bookId: string, quantity: number) => Promise<void>; // new
   clearCart: () => Promise<void>;
   total: number;
 };
@@ -37,12 +41,11 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  // Fetch cart from backend when app loads
   useEffect(() => {
     const fetchCart = async () => {
       try {
         const data = await getCart();
-        setCart(data.items || []); // ensure cart is always an array
+        setCart(data.items || []);
       } catch (error) {
         console.error('Failed to fetch cart:', error);
         setCart([]);
@@ -56,7 +59,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const updatedCart = await addToCartApi(bookId);
       setCart(updatedCart.items || []);
     } catch (error) {
-      console.error('Failed to add item to cart:', error);
+      console.error('Failed to add item:', error);
     }
   };
 
@@ -65,7 +68,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const updatedCart = await removeFromCartApi(bookId);
       setCart(updatedCart.items || []);
     } catch (error) {
-      console.error('Failed to remove item from cart:', error);
+      console.error('Failed to remove item:', error);
+    }
+  };
+
+  // New: update quantity
+  const updateQuantity = async (bookId: string, quantity: number) => {
+    try {
+      const updatedCart = await updateCartItem(bookId, quantity);
+      setCart(updatedCart.items || []);
+    } catch (error) {
+      console.error('Failed to update quantity:', error);
     }
   };
 
@@ -79,20 +92,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // Total price calculation
   const total =
     cart?.reduce((sum, item) => sum + item.book.price * item.quantity, 0) || 0;
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, total }}
+      value={{ cart, addItem, removeItem, updateQuantity, clearCart, total }}
     >
       {children}
     </CartContext.Provider>
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) throw new Error('useCart must be used inside a CartProvider');
