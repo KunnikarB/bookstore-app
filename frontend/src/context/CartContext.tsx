@@ -90,7 +90,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const updatedCart = await updateCartItemApi(bookId, quantity);
       setCart(updatedCart.items || []);
-      toast.success('Cart updated ✅');
+      toast.success(`📦 Quantity updated to ${quantity}`);
     } catch (err) {
       console.error('Failed to update quantity:', err);
       toast.error('Update failed ❌');
