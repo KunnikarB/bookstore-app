@@ -3,7 +3,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bookRoutes from './routes/Books.js';
-import cartRoutes from './routes/cart.js';
+import cartRoutes from './routes/Cart.js';
 
 dotenv.config();
 
