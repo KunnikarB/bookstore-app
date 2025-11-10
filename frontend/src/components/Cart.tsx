@@ -5,28 +5,60 @@ export default function Cart() {
   const { cart, removeItem, total } = useCart();
   const navigate = useNavigate();
 
-  if (cart.length === 0) return <p>Your cart is empty</p>;
+  if (cart.length === 0) return <p style={{ color: 'hotpink', fontWeight: 'bold', maxWidth: '700px', margin: '20px auto', fontSize: '1.2rem' }}>Your cart is empty</p>;
 
   return (
-    <div>
-      <h2>Your Cart</h2>
+    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+      <h2 style={{ color: '#4CAF50' }}>Your Cart</h2>
       <ul>
         {cart.map((item) => (
-          <li key={item.book._id}>
+          <li
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              gap: '2rem',
+              padding: '0.4rem',
+              borderBottom: '1px solid #4CAF50',
+              color: 'hotpink',
+            }}
+            key={item.book._id}
+          >
             {item.book.title} - ${item.book.price} × {item.quantity}
-            <button onClick={() => removeItem(item.book._id)}>❌ Remove</button>
+            <button
+              style={{
+                cursor: 'pointer',
+                backgroundColor: '#4CAF50',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                padding: '0.3rem 0.6rem',}}
+              onClick={() => removeItem(item.book._id)}
+            >
+              ❌ Remove
+            </button>
           </li>
         ))}
       </ul>
-      <p>Subtotal: ${total.toFixed(2)}</p>
+      <p style={{ fontWeight: 'bold', color: '#4CAF50' }}>Subtotal: ${total.toFixed(2)}</p>
 
       <button
         onClick={() => {
           navigate('/checkout');
         }}
-        style={{ marginTop: '1rem' }}
+        style={{
+          marginTop: '1rem',
+          padding: '0.5rem 1rem',
+          fontSize: '1rem',
+          cursor: 'pointer',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+        }}
       >
-        Proceed to Checkout
+        🛍️ Proceed to Checkout
       </button>
     </div>
   );

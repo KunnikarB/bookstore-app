@@ -2,7 +2,14 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { checkoutCart } from '../api/checkoutapi';
-import type { Book } from '../types';
+
+type Book = {
+  _id: string;
+  title: string;
+  author?: string;
+  price: number;
+  stock?: number;
+};
 
 export default function Checkout() {
   const { cart, total, clearCart, addItem, removeItem, updateQuantity } =
@@ -61,11 +68,11 @@ export default function Checkout() {
     }
   };
 
-  if (!cart.length) return <p>Your cart is empty</p>;
+  if (!cart.length) return <p style={{ color: 'hotpink', fontWeight: 'bold', maxWidth: '700px', margin: '20px auto', fontSize: '1.2rem' }}>Your cart is empty</p>;
 
   return (
     <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <h2>Checkout</h2>
+      <h2 style={{ color: '#4CAF50' }}>Checkout</h2>
 
       {/* Cart Items */}
       <ul>
@@ -77,6 +84,8 @@ export default function Checkout() {
               justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: '10px',
+              borderBottom: '1px solid #4CAF50',
+              color: 'hotpink',
             }}
           >
             <div>
@@ -87,7 +96,7 @@ export default function Checkout() {
               {/* Increase quantity */}
               <button
                 onClick={() => updateQuantity(item.book._id, item.quantity + 1)}
-                style={{ marginRight: '5px' }}
+                style={{ marginRight: '5px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px', padding: '0.3rem 0.6rem' }}
               >
                 +
               </button>
@@ -95,32 +104,32 @@ export default function Checkout() {
               {/* Decrease quantity */}
               <button
                 onClick={() => updateQuantity(item.book._id, item.quantity - 1)}
-                style={{ marginRight: '5px' }}
+                style={{ marginRight: '5px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px', padding: '0.3rem 0.6rem', marginBottom: '0.3rem' }}
               >
                 -
               </button>
 
               {/* Cancel/remove item */}
-              <button onClick={() => removeItem(item.book._id)}>🗑️</button>
+              <button style={{ backgroundColor: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1rem' }} onClick={() => removeItem(item.book._id)}>🗑️</button>
             </div>
           </li>
         ))}
       </ul>
 
-      <p>Subtotal: ${total?.toFixed(2) || 0}</p>
+      <p style={{ color: '#4CAF50', fontWeight: 'bold' }}>Subtotal: ${total?.toFixed(2) || 0}</p>
 
       {/* Discount code input */}
-      <div style={{ margin: '10px 0' }}>
+      <div style={{ margin: '10px 0', display: 'flex', alignItems: 'center', gap: '10px' }}>
         <input
           type="text"
           placeholder="Discount code"
           value={discountCode}
           onChange={(e) => setDiscountCode(e.target.value.trim().toUpperCase())}
-          style={{ padding: '5px', width: '60%' }}
+          style={{ padding: '5px', width: '60%', borderRadius: '4px', border: '1px solid hotpink', outlineColor: 'hotpink', color: '#4CAF50' }}
         />
       </div>
 
-      <p>
+      <p style={{ color: 'hotpink', fontWeight: 'bold' }}>
         <strong>Total after discount:</strong> ${discountedTotal.toFixed(2)}
       </p>
 
@@ -129,7 +138,7 @@ export default function Checkout() {
         <button
           onClick={handleCheckout}
           disabled={loading}
-          style={{ padding: '10px 20px', marginRight: '10px' }}
+          style={{ padding: '10px 20px', marginRight: '10px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}
         >
           {loading ? 'Processing...' : 'Complete Purchase'}
         </button>
@@ -137,7 +146,7 @@ export default function Checkout() {
         <button
           onClick={clearCart}
           disabled={loading}
-          style={{ padding: '10px 20px' }}
+          style={{ padding: '10px 20px', backgroundColor: 'red', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}
         >
           Cancel All
         </button>
@@ -151,12 +160,15 @@ export default function Checkout() {
       <hr style={{ margin: '20px 0' }} />
 
       {/* Add More Items Section */}
-      <h3>Add More Items</h3>
-      <ul>
+      <h3 style={{ color: 'hotpink' }}>Add More Items 📚</h3>
+      <ul style={{ listStyleType: 'none', padding: 0 }}>
         {books.map((book) => (
-          <li key={book._id} style={{ marginBottom: '5px' }}>
+          <li  key={book._id} style={{ marginBottom: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <p style={{ margin: 0, color: '#4CAF50' }}>
             {book.title} - ${book.price}{' '}
-            <button onClick={() => addItem(book._id)}>Add</button>
+            </p>
+            <button style={{backgroundColor: 'hotpink', border: 'none', padding: '0.3rem', borderRadius: '5px', color: 'white'
+            }} onClick={() => addItem(book._id)}>Add</button>
           </li>
         ))}
       </ul>

@@ -14,6 +14,8 @@ import {
   clearCart as clearCartApi,
   updateCartItem as updateCartItemApi, // new backend endpoint to update quantity
 } from '../api/cartApi';
+import toast from 'react-hot-toast';
+
 
 type Book = {
   _id: string;
@@ -58,42 +60,55 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const updatedCart = await addToCartApi(bookId);
       setCart(updatedCart.items || []);
+      toast.success('Item added to cart 🛍️');
     } catch (error) {
       console.error('Failed to add item:', error);
+      toast.error('Failed to add item ❌');
     }
   };
+
 
   const removeItem = async (bookId: string) => {
     try {
       const updatedCart = await removeFromCartApi(bookId);
       setCart(updatedCart.items || []);
+      toast('Item removed from cart', { icon: '🗑️' });
     } catch (error) {
       console.error('Failed to remove item:', error);
+      toast.error('Failed to remove item ❌');
     }
   };
+
 
   // New: update quantity
   const updateQuantity = async (bookId: string, quantity: number) => {
     if (quantity <= 0) {
-      return removeItem(bookId);
+      await removeItem(bookId);
+      toast('Item removed', { icon: '➖' });
+      return;
     }
     try {
       const updatedCart = await updateCartItemApi(bookId, quantity);
       setCart(updatedCart.items || []);
+      toast.success('Cart updated ✅');
     } catch (err) {
       console.error('Failed to update quantity:', err);
-      throw err; // rethrow so UI can show error if desired
+      toast.error('Update failed ❌');
     }
   };
+
 
   const clearCart = async () => {
     try {
       await clearCartApi();
       setCart([]);
+      toast('Cart cleared', { icon: '🧹' });
     } catch (error) {
       console.error('Failed to clear cart:', error);
+      toast.error('Failed to clear cart ❌');
     }
   };
+
 
   const total =
     cart?.reduce((sum, item) => sum + item.book.price * item.quantity, 0) || 0;
