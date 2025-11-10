@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+ 
 import {
   createContext,
   useContext,
@@ -10,7 +12,10 @@ import {
   addToCart as addToCartApi,
   removeFromCart as removeFromCartApi,
   clearCart as clearCartApi,
+  updateCartItem as updateCartItemApi, // new backend endpoint to update quantity
 } from '../api/cartApi';
+import toast from 'react-hot-toast';
+
 
 type Book = {
   _id: string;
@@ -28,6 +33,7 @@ type CartContextType = {
   cart: CartItem[];
   addItem: (bookId: string) => Promise<void>;
   removeItem: (bookId: string) => Promise<void>;
+  updateQuantity: (bookId: string, quantity: number) => Promise<void>; // new
   clearCart: () => Promise<void>;
   total: number;
 };
@@ -37,12 +43,11 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  // Fetch cart from backend when app loads
   useEffect(() => {
     const fetchCart = async () => {
       try {
         const data = await getCart();
-        setCart(data.items || []); // ensure cart is always an array
+        setCart(data.items || []);
       } catch (error) {
         console.error('Failed to fetch cart:', error);
         setCart([]);
@@ -55,17 +60,40 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const updatedCart = await addToCartApi(bookId);
       setCart(updatedCart.items || []);
+      toast.success('Item added to cart 🛍️');
     } catch (error) {
-      console.error('Failed to add item to cart:', error);
+      console.error('Failed to add item:', error);
+      toast.error('Failed to add item ❌');
     }
   };
+
 
   const removeItem = async (bookId: string) => {
     try {
       const updatedCart = await removeFromCartApi(bookId);
       setCart(updatedCart.items || []);
+      toast('Item removed from cart', { icon: '🗑️' });
     } catch (error) {
-      console.error('Failed to remove item from cart:', error);
+      console.error('Failed to remove item:', error);
+      toast.error('Failed to remove item ❌');
+    }
+  };
+
+
+  // New: update quantity
+  const updateQuantity = async (bookId: string, quantity: number) => {
+    if (quantity <= 0) {
+      await removeItem(bookId);
+      toast('Item removed', { icon: '➖' });
+      return;
+    }
+    try {
+      const updatedCart = await updateCartItemApi(bookId, quantity);
+      setCart(updatedCart.items || []);
+      toast.success('Cart updated ✅');
+    } catch (err) {
+      console.error('Failed to update quantity:', err);
+      toast.error('Update failed ❌');
     }
   };
 
@@ -74,25 +102,26 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       await clearCartApi();
       setCart([]);
+      toast('Cart cleared', { icon: '🧹' });
     } catch (error) {
       console.error('Failed to clear cart:', error);
+      toast.error('Failed to clear cart ❌');
     }
   };
 
-  // Total price calculation
+
   const total =
     cart?.reduce((sum, item) => sum + item.book.price * item.quantity, 0) || 0;
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, total }}
+      value={{ cart, addItem, removeItem, updateQuantity, clearCart, total }}
     >
       {children}
     </CartContext.Provider>
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) throw new Error('useCart must be used inside a CartProvider');

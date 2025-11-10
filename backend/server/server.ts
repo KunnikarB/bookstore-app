@@ -3,7 +3,8 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bookRoutes from './routes/Books.js';
-import cartRoutes from './routes/cart.js';
+import cartRoutes from './routes/Cart.js';
+import checkoutRoutes from './routes/Checkout.js';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use('/api/books', bookRoutes);
 app.use('/api/cart', cartRoutes);
+app.use('/api/checkout', checkoutRoutes);
 
 const PORT = process.env.PORT || 3000;
 
