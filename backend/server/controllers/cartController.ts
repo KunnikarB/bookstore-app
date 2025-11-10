@@ -50,3 +50,39 @@ export const clearCart = async (_req: Request, res: Response) => {
   await cart.save();
   res.json(cart);
 };
+
+export const updateCartItemController = async (req: Request, res: Response) => {
+  const { bookId } = req.params;
+  const { quantity } = req.body;
+
+  try {
+    let cart = await Cart.findOne({ userId: USER_ID });
+    if (!cart) return res.status(404).json({ error: 'Cart not found' });
+
+    const item = cart.items.find((i) => i.book.toString() === bookId);
+    if (!item) return res.status(404).json({ error: 'Item not found in cart' });
+
+    // Remove item if quantity <= 0
+    if (quantity <= 0) {
+      cart.items = cart.items.filter((i) => i.book.toString() !== bookId);
+    } else {
+      // Check stock
+      const book = await Book.findById(bookId);
+      if (!book) return res.status(404).json({ error: 'Book not found' });
+
+      const available = book.stock ?? Infinity;
+      if (available < quantity) {
+        return res.status(400).json({ error: 'Not enough stock' });
+      }
+
+      item.quantity = quantity;
+    }
+
+    await cart.save();
+    await cart.populate('items.book');
+    res.json(cart);
+  } catch (err) {
+    console.error('Error updating cart item:', err);
+    res.status(500).json({ error: 'Failed to update cart item' });
+  }
+};

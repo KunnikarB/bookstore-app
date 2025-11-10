@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+ 
 import {
   createContext,
   useContext,
@@ -74,14 +74,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // New: update quantity
   const updateQuantity = async (bookId: string, quantity: number) => {
+    if (quantity <= 0) {
+      return removeItem(bookId);
+    }
     try {
-      const updatedCart = await updateCartItem(bookId, quantity);
+      const updatedCart = await updateCartItemApi(bookId, quantity);
       setCart(updatedCart.items || []);
-    } catch (error) {
-      console.error('Failed to update quantity:', error);
+    } catch (err) {
+      console.error('Failed to update quantity:', err);
+      throw err; // rethrow so UI can show error if desired
     }
   };
-
 
   const clearCart = async () => {
     try {

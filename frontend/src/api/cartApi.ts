@@ -21,13 +21,15 @@ export const removeFromCart = async (bookId: string) => {
   return res.data;
 };
 
-export const updateCartItem = async (bookId: string, quantity: number) => {
-  const res = await API.put(`/${bookId}`, { quantity });
-  return res.data;
-};
-
 
 export const clearCart = async () => {
   const res = await API.delete('/clear');
+  return res.data;
+};
+
+// NEW: update quantity
+export const updateCartItem = async (bookId: string, quantity: number) => {
+  const res = await API.put(`/${bookId}`, { quantity });
+  if (res.status < 200 || res.status >= 300) throw new Error('Failed to update cart item');
   return res.data;
 };
