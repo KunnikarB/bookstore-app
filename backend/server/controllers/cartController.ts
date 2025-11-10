@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import Book from '../models/Book.ts';
+import Book from '../models/Book.js';
 
 let cart: { book: any; quantity: number }[] = [];
 

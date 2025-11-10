@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import bookRoutes from './routes/Books.ts';
-import cartRoutes from './routes/cart.ts';
+import bookRoutes from './routes/Books.js';
+import cartRoutes from './routes/cart.js';
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/api/books', bookRoutes);
 app.use('/api/cart', cartRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 mongoose
   .connect(process.env.MONGO_URI!)

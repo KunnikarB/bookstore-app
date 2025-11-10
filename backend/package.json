@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/server.ts",
   "scripts": {
-    "dev": "ts-node ./server/server.ts",
+    "dev": "node --loader ts-node/esm --watch ./server/server.ts",
     "seed": "ts-node ./server/seedBooks.ts"
   },
   "keywords": [],
@@ -18,7 +18,9 @@
     "mongoose": "^8.19.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   }
 }
