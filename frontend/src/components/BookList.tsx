@@ -33,7 +33,7 @@ export default function BookList() {
 
   return (
     <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <h2 style={{ color: 'hotpink' }}>Books</h2>
+      <h2 style={{ color: 'hotpink', fontWeight: 'bold' }}>📚 Books</h2>
 
       <SearchBar
         onSelect={(book) => {
@@ -45,10 +45,10 @@ export default function BookList() {
         {books.map((book) => (
           <div
             key={book._id}
-            style={{ border: '1px solid #4CAF50', padding: '1rem', width: '100%' }}
+            style={{ border: '1px solid #2d262e', padding: '1rem', width: '100%', borderRadius: '8px', backgroundColor: '#2d262e', margin: '0 auto', textAlign: 'center' }}
           >
             <h3 style={{ color: 'hotpink' }}>{book.title}</h3>
-            <p style={{ color: '#4CAF50' }}>By {book.author}</p>
+            <p style={{ color: '#fff' }}>By {book.author}</p>
             <p style={{ color: 'hotpink' }}>${book.price}</p>
             {book.stock < 5 && (
               <p style={{ color: 'red' }}>⚠️ Low stock ({book.stock})</p>
@@ -59,7 +59,7 @@ export default function BookList() {
                 padding: '0.5rem 1rem',
                 fontSize: '1rem',
                 cursor: 'pointer',
-                backgroundColor: '#4CAF50',
+                backgroundColor: '#6c46dd',
                 color: 'white',
                 border: 'none',
                 borderRadius: '4px',

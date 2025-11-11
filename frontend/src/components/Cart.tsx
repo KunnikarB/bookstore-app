@@ -8,8 +8,16 @@ export default function Cart() {
   if (cart.length === 0) return <p style={{ color: 'hotpink', fontWeight: 'bold', maxWidth: '700px', margin: '20px auto', fontSize: '1.2rem' }}>Your cart is empty</p>;
 
   return (
-    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <h2 style={{ color: '#4CAF50' }}>Your Cart</h2>
+    <div
+      style={{
+        maxWidth: '700px',
+        margin: '0 auto',
+        backgroundColor: '#2d262e',
+        padding: '1rem',
+        borderRadius: '8px',
+      }}
+    >
+      <h2 style={{ color: '#fff', fontWeight: 'bold' }}>Your Cart</h2>
       <ul>
         {cart.map((item) => (
           <li
@@ -20,7 +28,7 @@ export default function Cart() {
               alignItems: 'center',
               gap: '2rem',
               padding: '0.4rem',
-              borderBottom: '1px solid #4CAF50',
+              borderBottom: '1px solid #6c46dd',
               color: 'hotpink',
             }}
             key={item.book._id}
@@ -29,19 +37,22 @@ export default function Cart() {
             <button
               style={{
                 cursor: 'pointer',
-                backgroundColor: '#4CAF50',
+                backgroundColor: '#6c46dd',
                 color: 'white',
                 border: 'none',
                 borderRadius: '4px',
-                padding: '0.3rem 0.6rem',}}
+                padding: '0.3rem 0.6rem',
+              }}
               onClick={() => removeItem(item.book._id)}
             >
-              ❌ Remove
+               Remove
             </button>
           </li>
         ))}
       </ul>
-      <p style={{ fontWeight: 'bold', color: '#4CAF50' }}>Subtotal: ${total.toFixed(2)}</p>
+      <p style={{ fontWeight: 'bold', color: '#fff', marginTop: '1rem' }}>
+        Subtotal: ${total.toFixed(2)}
+      </p>
 
       <button
         onClick={() => {
@@ -52,7 +63,7 @@ export default function Cart() {
           padding: '0.5rem 1rem',
           fontSize: '1rem',
           cursor: 'pointer',
-          backgroundColor: '#4CAF50',
+          backgroundColor: '#6c46dd',
           color: 'white',
           border: 'none',
           borderRadius: '4px',

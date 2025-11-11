@@ -1,6 +1,7 @@
  
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import '../index.css';
 
 export default function Header() {
   const { cart } = useCart();
@@ -14,7 +15,7 @@ export default function Header() {
         maxWidth: '700px',
         margin: '30px auto',
         padding: '1rem',
-        borderBottom: '1px solid #4CAF50',
+        borderBottom: '1px solid hotpink',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -37,7 +38,7 @@ export default function Header() {
           to="/cart"
           style={{
             textDecoration: 'none',
-            color: '#4CAF50',
+            color: '#fff',
             fontWeight: 'bold',
             fontSize: '1.5rem',
           }}

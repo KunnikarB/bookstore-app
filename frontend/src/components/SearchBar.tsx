@@ -50,9 +50,9 @@ export default function SearchBar({ onSelect }: Props) {
           padding: '1rem',
           width: '100%',
           borderRadius: '4px',
-          border: '1px solid #4CAF50',
+          border: '1px solid hotpink',
           outlineColor: 'hotpink',
-          color: '#4CAF50',
+          color: 'hotpink',
         }}
       />
       {loading && (
@@ -66,9 +66,8 @@ export default function SearchBar({ onSelect }: Props) {
             top: '110%',
             left: 0,
             right: 0,
-            backgroundColor: 'white',
-            border: '1px solid #4CAF50',
-            borderRadius: '4px',
+            backgroundColor: 'transparent',
+            color: '#fff',
             listStyle: 'none',
             padding: 0,
             margin: 0,
@@ -83,7 +82,7 @@ export default function SearchBar({ onSelect }: Props) {
               style={{
                 padding: '0.5rem',
                 cursor: 'pointer',
-                borderBottom: '1px solid #eee',
+                borderBottom: '1px solid #555'
               }}
               onClick={() => {
                 onSelect(book);
