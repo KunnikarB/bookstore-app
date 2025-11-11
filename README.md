@@ -15,17 +15,19 @@ where users can search for books, view details, and add items to their cart with
 ---
 
 - Home page
-<img width="752" height="936" alt="Screenshot 2025-11-10 at 21 21 59" src="https://github.com/user-attachments/assets/65d41f34-278b-4c7d-98f8-87055d5b9dda" />
+<img width="864" height="954" alt="Screenshot 2025-11-11 at 08 10 47" src="https://github.com/user-attachments/assets/49528a28-d398-425e-bca8-e5f8a7951207" />
+
 
 ---
 
 - Cart page
-<img width="743" height="396" alt="Screenshot 2025-11-10 at 21 22 48" src="https://github.com/user-attachments/assets/0b5de6ff-6d39-411d-bd20-bbd6b5ea09d1" />
+<img width="850" height="944" alt="Screenshot 2025-11-11 at 08 11 02" src="https://github.com/user-attachments/assets/5602e704-4793-43a2-ba1a-73fd807ad6de" />
+
 
 ---
 
 - Checkout page
-<img width="772" height="762" alt="Screenshot 2025-11-10 at 21 23 06" src="https://github.com/user-attachments/assets/2311cfe4-fe32-4714-b985-9d9bc43efa10" />
+<img width="878" height="957" alt="Screenshot 2025-11-11 at 08 11 18" src="https://github.com/user-attachments/assets/c7bd213d-dfb3-40c1-9a31-4a66de3697a5" />
 
 ---
 
