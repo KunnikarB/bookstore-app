@@ -33,7 +33,7 @@ export default function BookList() {
 
   return (
     <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <h2 style={{ color: 'hotpink', fontWeight: 'bold', textAlign: 'center', margin: '2rem 0' }}>📚 Books</h2>
+      <h2 style={{ color: 'hotpink', fontWeight: 'bold', textAlign: 'center', }}>📚 Books</h2>
 
       <SearchBar
         onSelect={(book) => {
