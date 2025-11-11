@@ -66,7 +66,7 @@ export default function SearchBar({ onSelect }: Props) {
             top: '110%',
             left: 0,
             right: 0,
-            backgroundColor: 'transparent',
+            backgroundColor: '#2d262e',
             color: '#fff',
             listStyle: 'none',
             padding: 0,
@@ -82,7 +82,7 @@ export default function SearchBar({ onSelect }: Props) {
               style={{
                 padding: '0.5rem',
                 cursor: 'pointer',
-                borderBottom: '1px solid #555'
+                borderBottom: '1px solid #555',
               }}
               onClick={() => {
                 onSelect(book);

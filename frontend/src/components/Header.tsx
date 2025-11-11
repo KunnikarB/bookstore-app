@@ -19,6 +19,7 @@ export default function Header() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginBottom: '2rem',
       }}
     >
       <Link
@@ -31,6 +32,22 @@ export default function Header() {
         }}
       >
         🏠 Home
+      </Link>
+
+      <Link
+        to="/add-book"
+        style={{
+          textDecoration: 'none',
+          color: '#fff',
+          fontWeight: 'bold',
+          fontSize: '1.5rem',
+          backgroundColor: 'hotpink',
+          padding: '0.2rem 0.5rem',
+          borderRadius: '10px',
+          boxShadow: '0 0 6px rgba(0,0,0,0.3)',
+        }}
+      >
+        📖 Add Book
       </Link>
 
       <div style={{ position: 'relative' }}>

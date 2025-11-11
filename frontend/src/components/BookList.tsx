@@ -33,7 +33,7 @@ export default function BookList() {
 
   return (
     <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <h2 style={{ color: 'hotpink', fontWeight: 'bold' }}>📚 Books</h2>
+      <h2 style={{ color: 'hotpink', fontWeight: 'bold', textAlign: 'center', margin: '2rem 0' }}>📚 Books</h2>
 
       <SearchBar
         onSelect={(book) => {
@@ -41,7 +41,7 @@ export default function BookList() {
         }}
       />
 
-      <div style={{ display: 'grid', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '3rem' }}>
         {books.map((book) => (
           <div
             key={book._id}

@@ -19,4 +19,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+// POST /api/books - Add a new book
+router.post('/', async (req, res) => {
+  try {
+    const { title, author, price, stock } = req.body;
+
+    if (!title || !author || !price) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    const newBook = new Book({ title, author, price, stock });
+    await newBook.save();
+
+    res.status(201).json(newBook);
+  } catch (error) {
+    console.error('Failed to add book:', error);
+    res.status(500).json({ error: 'Failed to add book' });
+  }
+});
+
+
 export default router;
