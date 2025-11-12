@@ -26,6 +26,7 @@ app.use('/api/books', bookRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/checkout', checkoutRoutes);
 
+
 app.get('/', (req, res) => {
   res.send('Bookstore API is running');
 });

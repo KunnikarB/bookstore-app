@@ -5,6 +5,8 @@
   "main": "server/server.ts",
   "scripts": {
     "dev": "node --loader ts-node/esm --watch ./server/server.ts",
+    "build": "tsc",
+    "start": "node dist/server/server.js",
     "seed": "ts-node ./server/seedBooks.ts"
   },
   "keywords": [],

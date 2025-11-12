@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../index.css';
 
 export default function Signup() {
@@ -14,7 +15,9 @@ export default function Signup() {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
     try {
+      // 1️⃣ Create user in Firebase
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -23,11 +26,19 @@ export default function Signup() {
       if (auth.currentUser) {
         await updateProfile(auth.currentUser, { displayName: name });
       }
-      console.log('User signed up:', userCredential.user);
+
+      // 2️⃣ Save user to MongoDB via backend
+      await axios.post('http://localhost:3000/api/users', {
+        name,
+        email,
+        uid: userCredential.user.uid, // optional: link Firebase UID
+      });
+
+      console.log('User signed up and saved in MongoDB:', userCredential.user);
       navigate('/');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      setError(err.message);
+      setError(err.response?.data?.message || err.message);
     }
   };
 
@@ -57,13 +68,20 @@ export default function Signup() {
           gap: '1.5rem',
         }}
       >
-        <h2 style={{ color: 'hotpink', marginBottom: '1rem', fontSize: '2rem' }}>
+        <h2
+          style={{ color: 'hotpink', marginBottom: '1rem', fontSize: '2rem' }}
+        >
           Create Account
         </h2>
 
         <form
           onSubmit={handleSignup}
-          style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem',
+            width: '100%',
+          }}
         >
           <input
             type="text"
