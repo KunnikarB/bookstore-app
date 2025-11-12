@@ -13,6 +13,7 @@ backend/dist/
 frontend/.env
 backend/.env
 backend/server/serviceAccountKey.json
+serviceAccountKey.json
 
 # Logs
 npm-debug.log*
