@@ -1,71 +1,131 @@
 # 📚 Bookstore App
-A full-stack Bookstore web application built with React, Express, and MongoDB, 
-where users can search for books, view details, and add items to their cart with real-time updates.
+A modern full-stack **Bookstore web application** built with React (Vite), Node.js, Express, MongoDB, and Firebase Authentication.  
+Users can browse books, add them to the cart, and securely check out — with admin functionality for adding new books.
 
 ## Features
-- 🔍 Search books by title or author
-- 🛒 Add to Cart with real-time cart badge updates
-- ➕➖ Adjust quantity directly from the cart
-- ❌ Remove items or clear the entire cart
-- 💰 Checkout with discount and stock validation
-- 🔔 Notifications using React Hot Toast
-- ⚠️ Low stock alerts for limited books
-- 💾 Backend API with Express + MongoDB
+
+### 👥 User Features
+- 🔐 **User Authentication** (Sign up, Login, Logout with Firebase)
+- 🛒 **Cart Management** — Add, remove, and view cart items
+- 💳 **Checkout Page** with summary and total
+- 📚 **Browse and Search Books**
+- 🌙 **Modern UI** with pink-purple theme and responsive design
+
+### ⚙️ Admin Features
+- 📖 **Add New Books** (title, author, price, and stock)
+- 💾 **Instant Database Update** via Express + MongoDB
+
+--- 
+
+## 🧰 Tech Stack
+
+### Frontend
+- ⚛️ **React (Vite) + TypeScript**
+- 🎨 **CSS / Inline Styles** (Hotpink and Deep Purple theme)
+- 🔥 **Firebase Authentication**
+- 🍞 **React Hot Toast** for notifications
+- 🛍️ **Context API** for Cart and Auth management
+
+### Backend
+- 🧠 **Node.js + Express**
+- 🗄️ **MongoDB (Mongoose ORM)**
+- 🌐 **RESTful API** endpoints for books
+
+### 🔐 Authentication
+
+- Uses Firebase Authentication for user login/signup
+
+- Stores display name and email for each user
+
+- Supports logout and redirects using React Router
+
+### 💡 Future Improvements
+
+- 🖼️ Add Book Cover Upload (Firebase Storage)
+
+- ⭐ Add Reviews and Ratings
+
+- 🔍 Add Search and Filter Functionality
+
+- 💰 Integrate Stripe for Real Payment
+
+- 🧑‍💼 Admin Dashboard for managing inventory
+  
+---
+
+- Login page
+<img width="1198" height="941" alt="Screenshot 2025-11-12 at 09 36 26" src="https://github.com/user-attachments/assets/358491e2-d830-4a29-9085-46e4c2d16e4d" />
 
 ---
+
+- Signup page
+<img width="1132" height="930" alt="Screenshot 2025-11-12 at 09 36 05" src="https://github.com/user-attachments/assets/278b93f3-3033-41f5-a325-3d8c55dc2f83" />
+
+--- 
 
 - Home page
-<img width="864" height="954" alt="Screenshot 2025-11-11 at 08 10 47" src="https://github.com/user-attachments/assets/49528a28-d398-425e-bca8-e5f8a7951207" />
-
+<img width="1191" height="729" alt="Screenshot 2025-11-12 at 09 28 24" src="https://github.com/user-attachments/assets/4ef625b1-ced5-4e9d-ad45-927f49da8afc" />
 
 ---
 
+- Add Book
+<img width="1084" height="919" alt="Screenshot 2025-11-12 at 09 25 43" src="https://github.com/user-attachments/assets/e5d4fa46-2317-4118-a024-8572e25ccc77" />
+
+
 - Cart page
-<img width="850" height="944" alt="Screenshot 2025-11-11 at 08 11 02" src="https://github.com/user-attachments/assets/5602e704-4793-43a2-ba1a-73fd807ad6de" />
+<img width="1135" height="929" alt="Screenshot 2025-11-12 at 09 25 57" src="https://github.com/user-attachments/assets/da900aed-f967-4dd6-bc5b-30af56468956" />
 
 
 ---
 
 - Checkout page
-<img width="878" height="957" alt="Screenshot 2025-11-11 at 08 11 18" src="https://github.com/user-attachments/assets/c7bd213d-dfb3-40c1-9a31-4a66de3697a5" />
+<img width="1103" height="966" alt="Screenshot 2025-11-12 at 09 31 17" src="https://github.com/user-attachments/assets/5ba69987-61a7-400d-96c3-953ce9281d7d" />
+
 
 ---
 
-
-## 🧩 Tech Stack
-Frontend
-- React (Vite)
-- TypeScript
-- Context API
-- React Hot Toast
-
-Backend
-- Node.js + Express
-- MongoDB + Mongoose
 
 ## ⚙️ Installation
 Clone the repository
 - git clone https://github.com/KunnikarB/bookstore-app
 
-Setup backend
+### Setup backend
 - cd backend
 - npm install
 - npm run dev
 The backend will start at http://localhost:3000
 
-Setup Frontedn
+### Setup Frontedn
 - cd frontend
 - npm install
 - npm run dev
 
-## 🌈 Future Enhancements
-- 🧾 Add order history
-- 💳 Integrate Stripe payments
-- 🔐 Add user login & authentication
-- 📱 Make UI more mobile-friendly
+### Setup Environment Variables
+In /server/.env
+- .env
+  <pre>
+  MONGO_URI=your_mongodb_connection_string
+  PORT=3000
+  </pre>
+  
+In /client/src/firebase.ts
+- Replace with your Firebase config
+  <pre>
+  const firebaseConfig = {
+    apiKey: "...",
+    authDomain: "...",
+    projectId: "...",
+    storageBucket: "...",
+    messagingSenderId: "...",
+    appId: "..."
+  };
+</pre>
 
-<pre>
+---
+
+  
 ## 💖 Credits
+<pre>
 Created with ❤️ by Kunnikar — Full Stack Developer
 📧 Contact: bcreative@gmai.com
 🌐 Portfolio: https://kunnikar-b.netlify.app
