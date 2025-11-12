@@ -1,13 +1,85 @@
-@import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Are+You+Serious&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&family=Pacifico&display=swap');
 
 body {
   margin: 0;
   padding: 0;
   background-color: #261e28; 
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Roboto', system-ui, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Are You Serious", cursive;
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
+}
+
+ul, li {
+  font-family: 'Playfair Display', serif;
+}
+
+button, input, select, textarea {
+  font-family: 'Roboto', system-ui, sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* 🧭 Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  form {
+    padding: 2rem 1rem;
+    max-width: 500px;
+    width: 80%;
+  }
+
+  input,
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.6rem;
+  }
+
+  .cart-count {
+    top: -8px !important;
+    right: -16px !important;
+  }
 }

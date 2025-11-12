@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import '../index.css';
 
 export default function AddBookPage() {
   const [title, setTitle] = useState('');
@@ -31,12 +32,17 @@ export default function AddBookPage() {
   return (
     <div
       style={{
-        maxWidth: '600px',
+        maxWidth: '800px',
         margin: '2rem auto',
-        padding: '1rem',
+        textAlign: 'center',
+        width: '100%',
       }}
     >
-      <h2 style={{ color: 'hotpink', marginBottom: '2rem', textAlign: 'center' }}>📚 Add a New Book</h2>
+      <h2
+        style={{ color: 'hotpink', marginBottom: '2rem', textAlign: 'center' }}
+      >
+        📚 Add a New Book
+      </h2>
       <form
         onSubmit={handleSubmit}
         style={{
@@ -47,10 +53,19 @@ export default function AddBookPage() {
           padding: '3rem',
           borderRadius: '8px',
           color: '#fff',
+          boxShadow: '0 0 10px hotpink',
+          margin: '0 auto',
         }}
       >
         <input
-          style={{ margin: '0', padding: '5px' }}
+          style={{
+            padding: '0.75rem',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            width: '90%',
+            margin: '0 auto',
+            fontSize: '1rem',
+          }}
           type="text"
           placeholder="Title"
           value={title}
@@ -58,7 +73,14 @@ export default function AddBookPage() {
           required
         />
         <input
-          style={{ margin: '0', padding: '5px' }}
+          style={{
+            padding: '0.75rem',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            width: '90%',
+            margin: '0 auto',
+            fontSize: '1rem',
+          }}
           type="text"
           placeholder="Author"
           value={author}
@@ -66,7 +88,14 @@ export default function AddBookPage() {
           required
         />
         <input
-          style={{ margin: '0', padding: '5px' }}
+          style={{
+            padding: '0.75rem',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            width: '90%',
+            margin: '0 auto',
+            fontSize: '1rem',
+          }}
           type="number"
           placeholder="Price"
           value={price}
@@ -74,7 +103,14 @@ export default function AddBookPage() {
           required
         />
         <input
-          style={{ margin: '0', padding: '5px' }}
+          style={{
+            padding: '0.75rem',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            width: '90%',
+            margin: '0 auto',
+            fontSize: '1rem',
+          }}
           type="number"
           placeholder="Stock"
           value={stock}
@@ -91,13 +127,22 @@ export default function AddBookPage() {
             padding: '0.75rem',
             cursor: 'pointer',
             fontWeight: 'bold',
+            fontSize: '1rem',
+            width: '50%',
+            margin: '1rem auto',
           }}
         >
           + Add Book
         </button>
       </form>
       {message && (
-        <p style={{marginTop: '1rem', textAlign: 'center', color: message.startsWith('✅') ? '#fff' : 'hotpink' }}>
+        <p
+          style={{
+            marginTop: '1rem',
+            textAlign: 'center',
+            color: message.startsWith('✅') ? '#fff' : 'hotpink',
+          }}
+        >
           {message}
         </p>
       )}

@@ -10,5 +10,5 @@
     "ignoreDeprecations": "6.0",
     "skipLibCheck": true
   },
-  "include": ["server/**/*.ts"]
+  "include": ["server/**/*.ts", "server/middleware/auth.js"]
 }

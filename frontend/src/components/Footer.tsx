@@ -21,7 +21,7 @@ export default function Footer() {
           style={{
             color: 'hotpink',
             textDecoration: 'none',
-            fontWeight: 'bold',
+            fontWeight: 'bold',           
           }}
         >
           kunnikar

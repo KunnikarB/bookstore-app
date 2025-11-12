@@ -14,6 +14,7 @@ import {
   clearCart as clearCartApi,
   updateCartItem as updateCartItemApi, // new backend endpoint to update quantity
 } from '../api/cartApi';
+
 import toast from 'react-hot-toast';
 
 

@@ -1,68 +1,69 @@
- 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
+import { auth } from '../firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import '../index.css';
 
 export default function Header() {
+  const navigate = useNavigate();
+  const location = useLocation(); // <--- get current path
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [user, setUser] = useState<any>(null);
   const { cart } = useCart();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigate('/login');
+  };
 
   // Calculate total quantity
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
+  const linkStyle = (path: string) => ({
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    fontSize: '1.5rem',
+    fontFamily: '"Playfair Display", serif',
+    color: location.pathname === path ? 'hotpink' : '#fff', // active color
+    borderBottom: location.pathname === path ? '2px solid hotpink' : 'none', // active border
+    paddingBottom: '4px',
+    transition: 'color 0.2s, border-bottom 0.2s',
+  });
+
   return (
     <header
       style={{
-        maxWidth: '700px',
+        maxWidth: '1000px',
         margin: '30px auto',
         padding: '1rem',
         borderBottom: '1px solid hotpink',
         display: 'flex',
+        flexWrap: 'wrap',
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: '2rem',
       }}
     >
-      <Link
-        to="/"
-        style={{
-          textDecoration: 'none',
-          color: 'hotpink',
-          fontWeight: 'bold',
-          fontSize: '1.5rem',
-        }}
-      >
+      <Link to="/" style={linkStyle('/')}>
         🏠 Home
       </Link>
 
-      <Link
-        to="/add-book"
-        style={{
-          textDecoration: 'none',
-          color: '#fff',
-          fontWeight: 'bold',
-          fontSize: '1.5rem',
-          backgroundColor: 'hotpink',
-          padding: '0.2rem 0.5rem',
-          borderRadius: '10px',
-          boxShadow: '0 0 6px rgba(0,0,0,0.3)',
-        }}
-      >
+      <Link to="/add-book" style={linkStyle('/add-book')}>
         📖 Add Book
       </Link>
 
       <div style={{ position: 'relative' }}>
-        <Link
-          to="/cart"
-          style={{
-            textDecoration: 'none',
-            color: '#fff',
-            fontWeight: 'bold',
-            fontSize: '1.5rem',
-          }}
-        >
+        <Link to="/cart" style={linkStyle('/cart')}>
           🛒 Cart
         </Link>
-
         {itemCount > 0 && (
           <span
             style={{
@@ -82,6 +83,65 @@ export default function Header() {
           >
             {itemCount}
           </span>
+        )}
+      </div>
+
+      {/* Auth Links */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {user ? (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ color: '#fff', fontWeight: 'bold' }}>
+              👤 {user.displayName || user.email}
+            </span>
+            <button
+              onClick={handleLogout}
+              style={{
+                background: 'hotpink',
+                color: 'white',
+                border: 'none',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                fontSize: '1rem',
+              }}
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <button
+              onClick={() => navigate('/login')}
+              style={{
+                background: '#6c46dd',
+                color: 'white',
+                border: 'none',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                fontSize: '1rem',
+              }}
+            >
+              Login
+            </button>
+            <button
+              onClick={() => navigate('/signup')}
+              style={{
+                background: 'hotpink',
+                color: 'white',
+                border: 'none',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                fontSize: '1rem',
+              }}
+            >
+              Sign Up
+            </button>
+          </div>
         )}
       </div>
     </header>

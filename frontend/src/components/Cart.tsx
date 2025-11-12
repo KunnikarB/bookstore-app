@@ -10,11 +10,15 @@ export default function Cart() {
   return (
     <div
       style={{
-        maxWidth: '700px',
-        margin: '0 auto',
+        maxWidth: '800px',
+        width: '100%',
+        margin: '5rem auto',
         backgroundColor: '#2d262e',
         padding: '1rem',
         borderRadius: '8px',
+        boxShadow: '0 0 10px hotpink',
+        textAlign: 'center',
+
       }}
     >
       <h2 style={{ color: '#fff', fontWeight: 'bold' }}>Your Cart</h2>
@@ -30,6 +34,7 @@ export default function Cart() {
               padding: '0.4rem',
               borderBottom: '1px solid #6c46dd',
               color: 'hotpink',
+              fontSize: '1.1rem',
             }}
             key={item.book._id}
           >
@@ -42,6 +47,7 @@ export default function Cart() {
                 border: 'none',
                 borderRadius: '4px',
                 padding: '0.3rem 0.6rem',
+                fontSize: '1rem',
               }}
               onClick={() => removeItem(item.book._id)}
             >
@@ -50,7 +56,7 @@ export default function Cart() {
           </li>
         ))}
       </ul>
-      <p style={{ fontWeight: 'bold', color: '#fff', marginTop: '1rem' }}>
+      <p style={{ fontWeight: 'bold', color: '#fff', marginTop: '2rem', fontSize: '1.5rem' }}>
         Subtotal: ${total.toFixed(2)}
       </p>
 
@@ -59,9 +65,9 @@ export default function Cart() {
           navigate('/checkout');
         }}
         style={{
-          marginTop: '1rem',
+          margin: '1rem',
           padding: '0.5rem 1rem',
-          fontSize: '1rem',
+          fontSize: '1.2rem',
           cursor: 'pointer',
           backgroundColor: '#6c46dd',
           color: 'white',

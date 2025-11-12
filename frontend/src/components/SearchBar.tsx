@@ -48,7 +48,7 @@ export default function SearchBar({ onSelect }: Props) {
         placeholder="Search books..."
         style={{
           padding: '1rem',
-          width: '100%',
+          width: '97%',
           borderRadius: '4px',
           border: '1px solid hotpink',
           outlineColor: 'hotpink',
