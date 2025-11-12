@@ -77,6 +77,7 @@ export default function Login() {
               borderRadius: '6px',
               border: '1px solid #ccc',
               width: '100%',
+              fontSize: '1rem'
             }}
             required
           />
@@ -90,6 +91,7 @@ export default function Login() {
               borderRadius: '6px',
               border: '1px solid #ccc',
               width: '100%',
+              fontSize: '1rem'
             }}
             required
           />
@@ -98,14 +100,14 @@ export default function Login() {
             style={{
               backgroundColor: '#6c46dd',
               color: 'white',
-              padding: '0.75rem',
+              padding: '0.55rem',
               border: 'none',
               borderRadius: '6px',
               cursor: 'pointer',
               width: '50%',
               margin: '0 auto',
               fontWeight: 'bold',
-              fontSize: '1rem',
+              fontSize: '1rem'
             }}
           >
             Login 👤
@@ -126,6 +128,7 @@ export default function Login() {
             width: '50%',
             margin: '0 auto',
             fontWeight: 'bold',
+            fontSize: '1rem'
           }}
         >
           Sign in with Google
@@ -143,6 +146,7 @@ export default function Login() {
             width: '50%',
             margin: '0 auto',
             fontWeight: 'bold',
+            fontSize: '1rem'
           }}
         >
           Sign in with GitHub

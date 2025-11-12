@@ -22,9 +22,11 @@ serviceAccountKey.json
 *.json
 .env.local
 .env.*.local
+# Firebase credentials
 
-# Logs
-npm-debug.log*
+!package.json
+!tsconfig.json
+
 yarn-debug.log*
 yarn-error.log*
 
