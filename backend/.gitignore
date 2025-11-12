@@ -7,6 +7,11 @@ backend/node_modules/
 dist/
 frontend/dist/
 backend/dist/
+build/
+frontend/build/
+backend/build/
+dist/
+
 
 # Environment variables
 .env
@@ -14,6 +19,9 @@ frontend/.env
 backend/.env
 backend/server/serviceAccountKey.json
 serviceAccountKey.json
+*.json
+.env.local
+.env.*.local
 
 # Logs
 npm-debug.log*
