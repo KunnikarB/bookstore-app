@@ -133,3 +133,34 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "clientVersion": "6.19.0",
   "name": "PrismaClientKnownRequestError"
 }
+2025-12-02 21:24:06 [error]: Failed to update book: 
+Invalid `prisma.book.update()` invocation in
+/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:89:43
+
+  86 const { id } = req.params;
+  87 const validatedData = createBookSchema.partial().parse(req.body);
+  88 
+→ 89 const updatedBook = await prisma.book.update(
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.update()` invocation in
+/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:89:43
+
+  86 const { id } = req.params;
+  87 const validatedData = createBookSchema.partial().parse(req.body);
+  88 
+→ 89 const updatedBook = await prisma.book.update(
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:89:25)
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}

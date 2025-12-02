@@ -4,7 +4,7 @@ import { createBookSchema, searchQuerySchema } from '../validation/bookSchema.js
 import logger from '../config/logger.js';
 import verifyAdmin from '../middleware/adminAuth.js';
 import { ZodError } from 'zod';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -48,8 +48,8 @@ router.post('/', verifyAdmin, async (req, res) => {
     // Prefer raw MongoDB driver for create to avoid replica set transaction requirement
     const client = new MongoClient(process.env.DATABASE_URL || '');
     await client.connect();
-    const dbNameFromUrl = (process.env.DATABASE_URL || '').split('/').pop() || 'bookstore';
-    const db = client.db(dbNameFromUrl);
+    // Use default DB from the connection string
+    const db = client.db();
     const collection = db.collection('Book');
 
     const now = new Date();
@@ -86,20 +86,40 @@ router.put('/:id', verifyAdmin, async (req, res) => {
     const { id } = req.params;
     const validatedData = createBookSchema.partial().parse(req.body);
 
-    const updatedBook = await prisma.book.update({
-      where: { id },
-      data: validatedData,
-    });
+    const client = new MongoClient(process.env.DATABASE_URL || '');
+    await client.connect();
+    const dbNameFromUrl = (process.env.DATABASE_URL || '').split('/').pop() || 'bookstore';
+    const db = client.db(dbNameFromUrl);
+    const collection = db.collection('Book');
 
-    logger.info(`Updated book: ${updatedBook.title} by ${updatedBook.author}`);
-    res.json(updatedBook);
+    const _id = new ObjectId(id);
+
+    const now = new Date();
+    const updateDoc = { ...validatedData, updatedAt: now };
+
+    const result = await collection.findOneAndUpdate(
+      { _id },
+      { $set: updateDoc },
+      { returnDocument: 'after' }
+    );
+
+    await client.close();
+
+    if (!result.value) {
+      return res.status(404).json({ error: 'Book not found' });
+    }
+
+    // Normalize id field
+    const updated = { id: result.value._id.toString(), ...result.value };
+    logger.info(`Updated book: ${updated.title} by ${updated.author}`);
+    res.json(updated);
   } catch (error) {
     if (error instanceof ZodError) {
       logger.warn('Invalid book data:', error.issues);
       return res.status(400).json({ error: 'Validation failed', details: error.issues });
     }
-    logger.error('Failed to update book:', error);
-    res.status(500).json({ error: 'Failed to update book' });
+    logger.error('Failed to update book:', { message: (error as any)?.message });
+    res.status(500).json({ error: 'Failed to update book', message: (error as any)?.message });
   }
 });
 
