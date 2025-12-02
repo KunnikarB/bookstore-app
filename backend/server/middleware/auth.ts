@@ -1,11 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import admin from 'firebase-admin';
 
-export default async function verifyToken(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export default async function verifyToken(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {

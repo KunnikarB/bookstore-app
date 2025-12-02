@@ -32,7 +32,7 @@ export const addToCart = async (req: Request, res: Response) => {
 // Remove item
 export const removeFromCart = async (req: Request, res: Response) => {
   const { bookId } = req.params;
-  let cart = await Cart.findOne({ userId: USER_ID });
+  const cart = await Cart.findOne({ userId: USER_ID });
   if (!cart) return res.status(404).json({ error: 'Cart not found' });
 
   cart.items = cart.items.filter((i) => i.book.toString() !== bookId);
@@ -40,7 +40,6 @@ export const removeFromCart = async (req: Request, res: Response) => {
   await cart.populate('items.book');
   res.json(cart);
 };
-
 
 // Clear cart
 export const clearCart = async (_req: Request, res: Response) => {
@@ -56,7 +55,7 @@ export const updateCartItemController = async (req: Request, res: Response) => {
   const { quantity } = req.body;
 
   try {
-    let cart = await Cart.findOne({ userId: USER_ID });
+    const cart = await Cart.findOne({ userId: USER_ID });
     if (!cart) return res.status(404).json({ error: 'Cart not found' });
 
     const item = cart.items.find((i) => i.book.toString() === bookId);

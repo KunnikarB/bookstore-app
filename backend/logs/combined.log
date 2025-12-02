@@ -1,0 +1,515 @@
+2025-12-02 14:01:34 [info]: MongoDB connected successfully
+2025-12-02 14:01:34 [info]: 🚀 Server running on port 3000
+2025-12-02 14:01:34 [info]: Environment: development
+2025-12-02 14:02:38 [info]: MongoDB connected successfully
+2025-12-02 14:02:38 [info]: 🚀 Server running on port 3000
+2025-12-02 14:02:38 [info]: Environment: development
+2025-12-02 14:02:49 [info]: GET /
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:02:49 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:02:55 [info]: GET /
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:03:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:04:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:04:53 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:05:18 [info]: GET /nonexistent
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:08:07 [info]: MongoDB connected successfully
+2025-12-02 14:08:07 [info]: 🚀 Server running on port 3000
+2025-12-02 14:08:07 [info]: Environment: development
+2025-12-02 14:08:13 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:08:13 [info]: Created new book: Valid Book by John Doe
+2025-12-02 14:08:35 [info]: GET /
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:08:43 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:08:43 [info]: Created new book: Zod Test Book by Jane Smith
+2025-12-02 14:08:50 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:08:50 [warn]: Invalid book data: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "title"
+    ],
+    "message": "Title is required"
+  }
+]
+ZodError: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "title"
+    ],
+    "message": "Title is required"
+  }
+]
+    at file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:32:48
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at /Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:295:15
+    at processParams (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:582:12)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:291:5)
+    at router.handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:186:3)
+{
+  "name": "ZodError"
+}
+2025-12-02 14:08:56 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:08:56 [warn]: Invalid book data: [
+  {
+    "origin": "number",
+    "code": "too_small",
+    "minimum": 0,
+    "inclusive": false,
+    "path": [
+      "price"
+    ],
+    "message": "Price must be positive"
+  }
+]
+ZodError: [
+  {
+    "origin": "number",
+    "code": "too_small",
+    "minimum": 0,
+    "inclusive": false,
+    "path": [
+      "price"
+    ],
+    "message": "Price must be positive"
+  }
+]
+    at file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:32:48
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at /Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:295:15
+    at processParams (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:582:12)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:291:5)
+    at router.handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:186:3)
+{
+  "name": "ZodError"
+}
+2025-12-02 14:09:03 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:09:03 [warn]: Invalid book data: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "price"
+    ],
+    "message": "Invalid input: expected number, received undefined"
+  }
+]
+ZodError: [
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "price"
+    ],
+    "message": "Invalid input: expected number, received undefined"
+  }
+]
+    at file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:32:48
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at /Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:295:15
+    at processParams (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:582:12)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:291:5)
+    at router.handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:186:3)
+{
+  "name": "ZodError"
+}
+2025-12-02 14:24:29 [info]: MongoDB connected successfully
+2025-12-02 14:24:29 [info]: 🚀 Server running on port 3000
+2025-12-02 14:24:29 [info]: Environment: development
+2025-12-02 14:25:50 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:25:50 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:25:50 [info]: Found 9 books for search: ""
+2025-12-02 14:25:50 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:26:16 [info]: MongoDB connected successfully
+2025-12-02 14:26:16 [info]: 🚀 Server running on port 3000
+2025-12-02 14:26:16 [info]: Environment: development
+2025-12-02 14:26:21 [info]: GET /
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:26:21 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:26:21 [info]: Found 9 books for search: ""
+2025-12-02 14:26:30 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:26:30 [info]: Created new book: Test Book by Test Author
+2025-12-02 14:26:38 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 14:26:38 [warn]: Invalid book data: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "title"
+    ],
+    "message": "Title is required"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "price"
+    ],
+    "message": "Invalid input: expected number, received undefined"
+  }
+]
+ZodError: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "title"
+    ],
+    "message": "Title is required"
+  },
+  {
+    "expected": "number",
+    "code": "invalid_type",
+    "path": [
+      "price"
+    ],
+    "message": "Invalid input: expected number, received undefined"
+  }
+]
+    at file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:32:48
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/lib/layer.js:152:17)
+    at /Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:295:15
+    at processParams (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:582:12)
+    at next (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:291:5)
+    at router.handle (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/router/index.js:186:3)
+{
+  "name": "ZodError"
+}
+2025-12-02 14:27:58 [info]: MongoDB connected successfully
+2025-12-02 14:27:58 [info]: 🚀 Server running on port 3000
+2025-12-02 14:27:58 [info]: Environment: development
+2025-12-02 14:28:13 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:13 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:13 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:13 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:16 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:16 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:16 [info]: Found 10 books for search: ""
+2025-12-02 14:28:16 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:16 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:16 [info]: Found 10 books for search: ""
+2025-12-02 14:28:16 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:28:16 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:29:14 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:29:14 [info]: Created new book: Test by Test
+2025-12-02 14:29:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:29:20 [info]: Found 11 books for search: ""
+2025-12-02 14:29:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:29:20 [info]: Found 11 books for search: ""
+2025-12-02 14:31:17 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:31:17 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:31:17 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:31:17 [info]: Found 11 books for search: ""
+2025-12-02 14:31:17 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:31:17 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:31:17 [info]: Found 11 books for search: ""
+2025-12-02 14:31:17 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:05 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:05 [info]: Found 11 books for search: ""
+2025-12-02 14:34:05 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:05 [info]: Found 11 books for search: ""
+2025-12-02 14:34:14 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:14 [info]: Found 11 books for search: ""
+2025-12-02 14:34:14 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:14 [info]: Found 11 books for search: ""
+2025-12-02 14:34:37 [info]: POST /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:52 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:52 [info]: Found 11 books for search: ""
+2025-12-02 14:34:52 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:34:52 [info]: Found 11 books for search: ""
+2025-12-02 14:34:57 [info]: POST /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:35:14 [info]: POST /api/checkout
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:35:23 [info]: DELETE /api/cart/692ee90667e3994821936883
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:35:29 [info]: POST /api/checkout
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:35:29 [info]: DELETE /api/cart/clear
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:36:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:36:49 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:36:49 [info]: Found 10 books for search: ""
+2025-12-02 14:36:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:36:49 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:36:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:36:49 [info]: Found 10 books for search: ""
+2025-12-02 14:36:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:37:27 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:37:27 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:37:27 [info]: Found 9 books for search: ""
+2025-12-02 14:37:27 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:37:27 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:37:27 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 14:37:27 [info]: Found 9 books for search: ""
+2025-12-02 14:37:27 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}

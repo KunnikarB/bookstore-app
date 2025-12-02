@@ -1,39 +1,38 @@
 import type { Request, Response } from 'express';
 import Book from '../models/Book.js';
 
-let cart: { book: any; quantity: number }[] = []; // your in-memory cart
+interface CartItem {
+  book: {
+    _id: string;
+    title: string;
+    price: number;
+  };
+  quantity: number;
+}
 
 export const checkoutCart = async (req: Request, res: Response) => {
   try {
-    const { cart, discountCode } = req.body;
+    const { cart, discountCode }: { cart: CartItem[]; discountCode?: string } = req.body;
 
     if (!Array.isArray(cart) || !cart.length)
       return res.status(400).json({ error: 'Cart is empty' });
 
     for (const item of cart) {
       const book = await Book.findById(item.book._id);
-      if (!book)
-        return res.status(404).json({ error: `${item.book.title} not found` });
+      if (!book) return res.status(404).json({ error: `${item.book.title} not found` });
 
       if (typeof book.stock !== 'number')
-        return res
-          .status(500)
-          .json({ error: `Stock info missing for ${book.title}` });
+        return res.status(500).json({ error: `Stock info missing for ${book.title}` });
 
       if (book.stock < item.quantity)
-        return res
-          .status(400)
-          .json({ error: `${book.title} does not have enough stock` });
+        return res.status(400).json({ error: `${book.title} does not have enough stock` });
 
       book.stock -= item.quantity;
       await book.save();
     }
 
     // Calculate total
-    let total = cart.reduce(
-      (sum, item) => sum + item.book.price * item.quantity,
-      0
-    );
+    let total = cart.reduce((sum, item) => sum + item.book.price * item.quantity, 0);
 
     // Apply discount rules
     if (discountCode === 'SAVE10') total *= 0.9;
@@ -55,5 +54,3 @@ export const checkoutCart = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Checkout failed' });
   }
 };
-
-
