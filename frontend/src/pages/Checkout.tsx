@@ -5,7 +5,7 @@ import { checkoutCart } from '../api/checkoutapi';
 import '../index.css';
 
 type Book = {
-  _id: string;
+  id: string;
   title: string;
   author?: string;
   price: number;
@@ -69,7 +69,23 @@ export default function Checkout() {
     }
   };
 
-  if (!cart.length) return <p style={{ color: 'hotpink', fontWeight: 'bold', maxWidth: '800px', margin: '20px auto', fontSize: '2rem', fontFamily: '"Playfair Display", serif' }}>Your cart is empty</p>;
+  if (!cart.length)
+    return (
+      <p
+        style={{
+          color: 'hotpink',
+          fontWeight: 'bold',
+          maxWidth: '800px',
+          margin: '20px auto',
+          fontSize: '2rem',
+          fontFamily: '"Playfair Display", serif',
+          textAlign: 'center',
+        }}
+      >
+        Thanks for your purchase!
+        <br /><span style={{color: 'white'}}>Your order has been completed successfully 🎉</span>
+      </p>
+    );
 
   return (
     <div
@@ -91,7 +107,7 @@ export default function Checkout() {
       <ul>
         {cart.map((item) => (
           <li
-            key={item.book._id}
+            key={`${item.book.id}-${item.quantity}`}
             style={{
               display: 'flex',
               justifyContent: 'space-between',
@@ -109,7 +125,7 @@ export default function Checkout() {
             <div>
               {/* Increase quantity */}
               <button
-                onClick={() => updateQuantity(item.book._id, item.quantity + 1)}
+                onClick={() => updateQuantity(item.book.id, item.quantity + 1)}
                 style={{
                   marginRight: '5px',
                   backgroundColor: '#6c46dd',
@@ -126,7 +142,7 @@ export default function Checkout() {
 
               {/* Decrease quantity */}
               <button
-                onClick={() => updateQuantity(item.book._id, item.quantity - 1)}
+                onClick={() => updateQuantity(item.book.id, item.quantity - 1)}
                 style={{
                   marginRight: '5px',
                   backgroundColor: 'hotpink',
@@ -150,7 +166,7 @@ export default function Checkout() {
                   cursor: 'pointer',
                   fontSize: '1rem',
                 }}
-                onClick={() => removeItem(item.book._id)}
+                onClick={() => removeItem(item.book.id)}
               >
                 🗑️
               </button>
@@ -276,7 +292,7 @@ export default function Checkout() {
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {books.map((book) => (
           <li
-            key={book._id}
+            key={`${book.id}`}
             style={{
               marginBottom: '5px',
               display: 'flex',
@@ -298,7 +314,7 @@ export default function Checkout() {
                 cursor: 'pointer',
                 fontSize: '1rem',
               }}
-              onClick={() => addItem(book._id)}
+              onClick={() => addItem(book.id)}
             >
               Add
             </button>

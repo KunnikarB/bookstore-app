@@ -2,8 +2,14 @@
 import axios from 'axios';
 import { auth } from '../firebase';
 
+const apiBase =
+  (import.meta as any)?.env?.VITE_API_URL ||
+  ((import.meta as any)?.env?.VITE_API_BASE
+    ? `${(import.meta as any).env.VITE_API_BASE}/api`
+    : undefined);
+
 const API = axios.create({
-  baseURL: 'http://localhost:3000/api/cart',
+  baseURL: `${apiBase || 'http://localhost:3000/api'}/cart`,
 });
 
 // Add Firebase auth token to all cart requests

@@ -1,9 +1,11 @@
 import type { Request, Response } from 'express';
-import prisma from '../prisma.js';
+import { MongoClient, ObjectId } from 'mongodb';
+import dotenv from 'dotenv';
+dotenv.config();
 
 interface CartItem {
   book: {
-    _id: string;
+    id: string;
     title: string;
     price: number;
   };
@@ -17,20 +19,29 @@ export const checkoutCart = async (req: Request, res: Response) => {
     if (!Array.isArray(cart) || !cart.length)
       return res.status(400).json({ error: 'Cart is empty' });
 
+    const client = new MongoClient(process.env.DATABASE_URL || '');
+    await client.connect();
+    const db = client.db();
+    const booksCol = db.collection('Book');
+
     for (const item of cart) {
-      const book = await prisma.book.findUnique({ where: { id: item.book._id } });
-      if (!book) return res.status(404).json({ error: `${item.book.title} not found` });
+      const _id = new ObjectId(item.book.id);
+      const book = await booksCol.findOne({ _id });
+      if (!book) {
+        await client.close();
+        return res.status(404).json({ error: `${item.book.title} not found` });
+      }
 
-      if (typeof book.stock !== 'number')
-        return res.status(500).json({ error: `Stock info missing for ${book.title}` });
-
-      if (book.stock < item.quantity)
+      const currentStock = typeof book.stock === 'number' ? book.stock : Infinity;
+      if (currentStock < item.quantity) {
+        await client.close();
         return res.status(400).json({ error: `${book.title} does not have enough stock` });
+      }
 
-      await prisma.book.update({
-        where: { id: book.id },
-        data: { stock: book.stock - item.quantity },
-      });
+      await booksCol.updateOne(
+        { _id },
+        { $set: { stock: currentStock - item.quantity, updatedAt: new Date() } }
+      );
     }
 
     // Calculate total
@@ -46,6 +57,7 @@ export const checkoutCart = async (req: Request, res: Response) => {
 
     const orderId = `TXN-${Math.floor(Math.random() * 10000)}`;
 
+    await client.close();
     return res.json({
       message: 'Purchase completed successfully',
       total: total.toFixed(2),

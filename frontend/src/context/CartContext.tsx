@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+/* @refresh reload */
 
 import {
   createContext,
@@ -65,29 +66,65 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [user]);
 
   const addItem = async (bookId: string) => {
+    if (!user) {
+      toast.error('Please log in to add items');
+      return;
+    }
+    if (!bookId) {
+      toast.error('Invalid book. Please refresh.');
+      return;
+    }
     try {
       const updatedCart = await addToCartApi(bookId);
       setCart(updatedCart.items || []);
       toast.success('Item added to cart 🛍️');
     } catch (error) {
       console.error('Failed to add item:', error);
-      toast.error('Failed to add item ❌');
+      const status = (error as any)?.response?.status;
+      if (status === 401) {
+        toast.error('Unauthorized. Please log in again.');
+      } else if (status === 404) {
+        toast.error('Book not found. Refresh books.');
+      } else {
+        toast.error('Failed to add item ❌');
+      }
     }
   };
 
   const removeItem = async (bookId: string) => {
+    if (!user) {
+      toast.error('Please log in to manage your cart');
+      return;
+    }
+    if (!bookId) {
+      toast.error('Invalid item. Please refresh.');
+      return;
+    }
     try {
       const updatedCart = await removeFromCartApi(bookId);
       setCart(updatedCart.items || []);
       toast('Item removed from cart', { icon: '🗑️' });
     } catch (error) {
       console.error('Failed to remove item:', error);
-      toast.error('Failed to remove item ❌');
+      const status = (error as any)?.response?.status;
+      if (status === 401) {
+        toast.error('Unauthorized. Please log in again.');
+      } else {
+        toast.error('Failed to remove item ❌');
+      }
     }
   };
 
   // New: update quantity
   const updateQuantity = async (bookId: string, quantity: number) => {
+    if (!user) {
+      toast.error('Please log in to update quantities');
+      return;
+    }
+    if (!bookId) {
+      toast.error('Invalid item. Please refresh.');
+      return;
+    }
     if (quantity <= 0) {
       await removeItem(bookId);
       toast('Item removed', { icon: '➖' });
@@ -99,7 +136,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
       toast.success(`📦 Quantity updated to ${quantity}`);
     } catch (err) {
       console.error('Failed to update quantity:', err);
-      toast.error('Update failed ❌');
+      const status = (err as any)?.response?.status;
+      if (status === 400) {
+        toast.error('Not enough stock');
+      } else if (status === 401) {
+        toast.error('Unauthorized. Please log in again.');
+      } else if (status === 404) {
+        toast.error('Book not found in cart');
+      } else {
+        toast.error('Update failed ❌');
+      }
     }
   };
 

@@ -5,7 +5,20 @@ export default function Cart() {
   const { cart, removeItem, total } = useCart();
   const navigate = useNavigate();
 
-  if (cart.length === 0) return <p style={{ color: 'hotpink', fontWeight: 'bold', maxWidth: '700px', margin: '20px auto', fontSize: '1.2rem' }}>Your cart is empty</p>;
+  if (cart.length === 0)
+    return (
+      <p
+        style={{
+          color: 'hotpink',
+          fontWeight: 'bold',
+          maxWidth: '700px',
+          margin: '20px auto',
+          fontSize: '1.2rem',
+        }}
+      >
+        Your cart is empty
+      </p>
+    );
 
   return (
     <div
@@ -18,12 +31,11 @@ export default function Cart() {
         borderRadius: '8px',
         boxShadow: '0 0 10px hotpink',
         textAlign: 'center',
-
       }}
     >
       <h2 style={{ color: '#fff', fontWeight: 'bold' }}>Your Cart</h2>
       <ul>
-        {cart.map((item) => (
+        {cart.map((item, idx) => (
           <li
             style={{
               display: 'flex',
@@ -36,9 +48,10 @@ export default function Cart() {
               color: 'hotpink',
               fontSize: '1.1rem',
             }}
-            key={item.book._id}
+            key={`${item.book?.id || 'unknown'}-${idx}`}
           >
-            {item.book.title} - ${item.book.price} × {item.quantity}
+            {item.book?.title ?? 'Unknown'} - ${item.book?.price ?? 0} ×{' '}
+            {item.quantity}
             <button
               style={{
                 cursor: 'pointer',
@@ -49,14 +62,21 @@ export default function Cart() {
                 padding: '0.3rem 0.6rem',
                 fontSize: '1rem',
               }}
-              onClick={() => removeItem(item.book._id)}
+              onClick={() => item.book?.id && removeItem(item.book.id)}
             >
-               Remove
+              Remove
             </button>
           </li>
         ))}
       </ul>
-      <p style={{ fontWeight: 'bold', color: '#fff', marginTop: '2rem', fontSize: '1.5rem' }}>
+      <p
+        style={{
+          fontWeight: 'bold',
+          color: '#fff',
+          marginTop: '2rem',
+          fontSize: '1.5rem',
+        }}
+      >
         Subtotal: ${total.toFixed(2)}
       </p>
 
