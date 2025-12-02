@@ -1,18 +1,8 @@
-import mongoose from 'mongoose';
+import prisma from './prisma.js';
 import dotenv from 'dotenv';
+import { MongoClient } from 'mongodb';
 
 dotenv.config();
-
-// Define schema directly here
-const bookSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  price: { type: Number, required: true },
-  stock: { type: Number, required: true },
-});
-
-// Avoid model overwrite error in watch mode
-const Book = mongoose.models.Book || mongoose.model('Book', bookSchema);
 
 const books = [
   {
@@ -34,20 +24,39 @@ const books = [
 ];
 
 const seedBooks = async () => {
+  const client = new MongoClient(process.env.DATABASE_URL || '');
+
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/bookstore');
-    console.log('✅ MongoDB connected');
+    await client.connect();
+    console.log('✅ Connected to MongoDB');
 
-    await Book.deleteMany({});
-    console.log('🗑️  Existing books removed');
+    const db = client.db('bookstore');
+    const booksCollection = db.collection('Book');
 
-    await Book.insertMany(books);
-    console.log('📚 Sample books inserted successfully!');
+    // Check if books already exist
+    const count = await booksCollection.countDocuments();
 
-    await mongoose.disconnect();
+    if (count > 0) {
+      console.log(`📚 Database already has ${count} books. Skipping seed.`);
+      await client.close();
+      return;
+    }
+
+    // Insert books directly using MongoDB driver
+    const booksWithDates = books.map((book) => ({
+      ...book,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }));
+
+    const result = await booksCollection.insertMany(booksWithDates);
+    console.log(`📚 ${result.insertedCount} sample books inserted successfully!`);
+
+    await client.close();
     console.log('🔌 MongoDB disconnected');
   } catch (error) {
     console.error('❌ Error seeding books:', error);
+    await client.close();
     process.exit(1);
   }
 };

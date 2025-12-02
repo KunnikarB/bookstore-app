@@ -1,9 +1,25 @@
 // src/api/cartApi.ts
 import axios from 'axios';
+import { auth } from '../firebase';
 
 const API = axios.create({
   baseURL: 'http://localhost:3000/api/cart',
 });
+
+// Add Firebase auth token to all cart requests
+API.interceptors.request.use(
+  async (config) => {
+    const user = auth.currentUser;
+    if (user) {
+      const token = await user.getIdToken();
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 export const getCart = async () => {
   const res = await API.get('/');
@@ -17,10 +33,10 @@ export const addToCart = async (bookId: string) => {
 
 export const removeFromCart = async (bookId: string) => {
   const res = await API.delete(`/${bookId}`);
-  if (res.status < 200 || res.status >= 300) throw new Error("Failed to remove item from cart");
+  if (res.status < 200 || res.status >= 300)
+    throw new Error('Failed to remove item from cart');
   return res.data;
 };
-
 
 export const clearCart = async () => {
   const res = await API.delete('/clear');
@@ -30,6 +46,7 @@ export const clearCart = async () => {
 // NEW: update quantity
 export const updateCartItem = async (bookId: string, quantity: number) => {
   const res = await API.put(`/${bookId}`, { quantity });
-  if (res.status < 200 || res.status >= 300) throw new Error('Failed to update cart item');
+  if (res.status < 200 || res.status >= 300)
+    throw new Error('Failed to update cart item');
   return res.data;
 };
