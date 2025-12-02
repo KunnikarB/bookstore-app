@@ -17,16 +17,19 @@ dist/
 .env
 frontend/.env
 backend/.env
-backend/server/serviceAccountKey.json
-serviceAccountKey.json
 *.json
 .env.local
 .env.*.local
+
 # Firebase credentials
+backend/server/serviceAccountKey.json
+serviceAccountKey.json
 
 !package.json
 !tsconfig.json
 
+# Logs
+npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
@@ -36,3 +39,14 @@ Thumbs.db
 
 # Vite cache
 vite.config.ts.cache
+
+# TypeScript build files
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
