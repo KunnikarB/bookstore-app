@@ -1,10 +1,7 @@
-import * as Prisma from '@prisma/client';
-const PrismaClient = (Prisma as any).PrismaClient;
-
-export const prisma = new PrismaClient({
-	datasources: {
-		db: {
-			url: process.env.DATABASE_URL, 
-		},
-	},
-});
+module.exports = {
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL || 'mongodb://localhost:27017/bookstore',
+    },
+  },
+};
