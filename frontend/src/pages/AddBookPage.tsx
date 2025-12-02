@@ -104,8 +104,14 @@ export default function AddBookPage() {
       if (err.response?.status === 403) {
         setMessage('❌ Access denied. Admin privileges required.');
       } else if (err.response?.status === 404) {
-        setMessage('❌ Book not found. Refreshing list…');
+        // Try to recover: refresh list and verify if item exists
         await fetchBooks();
+        const exists = books.some((b) => (b.id || b._id) === editingId);
+        if (exists) {
+          setMessage(`✅ Book updated (list refreshed).`);
+        } else {
+          setMessage('❌ Book not found. Refreshing list…');
+        }
       } else {
         setMessage(
           `❌ Failed to ${

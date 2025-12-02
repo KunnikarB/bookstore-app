@@ -164,3 +164,34 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "clientVersion": "6.19.0",
   "name": "PrismaClientKnownRequestError"
 }
+2025-12-02 21:53:14 [error]: Failed to delete book: 
+Invalid `prisma.book.delete()` invocation in
+/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:131:23
+
+  128 try {
+  129   const { id } = req.params;
+  130 
+→ 131   await prisma.book.delete(
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.delete()` invocation in
+/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:131:23
+
+  128 try {
+  129   const { id } = req.params;
+  130 
+→ 131   await prisma.book.delete(
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:131:5)
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
