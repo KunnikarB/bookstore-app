@@ -41,7 +41,7 @@ export const getCart = async (_req: Request, res: Response) => {
     );
 
     await client.close();
-    res.json({ items });
+    res.json({ items: items.filter((i) => i.book) });
   } catch (err) {
     console.error('Failed to fetch cart:', err);
     res.status(500).json({ error: 'Failed to fetch cart' });
@@ -111,7 +111,7 @@ export const addToCart = async (req: Request, res: Response) => {
     );
 
     await client.close();
-    res.json({ items });
+    res.json({ items: items.filter((i) => i.book) });
   } catch (err) {
     console.error('Failed to add to cart:', err);
     res.status(500).json({ error: 'Failed to add to cart' });
@@ -153,7 +153,7 @@ export const removeFromCart = async (req: Request, res: Response) => {
     );
 
     await client.close();
-    res.json({ items });
+    res.json({ items: items.filter((i) => i.book) });
   } catch (err) {
     console.error('Failed to remove from cart:', err);
     res.status(500).json({ error: 'Failed to remove from cart' });
@@ -244,7 +244,7 @@ export const updateCartItemController = async (req: Request, res: Response) => {
     );
 
     await client.close();
-    res.json({ items });
+    res.json({ items: items.filter((i) => i.book) });
   } catch (err) {
     console.error('Error updating cart item:', err);
     res.status(500).json({ error: 'Failed to update cart item' });

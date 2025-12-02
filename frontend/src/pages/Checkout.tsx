@@ -5,7 +5,7 @@ import { checkoutCart } from '../api/checkoutapi';
 import '../index.css';
 
 type Book = {
-  _id: string;
+  id: string;
   title: string;
   author?: string;
   price: number;
@@ -79,9 +79,11 @@ export default function Checkout() {
           margin: '20px auto',
           fontSize: '2rem',
           fontFamily: '"Playfair Display", serif',
+          textAlign: 'center',
         }}
       >
-        Your cart is empty
+        Thanks for your purchase!
+        <br /><span style={{color: 'white'}}>Your order has been completed successfully 🎉</span>
       </p>
     );
 
@@ -123,7 +125,7 @@ export default function Checkout() {
             <div>
               {/* Increase quantity */}
               <button
-                onClick={() => updateQuantity(item.book._id, item.quantity + 1)}
+                onClick={() => updateQuantity(item.book.id, item.quantity + 1)}
                 style={{
                   marginRight: '5px',
                   backgroundColor: '#6c46dd',
@@ -140,7 +142,7 @@ export default function Checkout() {
 
               {/* Decrease quantity */}
               <button
-                onClick={() => updateQuantity(item.book._id, item.quantity - 1)}
+                onClick={() => updateQuantity(item.book.id, item.quantity - 1)}
                 style={{
                   marginRight: '5px',
                   backgroundColor: 'hotpink',
@@ -164,7 +166,7 @@ export default function Checkout() {
                   cursor: 'pointer',
                   fontSize: '1rem',
                 }}
-                onClick={() => removeItem(item.book._id)}
+                onClick={() => removeItem(item.book.id)}
               >
                 🗑️
               </button>
@@ -312,7 +314,7 @@ export default function Checkout() {
                 cursor: 'pointer',
                 fontSize: '1rem',
               }}
-              onClick={() => addItem(book._id)}
+              onClick={() => addItem(book.id)}
             >
               Add
             </button>

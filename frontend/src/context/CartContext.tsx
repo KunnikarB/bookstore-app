@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+/* @refresh reload */
 
 import {
   createContext,
@@ -69,6 +70,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       toast.error('Please log in to add items');
       return;
     }
+    if (!bookId) {
+      toast.error('Invalid book. Please refresh.');
+      return;
+    }
     try {
       const updatedCart = await addToCartApi(bookId);
       setCart(updatedCart.items || []);
@@ -91,6 +96,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       toast.error('Please log in to manage your cart');
       return;
     }
+    if (!bookId) {
+      toast.error('Invalid item. Please refresh.');
+      return;
+    }
     try {
       const updatedCart = await removeFromCartApi(bookId);
       setCart(updatedCart.items || []);
@@ -110,6 +119,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const updateQuantity = async (bookId: string, quantity: number) => {
     if (!user) {
       toast.error('Please log in to update quantities');
+      return;
+    }
+    if (!bookId) {
+      toast.error('Invalid item. Please refresh.');
       return;
     }
     if (quantity <= 0) {
