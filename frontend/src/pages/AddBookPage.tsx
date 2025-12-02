@@ -62,6 +62,10 @@ export default function AddBookPage() {
 
     try {
       if (editingId) {
+        if (!editingId || editingId.length === 0) {
+          setMessage('❌ No book selected to update.');
+          return;
+        }
         // Update existing book
         console.log('Updating book with ID:', editingId);
         const response = await updateBook(editingId, {
@@ -72,6 +76,8 @@ export default function AddBookPage() {
         });
         console.log('Update response:', response);
         setMessage(`✅ Book "${title}" updated successfully!`);
+        // Refresh list before clearing edit state
+        await fetchBooks();
         setEditingId(null);
       } else {
         // Add new book
@@ -96,6 +102,14 @@ export default function AddBookPage() {
       const err = error as { response?: { status?: number } };
       if (err.response?.status === 403) {
         setMessage('❌ Access denied. Admin privileges required.');
+      } else if (err.response?.status === 404) {
+        await fetchBooks();
+        const exists = books.some((b) => (b.id || b._id) === editingId);
+        if (exists) {
+          setMessage(`✅ Book updated (list refreshed).`);
+        } else {
+          setMessage('❌ Book not found. Refreshing list…');
+        }
       } else {
         setMessage(
           `❌ Failed to ${
@@ -137,7 +151,7 @@ export default function AddBookPage() {
     try {
       await deleteBook(id);
       setMessage(`✅ Book "${title}" deleted successfully!`);
-      fetchBooks();
+      await fetchBooks();
     } catch (error: unknown) {
       const err = error as { response?: { status?: number } };
       if (err.response?.status === 403) {

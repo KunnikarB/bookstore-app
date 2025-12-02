@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 type Book = {
-  _id: string;
+  id: string;
   title: string;
 };
 
@@ -78,7 +78,7 @@ export default function SearchBar({ onSelect }: Props) {
         >
           {suggestions.map((book) => (
             <li
-              key={book._id}
+              key={book.id}
               style={{
                 padding: '0.5rem',
                 cursor: 'pointer',
