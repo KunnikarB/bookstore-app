@@ -69,7 +69,21 @@ export default function Checkout() {
     }
   };
 
-  if (!cart.length) return <p style={{ color: 'hotpink', fontWeight: 'bold', maxWidth: '800px', margin: '20px auto', fontSize: '2rem', fontFamily: '"Playfair Display", serif' }}>Your cart is empty</p>;
+  if (!cart.length)
+    return (
+      <p
+        style={{
+          color: 'hotpink',
+          fontWeight: 'bold',
+          maxWidth: '800px',
+          margin: '20px auto',
+          fontSize: '2rem',
+          fontFamily: '"Playfair Display", serif',
+        }}
+      >
+        Your cart is empty
+      </p>
+    );
 
   return (
     <div
@@ -91,7 +105,7 @@ export default function Checkout() {
       <ul>
         {cart.map((item) => (
           <li
-            key={item.book._id}
+            key={`${item.book.id}-${item.quantity}`}
             style={{
               display: 'flex',
               justifyContent: 'space-between',
@@ -276,7 +290,7 @@ export default function Checkout() {
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {books.map((book) => (
           <li
-            key={book._id}
+            key={`${book.id}`}
             style={{
               marginBottom: '5px',
               display: 'flex',
