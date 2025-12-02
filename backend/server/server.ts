@@ -20,11 +20,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 // Firebase Admin SDK now initialized from firebase.ts
 
 app.use('/api/books', bookRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/checkout', checkoutRoutes);
+
 
 
 app.get('/', (req, res) => {
@@ -35,7 +37,7 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 mongoose
-  .connect(process.env.MONGO_URI!)
+  .connect(process.env.MONGO_URI || 'mongodb://localhost:27017/bookstore')
   .then(() => {
     console.log('MongoDB connected');
     app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -1,0 +1,13 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: bookstore-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: bookstore
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
