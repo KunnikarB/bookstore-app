@@ -19,12 +19,13 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@prisma/client": "^7.0.1",
+    "@prisma/client": "6.19.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "firebase-admin": "^13.6.0",
-    "mongoose": "^8.19.3",
+    "mongodb": "^7.0.0",
+    "prisma": "6.19.0",
     "winston": "^3.18.3",
     "zod": "^4.1.13"
   },
@@ -40,7 +41,6 @@
     "eslint-plugin-prettier": "^5.5.4",
     "jest": "^30.2.0",
     "prettier": "^3.7.3",
-    "prisma": "^7.0.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"

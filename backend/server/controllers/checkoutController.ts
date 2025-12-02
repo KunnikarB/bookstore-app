@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import Book from '../models/Book.js';
+import prisma from '../prisma.js';
 
 interface CartItem {
   book: {
@@ -18,7 +18,7 @@ export const checkoutCart = async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Cart is empty' });
 
     for (const item of cart) {
-      const book = await Book.findById(item.book._id);
+      const book = await prisma.book.findUnique({ where: { id: item.book._id } });
       if (!book) return res.status(404).json({ error: `${item.book.title} not found` });
 
       if (typeof book.stock !== 'number')
@@ -27,8 +27,10 @@ export const checkoutCart = async (req: Request, res: Response) => {
       if (book.stock < item.quantity)
         return res.status(400).json({ error: `${book.title} does not have enough stock` });
 
-      book.stock -= item.quantity;
-      await book.save();
+      await prisma.book.update({
+        where: { id: book.id },
+        data: { stock: book.stock - item.quantity },
+      });
     }
 
     // Calculate total

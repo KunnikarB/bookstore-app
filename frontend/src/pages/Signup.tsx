@@ -31,12 +31,12 @@ export default function Signup() {
       await axios.post('http://localhost:3000/api/users', {
         name,
         email,
-        uid: userCredential.user.uid, // optional: link Firebase UID
+        uid: userCredential.user.uid, 
       });
 
       console.log('User signed up and saved in MongoDB:', userCredential.user);
       navigate('/');
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.message || err.message);
     }
@@ -88,6 +88,7 @@ export default function Signup() {
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            autoComplete="name"
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
@@ -101,6 +102,7 @@ export default function Signup() {
             placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
@@ -114,6 +116,7 @@ export default function Signup() {
             placeholder="Password (min 6 characters)"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="new-password"
             style={{
               padding: '0.75rem',
               borderRadius: '6px',

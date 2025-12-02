@@ -1,0 +1,112 @@
+2025-12-02 15:04:09 [error]: Prisma connection error: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+{
+  "clientVersion": "6.19.0",
+  "errorCode": "P1012",
+  "name": "PrismaClientInitializationError"
+}
+2025-12-02 15:04:28 [error]: Prisma connection error: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+{
+  "clientVersion": "6.19.0",
+  "errorCode": "P1012",
+  "name": "PrismaClientInitializationError"
+}
+2025-12-02 15:04:28 [error]: Prisma connection error: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+{
+  "clientVersion": "6.19.0",
+  "errorCode": "P1012",
+  "name": "PrismaClientInitializationError"
+}
+2025-12-02 20:17:29 [error]: Failed to add book: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:7268)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:38:25
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-02 20:17:34 [error]: Failed to add book: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:7268)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:38:25
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}

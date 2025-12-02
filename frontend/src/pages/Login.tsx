@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
+  GithubAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -25,8 +26,22 @@ export default function Login() {
     }
   };
 
+  const handleSignupNavigate = () => {
+    navigate('/signup');
+  };
+
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate('/');
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  const handleGithubLogin = async () => {
+    const provider = new GithubAuthProvider();
     try {
       await signInWithPopup(auth, provider);
       navigate('/');
@@ -61,11 +76,20 @@ export default function Login() {
           gap: '1.5rem',
         }}
       >
-        <h2 style={{ color: 'hotpink', marginBottom: '1rem', fontSize: '2rem' }}>🛍️ Login</h2>
+        <h2
+          style={{ color: 'hotpink', marginBottom: '1rem', fontSize: '2rem' }}
+        >
+          👩🏻‍💻 Login
+        </h2>
 
         <form
           onSubmit={handleLogin}
-          style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem',
+            width: '100%',
+          }}
         >
           <input
             type="email"
@@ -77,7 +101,7 @@ export default function Login() {
               borderRadius: '6px',
               border: '1px solid #ccc',
               width: '100%',
-              fontSize: '1rem'
+              fontSize: '1rem',
             }}
             required
           />
@@ -91,66 +115,101 @@ export default function Login() {
               borderRadius: '6px',
               border: '1px solid #ccc',
               width: '100%',
-              fontSize: '1rem'
+              fontSize: '1rem',
             }}
             required
           />
-          <button
-            type="submit"
+
+          {/* Row 1: Login and Sign up buttons */}
+          <div
             style={{
-              backgroundColor: '#6c46dd',
+              display: 'flex',
+              gap: '1rem',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            <button
+              type="submit"
+              style={{
+                backgroundColor: '#6c46dd',
+                color: 'white',
+                padding: '0.75rem',
+                border: 'none',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                flex: 1,
+                fontWeight: 'bold',
+                fontSize: '1rem',
+              }}
+            >
+              Login 👤
+            </button>
+            <button
+              type="button"
+              onClick={handleSignupNavigate}
+              style={{
+                backgroundColor: '#dd46a8',
+                color: 'white',
+                padding: '0.75rem',
+                border: 'none',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                flex: 1,
+                fontWeight: 'bold',
+                fontSize: '1rem',
+              }}
+            >
+              Sign up ✨
+            </button>
+          </div>
+        </form>
+
+        {error && <p style={{ color: 'red', margin: '0' }}>{error}</p>}
+
+        {/* Row 2: Google and GitHub sign-in buttons */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '1rem',
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
+          <button
+            onClick={handleGoogleLogin}
+            style={{
+              backgroundColor: '#658d51',
               color: 'white',
-              padding: '0.55rem',
+              padding: '0.75rem',
               border: 'none',
               borderRadius: '6px',
               cursor: 'pointer',
-              width: '50%',
-              margin: '0 auto',
+              flex: 1,
               fontWeight: 'bold',
-              fontSize: '1rem'
+              fontSize: '1rem',
             }}
           >
-            Login 👤
+            Google 🌐
           </button>
-        </form>
 
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-
-        <button
-          onClick={handleGoogleLogin}
-          style={{
-            backgroundColor: '#658d51',
-            color: 'white',
-            padding: '0.75rem',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            width: '50%',
-            margin: '0 auto',
-            fontWeight: 'bold',
-            fontSize: '1rem'
-          }}
-        >
-          Sign in with Google
-        </button>
-
-        <button
-          onClick={handleGoogleLogin}
-          style={{
-            backgroundColor: 'hotpink',
-            color: 'white',
-            padding: '0.75rem',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            width: '50%',
-            margin: '0 auto',
-            fontWeight: 'bold',
-            fontSize: '1rem'
-          }}
-        >
-          Sign in with GitHub
-        </button>
+          <button
+            onClick={handleGithubLogin}
+            style={{
+              backgroundColor: '#333',
+              color: 'white',
+              padding: '0.75rem',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              flex: 1,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
+          >
+            GitHub 🐙
+          </button>
+        </div>
       </div>
     </div>
   );

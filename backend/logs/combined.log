@@ -513,3 +513,2593 @@ ZodError: [
   "ip": "::1",
   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
 }
+2025-12-02 15:04:09 [error]: Prisma connection error: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+{
+  "clientVersion": "6.19.0",
+  "errorCode": "P1012",
+  "name": "PrismaClientInitializationError"
+}
+2025-12-02 15:04:28 [error]: Prisma connection error: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+{
+  "clientVersion": "6.19.0",
+  "errorCode": "P1012",
+  "name": "PrismaClientInitializationError"
+}
+2025-12-02 15:04:28 [error]: Prisma connection error: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `mongo`.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "mongodb"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at r (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:112:2770)
+{
+  "clientVersion": "6.19.0",
+  "errorCode": "P1012",
+  "name": "PrismaClientInitializationError"
+}
+2025-12-02 15:05:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:05:43 [info]: 🚀 Server running on port 3000
+2025-12-02 15:05:43 [info]: Environment: development
+2025-12-02 15:06:05 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 15:06:05 [info]: Found 9 books for search: ""
+2025-12-02 15:06:57 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:06:57 [info]: 🚀 Server running on port 3000
+2025-12-02 15:06:57 [info]: Environment: development
+2025-12-02 15:07:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:20 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:20 [info]: Found 9 books for search: ""
+2025-12-02 15:07:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:20 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:20 [info]: Found 9 books for search: ""
+2025-12-02 15:07:20 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:20 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:32 [info]: Found 9 books for search: ""
+2025-12-02 15:07:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:32 [info]: Found 9 books for search: ""
+2025-12-02 15:07:37 [info]: POST /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:44 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:44 [info]: Found 9 books for search: ""
+2025-12-02 15:07:44 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:07:44 [info]: Found 9 books for search: ""
+2025-12-02 15:07:55 [info]: POST /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:02 [info]: Found 9 books for search: ""
+2025-12-02 15:08:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:02 [info]: Found 9 books for search: ""
+2025-12-02 15:08:09 [info]: DELETE /api/cart/692d9c612f85afdce818ae49
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:11 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:11 [info]: Found 9 books for search: ""
+2025-12-02 15:08:11 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:11 [info]: Found 9 books for search: ""
+2025-12-02 15:08:15 [info]: POST /api/checkout
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:15 [info]: DELETE /api/cart/clear
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:20 [info]: Found 9 books for search: ""
+2025-12-02 15:08:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:08:20 [info]: Found 9 books for search: ""
+2025-12-02 15:10:21 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:10:21 [info]: 🚀 Server running on port 3000
+2025-12-02 15:10:21 [info]: Environment: development
+2025-12-02 15:10:27 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:10:27 [info]: 🚀 Server running on port 3000
+2025-12-02 15:10:27 [info]: Environment: development
+2025-12-02 15:13:20 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:13:20 [info]: 🚀 Server running on port 3000
+2025-12-02 15:13:20 [info]: Environment: development
+2025-12-02 15:13:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:13:20 [info]: Found 2 books for search: "c"
+2025-12-02 15:16:20 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:16:20 [info]: 🚀 Server running on port 3000
+2025-12-02 15:16:20 [info]: Environment: development
+2025-12-02 15:16:51 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:16:51 [info]: 🚀 Server running on port 3000
+2025-12-02 15:16:51 [info]: Environment: development
+2025-12-02 15:17:39 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:17:39 [info]: 🚀 Server running on port 3000
+2025-12-02 15:17:39 [info]: Environment: development
+2025-12-02 15:18:44 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:18:44 [info]: 🚀 Server running on port 3000
+2025-12-02 15:18:44 [info]: Environment: development
+2025-12-02 15:21:57 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:21:57 [info]: 🚀 Server running on port 3000
+2025-12-02 15:21:57 [info]: Environment: development
+2025-12-02 15:22:03 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:22:03 [info]: 🚀 Server running on port 3000
+2025-12-02 15:22:03 [info]: Environment: development
+2025-12-02 15:22:19 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:22:19 [info]: 🚀 Server running on port 3000
+2025-12-02 15:22:19 [info]: Environment: development
+2025-12-02 15:22:29 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:22:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:22:29 [info]: Found 9 books for search: ""
+2025-12-02 15:22:29 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:22:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:22:29 [info]: Found 9 books for search: ""
+2025-12-02 15:22:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:22:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:24:18 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:24:18 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:24:18 [info]: Found 9 books for search: ""
+2025-12-02 15:24:18 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:24:18 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:24:18 [info]: Found 9 books for search: ""
+2025-12-02 15:24:18 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:24:18 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:32 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:26:32 [info]: 🚀 Server running on port 3000
+2025-12-02 15:26:32 [info]: Environment: development
+2025-12-02 15:26:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:49 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:50 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:51 [info]: Found 9 books for search: ""
+2025-12-02 15:26:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:51 [info]: Found 9 books for search: ""
+2025-12-02 15:26:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:26:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:28:57 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:28:57 [info]: Found 9 books for search: ""
+2025-12-02 15:28:57 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:28:57 [info]: Found 9 books for search: ""
+2025-12-02 15:29:23 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:29:23 [info]: 🚀 Server running on port 3000
+2025-12-02 15:29:23 [info]: Environment: development
+2025-12-02 15:29:28 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:29:28 [info]: 🚀 Server running on port 3000
+2025-12-02 15:29:28 [info]: Environment: development
+2025-12-02 15:29:40 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:29:40 [info]: 🚀 Server running on port 3000
+2025-12-02 15:29:40 [info]: Environment: development
+2025-12-02 15:30:21 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:30:21 [info]: 🚀 Server running on port 3000
+2025-12-02 15:30:21 [info]: Environment: development
+2025-12-02 15:34:46 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:34:46 [info]: 🚀 Server running on port 3000
+2025-12-02 15:34:46 [info]: Environment: development
+2025-12-02 15:35:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:02 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:02 [info]: Found 9 books for search: ""
+2025-12-02 15:35:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:02 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:02 [info]: Found 9 books for search: ""
+2025-12-02 15:35:02 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:02 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:03 [info]: Found 9 books for search: ""
+2025-12-02 15:35:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:03 [info]: Found 9 books for search: ""
+2025-12-02 15:35:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:08 [info]: Found 9 books for search: ""
+2025-12-02 15:35:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:35:08 [info]: Found 9 books for search: ""
+2025-12-02 15:37:23 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:37:23 [info]: Found 9 books for search: ""
+2025-12-02 15:37:23 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:37:23 [info]: Found 9 books for search: ""
+2025-12-02 15:37:45 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:37:45 [info]: 🚀 Server running on port 3000
+2025-12-02 15:37:45 [info]: Environment: development
+2025-12-02 15:37:56 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:37:56 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:37:56 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:37:57 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:02 [info]: Found 9 books for search: ""
+2025-12-02 15:38:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:02 [info]: Found 9 books for search: ""
+2025-12-02 15:38:23 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:23 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:23 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:23 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:30 [info]: Found 9 books for search: ""
+2025-12-02 15:38:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:38:30 [info]: Found 9 books for search: ""
+2025-12-02 15:42:58 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:42:58 [info]: Found 9 books for search: ""
+2025-12-02 15:42:58 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:42:58 [info]: Found 9 books for search: ""
+2025-12-02 15:43:29 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:43:29 [info]: Found 9 books for search: ""
+2025-12-02 15:43:29 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:43:29 [info]: Found 9 books for search: ""
+2025-12-02 15:43:50 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:43:50 [info]: Found 9 books for search: ""
+2025-12-02 15:43:50 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:43:50 [info]: Found 9 books for search: ""
+2025-12-02 15:44:10 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:10 [info]: Found 9 books for search: ""
+2025-12-02 15:44:10 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:10 [info]: Found 9 books for search: ""
+2025-12-02 15:44:14 [info]: POST /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:30 [info]: Found 9 books for search: ""
+2025-12-02 15:44:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:30 [info]: Found 9 books for search: ""
+2025-12-02 15:44:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:51 [info]: Found 9 books for search: ""
+2025-12-02 15:44:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:44:51 [info]: Found 9 books for search: ""
+2025-12-02 15:48:42 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:48:42 [info]: 🚀 Server running on port 3000
+2025-12-02 15:48:42 [info]: Environment: development
+2025-12-02 15:48:49 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:48:49 [info]: 🚀 Server running on port 3000
+2025-12-02 15:48:49 [info]: Environment: development
+2025-12-02 15:48:56 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:48:56 [info]: 🚀 Server running on port 3000
+2025-12-02 15:48:56 [info]: Environment: development
+2025-12-02 15:49:02 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:49:02 [info]: 🚀 Server running on port 3000
+2025-12-02 15:49:02 [info]: Environment: development
+2025-12-02 15:49:47 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:49:47 [info]: 🚀 Server running on port 3000
+2025-12-02 15:49:47 [info]: Environment: development
+2025-12-02 15:50:09 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:50:09 [info]: 🚀 Server running on port 3000
+2025-12-02 15:50:09 [info]: Environment: development
+2025-12-02 15:51:26 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:51:26 [info]: 🚀 Server running on port 3000
+2025-12-02 15:51:26 [info]: Environment: development
+2025-12-02 15:53:08 [info]: Prisma connected to MongoDB successfully
+2025-12-02 15:53:08 [info]: 🚀 Server running on port 3000
+2025-12-02 15:53:08 [info]: Environment: development
+2025-12-02 15:53:58 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:53:58 [info]: Found 9 books for search: ""
+2025-12-02 15:53:58 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 15:53:58 [info]: Found 9 books for search: ""
+2025-12-02 15:54:03 [info]: DELETE /api/cart/692d9c612f85afdce818ae48
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:00:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:00:04 [info]: Found 9 books for search: ""
+2025-12-02 16:00:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:00:04 [info]: Found 9 books for search: ""
+2025-12-02 16:10:21 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:10:21 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:10:21 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:10:21 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:11:21 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:11:21 [info]: Found 9 books for search: ""
+2025-12-02 16:11:21 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:11:21 [info]: Found 9 books for search: ""
+2025-12-02 16:30:14 [info]: Prisma connected to MongoDB successfully
+2025-12-02 16:30:14 [info]: 🚀 Server running on port 3000
+2025-12-02 16:30:14 [info]: Environment: development
+2025-12-02 16:31:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:31:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:31:03 [info]: Found 9 books for search: ""
+2025-12-02 16:31:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:31:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:31:03 [info]: Found 9 books for search: ""
+2025-12-02 16:31:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:31:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:32:44 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:32:44 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:32:44 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:32:44 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:37 [info]: Prisma connected to MongoDB successfully
+2025-12-02 16:34:37 [info]: 🚀 Server running on port 3000
+2025-12-02 16:34:37 [info]: Environment: development
+2025-12-02 16:34:50 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: Found 9 books for search: ""
+2025-12-02 16:34:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: Found 9 books for search: ""
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:34:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:36:50 [info]: POST /api/users
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:37:13 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:37:13 [info]: Found 9 books for search: ""
+2025-12-02 16:37:13 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:37:13 [info]: Found 9 books for search: ""
+2025-12-02 16:37:41 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:37:41 [info]: Created new book: Test admin by Test 
+2025-12-02 16:37:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:37:51 [info]: Found 10 books for search: ""
+2025-12-02 16:37:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:37:51 [info]: Found 10 books for search: ""
+2025-12-02 16:38:53 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:38:53 [info]: Found 10 books for search: ""
+2025-12-02 16:38:53 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:38:53 [info]: Found 10 books for search: ""
+2025-12-02 16:48:25 [info]: Prisma connected to MongoDB successfully
+2025-12-02 16:48:25 [info]: Prisma connected to MongoDB successfully
+2025-12-02 16:48:25 [info]: Prisma connected to MongoDB successfully
+2025-12-02 16:48:25 [info]: 🚀 Server running on port 3000
+2025-12-02 16:48:25 [info]: Environment: development
+2025-12-02 16:48:25 [info]: 🚀 Server running on port 3000
+2025-12-02 16:48:25 [info]: Environment: development
+2025-12-02 16:48:25 [info]: 🚀 Server running on port 3000
+2025-12-02 16:48:25 [info]: Environment: development
+2025-12-02 16:49:56 [info]: Prisma connected to MongoDB successfully
+2025-12-02 16:49:56 [info]: 🚀 Server running on port 3000
+2025-12-02 16:49:56 [info]: Environment: development
+2025-12-02 16:50:10 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:10 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:10 [info]: Found 10 books for search: ""
+2025-12-02 16:50:10 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:10 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:10 [info]: Found 10 books for search: ""
+2025-12-02 16:50:10 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:10 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:20 [info]: Found 10 books for search: ""
+2025-12-02 16:50:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:50:20 [info]: Found 10 books for search: ""
+2025-12-02 16:51:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:51:08 [info]: Found 10 books for search: ""
+2025-12-02 16:51:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:51:08 [info]: Found 10 books for search: ""
+2025-12-02 16:51:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:51:32 [info]: Found 10 books for search: ""
+2025-12-02 16:51:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:51:32 [info]: Found 10 books for search: ""
+2025-12-02 16:52:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:52:04 [info]: Found 10 books for search: ""
+2025-12-02 16:52:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 16:52:04 [info]: Found 10 books for search: ""
+2025-12-02 16:57:56 [info]: POST /api/users
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:02:50 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 17:02:50 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 17:02:50 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 17:02:51 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 17:03:19 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:03:19 [info]: 🚀 Server running on port 3000
+2025-12-02 17:03:19 [info]: Environment: development
+2025-12-02 17:04:18 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:18 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:18 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:18 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:18 [info]: Environment: development
+2025-12-02 17:04:18 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:18 [info]: Environment: development
+2025-12-02 17:04:18 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:18 [info]: Environment: development
+2025-12-02 17:04:29 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:29 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:29 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:29 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:29 [info]: Environment: development
+2025-12-02 17:04:29 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:29 [info]: Environment: development
+2025-12-02 17:04:29 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:29 [info]: Environment: development
+2025-12-02 17:04:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:04:43 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:43 [info]: Environment: development
+2025-12-02 17:04:43 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:43 [info]: Environment: development
+2025-12-02 17:04:43 [info]: 🚀 Server running on port 3000
+2025-12-02 17:04:43 [info]: Environment: development
+2025-12-02 17:05:22 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:05:22 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:05:22 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:05:22 [info]: 🚀 Server running on port 3000
+2025-12-02 17:05:22 [info]: Environment: development
+2025-12-02 17:05:22 [info]: 🚀 Server running on port 3000
+2025-12-02 17:05:22 [info]: Environment: development
+2025-12-02 17:05:22 [info]: 🚀 Server running on port 3000
+2025-12-02 17:05:22 [info]: Environment: development
+2025-12-02 17:06:12 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:06:12 [info]: 🚀 Server running on port 3000
+2025-12-02 17:06:12 [info]: Environment: development
+2025-12-02 17:06:29 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:06:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:06:29 [info]: Found 10 books for search: ""
+2025-12-02 17:06:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:06:29 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:06:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:06:29 [info]: Found 10 books for search: ""
+2025-12-02 17:06:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:07:01 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:07:01 [info]: Found 10 books for search: ""
+2025-12-02 17:07:01 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:07:01 [info]: Found 10 books for search: ""
+2025-12-02 17:07:22 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:07:22 [info]: Found 10 books for search: ""
+2025-12-02 17:07:22 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:07:22 [info]: Found 10 books for search: ""
+2025-12-02 17:08:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:08:04 [info]: Found 10 books for search: ""
+2025-12-02 17:08:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:08:04 [info]: Found 10 books for search: ""
+2025-12-02 17:10:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:10:03 [info]: Found 10 books for search: ""
+2025-12-02 17:10:18 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:10:18 [info]: Found 10 books for search: ""
+2025-12-02 17:10:54 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:10:54 [info]: Found 10 books for search: ""
+2025-12-02 17:11:46 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:11:46 [info]: Found 10 books for search: ""
+2025-12-02 17:11:46 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:11:46 [info]: Found 10 books for search: ""
+2025-12-02 17:11:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:11:51 [info]: Found 10 books for search: ""
+2025-12-02 17:11:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:11:51 [info]: Found 10 books for search: ""
+2025-12-02 17:12:40 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:12:40 [info]: Found 10 books for search: ""
+2025-12-02 17:13:22 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:13:22 [info]: Created new book: Test admin by Test 
+2025-12-02 17:13:22 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:13:22 [info]: Found 11 books for search: ""
+2025-12-02 17:14:52 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:14:52 [info]: Found 11 books for search: ""
+2025-12-02 17:15:57 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:15:57 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:15:57 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:15:57 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:16:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:16:02 [info]: Found 11 books for search: ""
+2025-12-02 17:16:02 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:16:02 [info]: Found 11 books for search: ""
+2025-12-02 17:16:21 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:16:21 [info]: Created new book: Test admin by Test 
+2025-12-02 17:16:21 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:16:21 [info]: Found 12 books for search: ""
+2025-12-02 17:17:01 [info]: Prisma connected to MongoDB successfully
+2025-12-02 17:17:01 [info]: 🚀 Server running on port 3000
+2025-12-02 17:17:01 [info]: Environment: development
+2025-12-02 17:17:11 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:11 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:11 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:11 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:14 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:14 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:14 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:14 [info]: Found 12 books for search: ""
+2025-12-02 17:17:14 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:14 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:14 [info]: Found 12 books for search: ""
+2025-12-02 17:17:14 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:35 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:35 [info]: Found 12 books for search: ""
+2025-12-02 17:17:35 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:35 [info]: Found 12 books for search: ""
+2025-12-02 17:17:39 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:39 [info]: Found 12 books for search: ""
+2025-12-02 17:17:39 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:17:39 [info]: Found 12 books for search: ""
+2025-12-02 17:17:53 [info]: DELETE /api/books/undefined
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:18:13 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:18:13 [info]: Created new book: Test admin by Test 
+2025-12-02 17:18:13 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 17:18:13 [info]: Found 13 books for search: ""
+2025-12-02 18:34:18 [info]: Prisma connected to MongoDB successfully
+2025-12-02 18:34:18 [info]: 🚀 Server running on port 3000
+2025-12-02 18:34:18 [info]: Environment: development
+2025-12-02 18:34:44 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:44 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:45 [info]: Found 13 books for search: ""
+2025-12-02 18:34:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:45 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:45 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:45 [info]: Found 13 books for search: ""
+2025-12-02 18:34:45 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:51 [info]: Found 13 books for search: ""
+2025-12-02 18:34:51 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:34:51 [info]: Found 13 books for search: ""
+2025-12-02 18:34:59 [info]: DELETE /api/books/692f114567e3994821936999
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:35:21 [info]: PUT /api/books/692f114567e3994821936999
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:38:47 [info]: PUT /api/books/692f114567e3994821936999
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 18:38:48 [info]: PUT /api/books/692f114567e3994821936999
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 18:39:01 [info]: DELETE /api/books/692f114567e3994821936999
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:39:06 [info]: DELETE /api/books/692f114567e3994821936999
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:39:44 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:39:44 [info]: Found 13 books for search: ""
+2025-12-02 18:48:29 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:48:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:48:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:48:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 18:57:07 [info]: Prisma connected to MongoDB successfully
+2025-12-02 18:57:07 [info]: 🚀 Server running on port 3000
+2025-12-02 18:57:07 [info]: Environment: development
+2025-12-02 18:57:13 [info]: Prisma connected to MongoDB successfully
+2025-12-02 18:57:13 [info]: 🚀 Server running on port 3000
+2025-12-02 18:57:13 [info]: Environment: development
+2025-12-02 18:57:23 [info]: Prisma connected to MongoDB successfully
+2025-12-02 18:57:23 [info]: 🚀 Server running on port 3000
+2025-12-02 18:57:23 [info]: Environment: development
+2025-12-02 18:57:34 [info]: Prisma connected to MongoDB successfully
+2025-12-02 18:57:34 [info]: 🚀 Server running on port 3000
+2025-12-02 18:57:34 [info]: Environment: development
+2025-12-02 18:57:49 [info]: Prisma connected to MongoDB successfully
+2025-12-02 18:57:49 [info]: 🚀 Server running on port 3000
+2025-12-02 18:57:49 [info]: Environment: development
+2025-12-02 19:00:35 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:00:35 [info]: 🚀 Server running on port 3000
+2025-12-02 19:00:35 [info]: Environment: development
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: Found 0 books for search: ""
+2025-12-02 19:00:58 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:00:58 [info]: Found 0 books for search: ""
+2025-12-02 19:01:08 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:08 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:08 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:08 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:45 [info]: Found 0 books for search: ""
+2025-12-02 19:01:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:45 [info]: Found 0 books for search: ""
+2025-12-02 19:01:55 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:55 [info]: Found 0 books for search: ""
+2025-12-02 19:01:55 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:01:55 [info]: Found 0 books for search: ""
+2025-12-02 19:16:52 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:16:52 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:16:52 [info]: 🚀 Server running on port 3000
+2025-12-02 19:16:52 [info]: Environment: development
+2025-12-02 19:16:52 [info]: 🚀 Server running on port 3000
+2025-12-02 19:16:52 [info]: Environment: development
+2025-12-02 19:16:58 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:16:58 [info]: 🚀 Server running on port 3000
+2025-12-02 19:16:58 [info]: Environment: development
+2025-12-02 19:16:58 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:16:58 [info]: 🚀 Server running on port 3000
+2025-12-02 19:16:58 [info]: Environment: development
+2025-12-02 19:17:41 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:17:41 [info]: 🚀 Server running on port 3000
+2025-12-02 19:17:41 [info]: Environment: development
+2025-12-02 19:17:59 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 19:17:59 [info]: Found 0 books for search: ""
+2025-12-02 19:18:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 19:18:06 [info]: Found 0 books for search: ""
+2025-12-02 19:18:51 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:18:51 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:18:51 [info]: 🚀 Server running on port 3000
+2025-12-02 19:18:51 [info]: Environment: development
+2025-12-02 19:18:51 [info]: 🚀 Server running on port 3000
+2025-12-02 19:18:51 [info]: Environment: development
+2025-12-02 19:18:56 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:18:56 [info]: 🚀 Server running on port 3000
+2025-12-02 19:18:56 [info]: Environment: development
+2025-12-02 19:18:56 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:18:56 [info]: 🚀 Server running on port 3000
+2025-12-02 19:18:56 [info]: Environment: development
+2025-12-02 19:19:16 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:19:16 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:19:16 [info]: 🚀 Server running on port 3000
+2025-12-02 19:19:16 [info]: Environment: development
+2025-12-02 19:19:16 [info]: 🚀 Server running on port 3000
+2025-12-02 19:19:16 [info]: Environment: development
+2025-12-02 19:19:50 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:19:50 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:19:50 [info]: 🚀 Server running on port 3000
+2025-12-02 19:19:50 [info]: Environment: development
+2025-12-02 19:19:50 [info]: 🚀 Server running on port 3000
+2025-12-02 19:19:50 [info]: Environment: development
+2025-12-02 19:20:24 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:20:24 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:20:24 [info]: 🚀 Server running on port 3000
+2025-12-02 19:20:24 [info]: Environment: development
+2025-12-02 19:20:24 [info]: 🚀 Server running on port 3000
+2025-12-02 19:20:24 [info]: Environment: development
+2025-12-02 19:20:53 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:20:53 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:20:53 [info]: 🚀 Server running on port 3000
+2025-12-02 19:20:53 [info]: Environment: development
+2025-12-02 19:20:53 [info]: 🚀 Server running on port 3000
+2025-12-02 19:20:53 [info]: Environment: development
+2025-12-02 19:21:46 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:21:46 [info]: 🚀 Server running on port 3000
+2025-12-02 19:21:46 [info]: Environment: development
+2025-12-02 19:22:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:22:03 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:22:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:22:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:22:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:22:03 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:22:03 [info]: Found 0 books for search: ""
+2025-12-02 19:22:03 [info]: Found 0 books for search: ""
+2025-12-02 19:24:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:06 [info]: Found 0 books for search: ""
+2025-12-02 19:24:06 [info]: Found 0 books for search: ""
+2025-12-02 19:24:07 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:07 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:43 [info]: Found 0 books for search: ""
+2025-12-02 19:24:43 [info]: Found 0 books for search: ""
+2025-12-02 19:24:43 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:24:43 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:25:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:25:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:25:43 [info]: Found 0 books for search: ""
+2025-12-02 19:25:43 [info]: Found 0 books for search: ""
+2025-12-02 19:26:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:26:04 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:26:04 [info]: Found 0 books for search: ""
+2025-12-02 19:26:04 [info]: Found 0 books for search: ""
+2025-12-02 19:26:04 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:26:40 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:26:40 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:26:40 [info]: Found 0 books for search: ""
+2025-12-02 19:26:40 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:26:40 [info]: Found 0 books for search: ""
+2025-12-02 19:27:15 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:27:15 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:27:15 [info]: Found 0 books for search: ""
+2025-12-02 19:27:15 [info]: Found 0 books for search: ""
+2025-12-02 19:29:35 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:29:35 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:29:35 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:29:35 [info]: 🚀 Server running on port 3000
+2025-12-02 19:29:35 [info]: Environment: development
+2025-12-02 19:29:35 [info]: 🚀 Server running on port 3000
+2025-12-02 19:29:35 [info]: Environment: development
+2025-12-02 19:29:35 [info]: 🚀 Server running on port 3000
+2025-12-02 19:29:35 [info]: Environment: development
+2025-12-02 19:29:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:29:43 [info]: 🚀 Server running on port 3000
+2025-12-02 19:29:43 [info]: Environment: development
+2025-12-02 19:29:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:29:43 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:29:43 [info]: 🚀 Server running on port 3000
+2025-12-02 19:29:43 [info]: Environment: development
+2025-12-02 19:29:43 [info]: 🚀 Server running on port 3000
+2025-12-02 19:29:43 [info]: Environment: development
+2025-12-02 19:30:11 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:30:11 [info]: 🚀 Server running on port 3000
+2025-12-02 19:30:11 [info]: Environment: development
+2025-12-02 19:30:34 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:34 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:34 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:34 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:34 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:34 [info]: Found 0 books for search: ""
+2025-12-02 19:30:34 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:34 [info]: Found 0 books for search: ""
+2025-12-02 19:30:47 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:47 [info]: Found 0 books for search: ""
+2025-12-02 19:30:47 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:30:47 [info]: Found 0 books for search: ""
+2025-12-02 19:31:09 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:31:09 [info]: 🚀 Server running on port 3000
+2025-12-02 19:31:09 [info]: Environment: development
+2025-12-02 19:31:09 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:31:09 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:31:09 [info]: 🚀 Server running on port 3000
+2025-12-02 19:31:09 [info]: Environment: development
+2025-12-02 19:31:09 [info]: 🚀 Server running on port 3000
+2025-12-02 19:31:09 [info]: Environment: development
+2025-12-02 19:31:16 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:31:16 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:31:16 [info]: 🚀 Server running on port 3000
+2025-12-02 19:31:16 [info]: Environment: development
+2025-12-02 19:31:16 [info]: 🚀 Server running on port 3000
+2025-12-02 19:31:16 [info]: Environment: development
+2025-12-02 19:31:16 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:31:16 [info]: 🚀 Server running on port 3000
+2025-12-02 19:31:16 [info]: Environment: development
+2025-12-02 19:32:11 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:32:11 [info]: 🚀 Server running on port 3000
+2025-12-02 19:32:11 [info]: Environment: development
+2025-12-02 19:32:26 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:26 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:26 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:26 [info]: Found 0 books for search: ""
+2025-12-02 19:32:26 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:26 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:26 [info]: Found 0 books for search: ""
+2025-12-02 19:32:26 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:38 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:38 [info]: Found 0 books for search: ""
+2025-12-02 19:32:38 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:32:38 [info]: Found 0 books for search: ""
+2025-12-02 19:34:59 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:34:59 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:34:59 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:34:59 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: Found 0 books for search: ""
+2025-12-02 19:37:15 [info]: Found 0 books for search: ""
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:37:15 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:53:58 [info]: Prisma connected to MongoDB successfully
+2025-12-02 19:53:58 [info]: 🚀 Server running on port 3000
+2025-12-02 19:53:58 [info]: Environment: development
+2025-12-02 19:54:40 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:54:40 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:54:40 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:54:40 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:54:40 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:54:40 [info]: Found 0 books for search: ""
+2025-12-02 19:54:40 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 19:54:40 [info]: Found 0 books for search: ""
+2025-12-02 20:05:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:05:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:05:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:05:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:05:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:05:32 [info]: Found 0 books for search: ""
+2025-12-02 20:05:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:05:32 [info]: Found 0 books for search: ""
+2025-12-02 20:08:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:08:06 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:08:06 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:08:06 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:08:06 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:08:06 [info]: Found 0 books for search: ""
+2025-12-02 20:08:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:08:06 [info]: Found 0 books for search: ""
+2025-12-02 20:09:37 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:09:37 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:09:37 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:09:37 [info]: 🚀 Server running on port 3000
+2025-12-02 20:09:37 [info]: Environment: development
+2025-12-02 20:09:37 [info]: 🚀 Server running on port 3000
+2025-12-02 20:09:37 [info]: Environment: development
+2025-12-02 20:09:37 [info]: 🚀 Server running on port 3000
+2025-12-02 20:09:37 [info]: Environment: development
+2025-12-02 20:09:46 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:09:46 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:09:46 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:09:46 [info]: 🚀 Server running on port 3000
+2025-12-02 20:09:46 [info]: Environment: development
+2025-12-02 20:09:46 [info]: 🚀 Server running on port 3000
+2025-12-02 20:09:46 [info]: Environment: development
+2025-12-02 20:09:46 [info]: 🚀 Server running on port 3000
+2025-12-02 20:09:46 [info]: Environment: development
+2025-12-02 20:11:25 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:11:25 [info]: 🚀 Server running on port 3000
+2025-12-02 20:11:25 [info]: Environment: development
+2025-12-02 20:11:36 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:36 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:36 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:36 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:36 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:36 [info]: Found 0 books for search: ""
+2025-12-02 20:11:36 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:36 [info]: Found 0 books for search: ""
+2025-12-02 20:11:38 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:38 [info]: Found 0 books for search: ""
+2025-12-02 20:11:38 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:38 [info]: Found 0 books for search: ""
+2025-12-02 20:11:47 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:48 [info]: Found 0 books for search: ""
+2025-12-02 20:11:48 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:11:48 [info]: Found 0 books for search: ""
+2025-12-02 20:12:56 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:12:56 [info]: Found 0 books for search: ""
+2025-12-02 20:13:16 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:13:16 [info]: Found 0 books for search: ""
+2025-12-02 20:17:05 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:17:05 [info]: Found 0 books for search: ""
+2025-12-02 20:17:05 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:17:05 [info]: Found 0 books for search: ""
+2025-12-02 20:17:29 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:17:29 [error]: Failed to add book: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:7268)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:38:25
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-02 20:17:34 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:17:34 [error]: Failed to add book: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:7268)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:38:25
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-02 20:20:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:20:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:20:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:20:30 [info]: Found 0 books for search: ""
+2025-12-02 20:20:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:20:30 [info]: Found 0 books for search: ""
+2025-12-02 20:20:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:20:30 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: Found 0 books for search: ""
+2025-12-02 20:21:12 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: Found 0 books for search: ""
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:12 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:21:55 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:55 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:55 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:21:55 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:01 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:01 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:01 [info]: Found 0 books for search: ""
+2025-12-02 20:22:01 [info]: Found 0 books for search: ""
+2025-12-02 20:22:23 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:22:23 [info]: 🚀 Server running on port 3000
+2025-12-02 20:22:23 [info]: Environment: development
+2025-12-02 20:22:37 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:37 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:37 [info]: Found 0 books for search: ""
+2025-12-02 20:22:37 [info]: Found 0 books for search: ""
+2025-12-02 20:22:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:38 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:22:41 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:22:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:22:41 [info]: Found 0 books for search: ""
+2025-12-02 20:22:41 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:22:41 [info]: Found 0 books for search: ""
+2025-12-02 20:22:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:22:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:22:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:26:07 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:26:07 [info]: Found 0 books for search: ""
+2025-12-02 20:26:07 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:26:07 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:26:07 [info]: Found 0 books for search: ""
+2025-12-02 20:26:07 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:26:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:26:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:26:08 [info]: Found 0 books for search: ""
+2025-12-02 20:26:08 [info]: Found 0 books for search: ""
+2025-12-02 20:26:08 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:26:08 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:27:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:27:32 [info]: Found 0 books for search: ""
+2025-12-02 20:27:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:27:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:27:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:27:32 [info]: Found 0 books for search: ""
+2025-12-02 20:27:32 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36"
+}
+2025-12-02 20:27:33 [info]: Found 0 books for search: ""
+2025-12-02 20:27:33 [info]: Found 0 books for search: ""
+2025-12-02 20:28:26 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:28:26 [info]: 🚀 Server running on port 3000
+2025-12-02 20:28:26 [info]: Environment: development
+2025-12-02 20:28:41 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:41 [info]: Found 0 books for search: ""
+2025-12-02 20:28:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:41 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:41 [info]: Found 0 books for search: ""
+2025-12-02 20:28:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:41 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: Found 0 books for search: ""
+2025-12-02 20:28:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:28:43 [info]: Found 0 books for search: ""
+2025-12-02 20:30:17 [info]: Prisma connected to MongoDB successfully
+2025-12-02 20:30:17 [info]: 🚀 Server running on port 3000
+2025-12-02 20:30:17 [info]: Environment: development
+2025-12-02 20:30:43 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 20:30:43 [info]: Found 0 books for search: ""
+2025-12-02 20:30:56 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 20:30:56 [info]: Found 0 books for search: ""
+2025-12-02 20:33:54 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "curl/8.7.1"
+}
+2025-12-02 20:33:54 [info]: Found 6 books for search: ""
+2025-12-02 20:34:22 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:34:22 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:34:22 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:34:22 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:34:22 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:34:22 [info]: Found 6 books for search: ""
+2025-12-02 20:34:22 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 20:34:22 [info]: Found 6 books for search: ""

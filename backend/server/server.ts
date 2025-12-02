@@ -1,11 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bookRoutes from './routes/Books.js';
 import cartRoutes from './routes/Cart.js';
 import checkoutRoutes from './routes/Checkout.js';
 import logger from './config/logger.js';
+import prisma from './prisma.js';
+import verifyToken from './middleware/auth.js';
+import './firebase.js'; // Initialize Firebase Admin SDK
 
 dotenv.config();
 
@@ -30,11 +32,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// Firebase Admin SDK now initialized from firebase.ts
-
+// Public routes (no auth required)
 app.use('/api/books', bookRoutes);
-app.use('/api/cart', cartRoutes);
-app.use('/api/checkout', checkoutRoutes);
+
+// Protected routes (require authentication)
+app.use('/api/cart', verifyToken, cartRoutes);
+app.use('/api/checkout', verifyToken, checkoutRoutes);
 
 app.get('/', (req, res) => {
   res.send('Bookstore API is running');
@@ -42,16 +45,17 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-mongoose
-  .connect(process.env.MONGO_URI || 'mongodb://localhost:27017/bookstore')
+// Connect to Prisma
+prisma
+  .$connect()
   .then(() => {
-    logger.info('MongoDB connected successfully');
+    logger.info('Prisma connected to MongoDB successfully');
     app.listen(PORT, () => {
       logger.info(`🚀 Server running on port ${PORT}`);
       logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
     });
   })
   .catch((err) => {
-    logger.error('MongoDB connection error:', err);
+    logger.error('Prisma connection error:', err);
     process.exit(1);
   });
