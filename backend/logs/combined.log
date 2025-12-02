@@ -3600,3 +3600,120 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "clientVersion": "6.19.0",
   "name": "PrismaClientKnownRequestError"
 }
+2025-12-02 21:54:07 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:54:07 [info]: Found 7 books for search: ""
+2025-12-02 21:54:09 [info]: Prisma connected to MongoDB successfully
+2025-12-02 21:54:09 [info]: 🚀 Server running on port 3000
+2025-12-02 21:54:09 [info]: Environment: development
+2025-12-02 21:54:22 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:54:25 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:54:25 [info]: Found 7 books for search: ""
+2025-12-02 21:54:25 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:54:25 [info]: Found 7 books for search: ""
+2025-12-02 21:55:44 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:55:44 [info]: Found 7 books for search: ""
+2025-12-02 21:55:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:55:45 [info]: Found 7 books for search: ""
+2025-12-02 21:55:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:55:45 [info]: Found 7 books for search: ""
+2025-12-02 21:56:09 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:56:09 [info]: Found 7 books for search: ""
+2025-12-02 21:56:19 [info]: Prisma connected to MongoDB successfully
+2025-12-02 21:56:19 [info]: 🚀 Server running on port 3000
+2025-12-02 21:56:19 [info]: Environment: development
+2025-12-02 21:56:49 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:56:49 [info]: Found 7 books for search: ""
+2025-12-02 21:58:08 [info]: Prisma connected to MongoDB successfully
+2025-12-02 21:58:08 [info]: 🚀 Server running on port 3000
+2025-12-02 21:58:08 [info]: Environment: development
+2025-12-02 21:58:19 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:21 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:21 [info]: Found 7 books for search: ""
+2025-12-02 21:58:21 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:21 [info]: Found 7 books for search: ""
+2025-12-02 21:58:21 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:24 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:24 [info]: Found 7 books for search: ""
+2025-12-02 21:58:24 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:24 [info]: Found 7 books for search: ""
+2025-12-02 21:58:30 [info]: DELETE /api/books/692f497fa4826c88b9bdc945
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:30 [info]: Deleted book with id: 692f497fa4826c88b9bdc945
+2025-12-02 21:58:30 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:30 [info]: Found 6 books for search: ""
+2025-12-02 21:58:45 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+}
+2025-12-02 21:58:45 [info]: Found 6 books for search: ""
+2025-12-02 21:58:47 [info]: Prisma connected to MongoDB successfully
+2025-12-02 21:58:47 [info]: 🚀 Server running on port 3000
+2025-12-02 21:58:47 [info]: Environment: development

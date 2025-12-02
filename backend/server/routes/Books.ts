@@ -127,16 +127,30 @@ router.put('/:id', verifyAdmin, async (req, res) => {
 router.delete('/:id', verifyAdmin, async (req, res) => {
   try {
     const { id } = req.params;
+    // Use MongoDB driver to avoid Prisma transaction requirements
+    const client = new MongoClient(process.env.DATABASE_URL || '');
+    await client.connect();
+    // Use default DB from connection string
+    const db = client.db();
+    const collection = db.collection('Book');
 
-    await prisma.book.delete({
-      where: { id },
-    });
+    const _id = new ObjectId(id);
+    const result = await collection.deleteOne({ _id });
+
+    await client.close();
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: 'Book not found' });
+    }
 
     logger.info(`Deleted book with id: ${id}`);
     res.json({ message: 'Book deleted successfully' });
   } catch (error) {
-    logger.error('Failed to delete book:', error);
-    res.status(500).json({ error: 'Failed to delete book' });
+    logger.error('Failed to delete book:', {
+      message: (error as any)?.message,
+      name: (error as any)?.name,
+    });
+    res.status(500).json({ error: 'Failed to delete book', message: (error as any)?.message });
   }
 });
 
