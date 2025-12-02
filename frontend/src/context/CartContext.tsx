@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
- 
+
 import {
   createContext,
   useContext,
@@ -16,10 +16,10 @@ import {
 } from '../api/cartApi';
 
 import toast from 'react-hot-toast';
-
+import { useAuth } from './AuthContext';
 
 type Book = {
-  _id: string;
+  id: string;
   title: string;
   price: number;
   stock?: number;
@@ -43,9 +43,16 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchCart = async () => {
+      // Only fetch cart if user is authenticated
+      if (!user) {
+        setCart([]);
+        return;
+      }
+
       try {
         const data = await getCart();
         setCart(data.items || []);
@@ -55,7 +62,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
     };
     fetchCart();
-  }, []);
+  }, [user]);
 
   const addItem = async (bookId: string) => {
     try {
@@ -68,7 +75,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
-
   const removeItem = async (bookId: string) => {
     try {
       const updatedCart = await removeFromCartApi(bookId);
@@ -79,7 +85,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       toast.error('Failed to remove item ❌');
     }
   };
-
 
   // New: update quantity
   const updateQuantity = async (bookId: string, quantity: number) => {
@@ -98,7 +103,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
-
   const clearCart = async () => {
     try {
       await clearCartApi();
@@ -109,7 +113,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       toast.error('Failed to clear cart ❌');
     }
   };
-
 
   const total =
     cart?.reduce((sum, item) => sum + item.book.price * item.quantity, 0) || 0;

@@ -110,3 +110,26 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "clientVersion": "6.19.0",
   "name": "PrismaClientKnownRequestError"
 }
+2025-12-02 20:41:35 [error]: Failed to add book: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+PrismaClientKnownRequestError: 
+Invalid `prisma.book.create()` invocation:
+
+
+Prisma needs to perform transactions, which requires your MongoDB server to be run as a replica set. https://pris.ly/d/mongodb-replica-set
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:7268)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async file:///Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:38:25
+{
+  "code": "P2031",
+  "meta": {
+    "modelName": "Book"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}

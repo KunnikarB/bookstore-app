@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import { useCart } from '../context/CartContext';
 
 type Book = {
-  _id: string;
+  id: string;
   title: string;
   author: string;
   price: number;
@@ -69,7 +69,7 @@ export default function BookList() {
       >
         {books.map((book) => (
           <div
-            key={book._id}
+            key={book.id}
             style={{
               border: '1px solid #2d262e',
               padding: '1.5rem',
@@ -130,7 +130,7 @@ export default function BookList() {
                 borderRadius: '6px',
                 fontWeight: 'bold',
               }}
-              onClick={() => addItem(book._id)}
+              onClick={() => addItem(book.id)}
               disabled={book.stock === 0}
             >
               {book.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
