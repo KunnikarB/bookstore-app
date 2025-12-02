@@ -1,19 +1,23 @@
 # 📚 Bookstore App
 A modern full-stack **Bookstore web application** built with React (Vite), Node.js, Express, MongoDB, and Firebase Authentication.  
-Users can browse books, add them to the cart, and securely check out — with admin functionality for adding new books.
+Users can browse books, add them to the cart, securely check out, discount system, and inventory alerts. — with admin functionality for adding new books. Includes integration tests with Jest.
 
 ## Features
 
 ### 👥 User Features
 - 🔐 **User Authentication** (Sign up, Login, Logout with Firebase)
 - 🛒 **Cart Management** — Add, remove, and view cart items
-- 💳 **Checkout Page** with summary and total
+- 💳 **Checkout Page** with summary total and apply coupon codes
 - 📚 **Browse and Search Books**
 - 🌙 **Modern UI** with pink-purple theme and responsive design
 
 ### ⚙️ Admin Features
 - 📖 **Add New Books** (title, author, price, and stock)
 - 💾 **Instant Database Update** via Express + MongoDB
+
+### 🔥 Advanced Features
+- Discount System: Apply coupon codes like SAVE10, SAVE20
+- Inventory Alerts ⚠️: Notify when stock is low after purchase 
 
 --- 
 
@@ -122,6 +126,11 @@ In /client/src/firebase.ts
 </pre>
 
 ---
+
+### Testing
+- Run all integration tests using Jest: npm test
+
+<img width="539" height="161" alt="Screenshot 2025-12-02 at 04 40 34" src="https://github.com/user-attachments/assets/8bc41e27-82ee-44a6-8d0c-488aeba757f8" />
 
   
 ## 💖 Credits
