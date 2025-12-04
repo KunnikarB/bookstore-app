@@ -2,12 +2,14 @@ services:
   - type: web
     name: bookstore-api
     runtime: node
-    buildCommand: "npm install && npm run build"
-    startCommand: "npm start"
+    buildCommand: 'npm install && npm run build'
+    startCommand: 'npm start'
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-      - key: MONGODB_URI
+      - key: DATABASE_URL
+        sync: false
+      - key: FIREBASE_KEY_PATH
         sync: false
