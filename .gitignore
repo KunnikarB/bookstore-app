@@ -3,3 +3,21 @@ backend/server/serviceAccountKey.json
 # Logs
 logs/
 *.log
+
+ADMIN_CONFIG.md
+.env
+.env.local
+
+# Firebase cache
+.firebase/
+firebase-debug.log
+.firebaserc
+# VSCode settings
+.vscode/
+# MacOS files
+.DS_Store
+# Node modules
+node_modules/
+# Build output
+dist/
+build/

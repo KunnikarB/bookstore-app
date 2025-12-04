@@ -28,7 +28,7 @@ export default function Signup() {
       }
 
       console.log('User signed up successfully:', userCredential.user);
-      toast.success('Account created successfully! 🎉');
+      toast.success('Account created successfully!');
       navigate('/');
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
