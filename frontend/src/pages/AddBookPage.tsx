@@ -3,6 +3,7 @@ import { addBook, getBooks, updateBook, deleteBook } from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { isAdmin } from '../config/admins';
+import toast from 'react-hot-toast';
 import '../index.css';
 
 interface Book {
@@ -19,7 +20,6 @@ export default function AddBookPage() {
   const [author, setAuthor] = useState('');
   const [price, setPrice] = useState('');
   const [stock, setStock] = useState('');
-  const [message, setMessage] = useState('');
   const [books, setBooks] = useState<Book[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const { user } = useAuth();
@@ -35,7 +35,7 @@ export default function AddBookPage() {
     if (!user) {
       navigate('/login');
     } else if (!isAdmin(user.email)) {
-      setMessage('❌ Access denied. You must be an admin to add books.');
+      toast.error('❌ Access denied. You must be an admin to add books.');
     } else {
       // Load books if admin
       fetchBooks();
@@ -56,14 +56,14 @@ export default function AddBookPage() {
 
     // Double check admin status
     if (!user || !isAdmin(user.email)) {
-      setMessage('❌ Access denied. Admin privileges required.');
+      toast.error('❌ Access denied. Admin privileges required.');
       return;
     }
 
     try {
       if (editingId) {
         if (!editingId || editingId.length === 0) {
-          setMessage('❌ No book selected to update.');
+          toast.error('❌ No book selected to update.');
           return;
         }
         // Update existing book
@@ -75,7 +75,7 @@ export default function AddBookPage() {
           stock: Number(stock),
         });
         console.log('Update response:', response);
-        setMessage(`✅ Book "${title}" updated successfully!`);
+        toast.success(`✅ Book "${title}" updated successfully!`);
         // Clear form and refresh list
         setTitle('');
         setAuthor('');
@@ -93,7 +93,7 @@ export default function AddBookPage() {
           stock: Number(stock),
         });
         console.log('Add response:', res);
-        setMessage(`✅ Book "${res.data.title}" added successfully!`);
+        toast.success(`✅ Book "${res.data.title}" added successfully!`);
         // Clear form and refresh books
         setTitle('');
         setAuthor('');
@@ -104,17 +104,17 @@ export default function AddBookPage() {
     } catch (error: unknown) {
       const err = error as { response?: { status?: number } };
       if (err.response?.status === 403) {
-        setMessage('❌ Access denied. Admin privileges required.');
+        toast.error('❌ Access denied. Admin privileges required.');
       } else if (err.response?.status === 404) {
         await fetchBooks();
         const exists = books.some((b) => (b.id || b._id) === editingId);
         if (exists) {
-          setMessage(`✅ Book updated successfully!`);
+          toast.success(`✅ Book updated successfully!`);
         } else {
-          setMessage('❌ Book not found. Refreshing list…');
+          toast.error('❌ Book not found. Refreshing list…');
         }
       } else {
-        setMessage(
+        toast.error(
           `❌ Failed to ${
             editingId ? 'update' : 'add'
           } book. Check console for details.`
@@ -131,7 +131,6 @@ export default function AddBookPage() {
     setAuthor(book.author);
     setPrice(book.price.toString());
     setStock(book.stock.toString());
-    setMessage('');
     console.log('Editing book with ID:', bookId);
     // Scroll to form
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -144,27 +143,57 @@ export default function AddBookPage() {
     setAuthor('');
     setPrice('');
     setStock('');
-    setMessage('');
   };
 
   const handleDelete = async (id: string, title: string) => {
-    if (!window.confirm(`Are you sure you want to delete "${title}"?`)) {
-      return;
-    }
-
-    try {
-      await deleteBook(id);
-      setMessage(`✅ Book "${title}" deleted successfully!`);
-      await fetchBooks();
-    } catch (error: unknown) {
-      const err = error as { response?: { status?: number } };
-      if (err.response?.status === 403) {
-        setMessage('❌ Access denied. Admin privileges required.');
-      } else {
-        setMessage('❌ Failed to delete book. Check console for details.');
-      }
-      console.error(error);
-    }
+    toast((t) => (
+      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <span>Delete "{title}"?</span>
+        <button
+          onClick={async () => {
+            toast.dismiss(t.id);
+            try {
+              await deleteBook(id);
+              toast.success(`✅ Book "${title}" deleted successfully!`);
+              await fetchBooks();
+            } catch (error: unknown) {
+              const err = error as { response?: { status?: number } };
+              if (err.response?.status === 403) {
+                toast.error('❌ Access denied. Admin privileges required.');
+              } else {
+                toast.error('❌ Failed to delete book. Check console for details.');
+              }
+              console.error(error);
+            }
+          }}
+          style={{
+            padding: '0.3rem 0.8rem',
+            backgroundColor: '#ff4444',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+          }}
+        >
+          Yes, Delete
+        </button>
+        <button
+          onClick={() => toast.dismiss(t.id)}
+          style={{
+            padding: '0.3rem 0.8rem',
+            backgroundColor: '#666',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+          }}
+        >
+          Cancel
+        </button>
+      </div>
+    ), { duration: 10000 });
   };
 
   // Show access denied if not admin
@@ -328,19 +357,6 @@ export default function AddBookPage() {
           )}
         </div>
       </form>
-
-      {message && (
-        <p
-          style={{
-            marginBottom: '2rem',
-            textAlign: 'center',
-            color: message.startsWith('✅') ? '#fff' : 'hotpink',
-            fontSize: '1.1rem',
-          }}
-        >
-          {message}
-        </p>
-      )}
 
       {/* Books List Section */}
       <div>
