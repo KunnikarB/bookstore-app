@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import toast from 'react-hot-toast';
 import '../index.css';
 
 export default function Signup() {
@@ -17,7 +17,7 @@ export default function Signup() {
     setError('');
 
     try {
-      // 1️⃣ Create user in Firebase
+      // Create user in Firebase
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -27,18 +27,14 @@ export default function Signup() {
         await updateProfile(auth.currentUser, { displayName: name });
       }
 
-      // 2️⃣ Save user to MongoDB via backend
-      await axios.post('http://localhost:3000/api/users', {
-        name,
-        email,
-        uid: userCredential.user.uid, 
-      });
-
-      console.log('User signed up and saved in MongoDB:', userCredential.user);
+      console.log('User signed up successfully:', userCredential.user);
+      toast.success('Account created successfully! 🎉');
       navigate('/');
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      setError(err.response?.data?.message || err.message);
+      const errorMessage = err.message || 'Failed to create account';
+      setError(errorMessage);
+      toast.error(errorMessage);
     }
   };
 

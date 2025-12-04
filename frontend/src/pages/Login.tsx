@@ -8,6 +8,7 @@ import {
 } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import '../index.css';
 
 export default function Login() {
@@ -20,9 +21,12 @@ export default function Login() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      toast.success('Logged in successfully! 🎉');
       navigate('/');
     } catch (err: any) {
-      setError(err.message);
+      const errorMessage = err.message || 'Login failed';
+      setError(errorMessage);
+      toast.error(errorMessage);
     }
   };
 
@@ -34,9 +38,12 @@ export default function Login() {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
+      toast.success('Logged in with Google! 🎉');
       navigate('/');
     } catch (err: any) {
-      setError(err.message);
+      const errorMessage = err.message || 'Google login failed';
+      setError(errorMessage);
+      toast.error(errorMessage);
     }
   };
 
@@ -44,9 +51,12 @@ export default function Login() {
     const provider = new GithubAuthProvider();
     try {
       await signInWithPopup(auth, provider);
+      toast.success('Logged in with GitHub! 🎉');
       navigate('/');
     } catch (err: any) {
-      setError(err.message);
+      const errorMessage = err.message || 'GitHub login failed';
+      setError(errorMessage);
+      toast.error(errorMessage);
     }
   };
 
