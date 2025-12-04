@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   getCart,
   addToCart as addToCartApi,
@@ -45,6 +46,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -68,6 +70,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addItem = async (bookId: string) => {
     if (!user) {
       toast.error('Please log in to add items');
+      navigate('/login');
       return;
     }
     if (!bookId) {
@@ -83,6 +86,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const status = (error as any)?.response?.status;
       if (status === 401) {
         toast.error('Unauthorized. Please log in again.');
+        navigate('/login');
       } else if (status === 404) {
         toast.error('Book not found. Refresh books.');
       } else {
