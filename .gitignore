@@ -1,1 +1,5 @@
 backend/server/serviceAccountKey.json
+
+# Logs
+logs/
+*.log

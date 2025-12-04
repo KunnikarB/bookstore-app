@@ -53,7 +53,7 @@ export default function BookList() {
 
       <SearchBar
         onSelect={(book) => {
-          addItem(book._id);
+          addItem(book.id);
         }}
       />
 

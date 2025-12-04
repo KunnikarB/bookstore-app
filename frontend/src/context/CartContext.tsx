@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-refresh/only-export-components */
 /* @refresh reload */
 
@@ -8,12 +9,13 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   getCart,
   addToCart as addToCartApi,
   removeFromCart as removeFromCartApi,
   clearCart as clearCartApi,
-  updateCartItem as updateCartItemApi, // new backend endpoint to update quantity
+  updateCartItem as updateCartItemApi, 
 } from '../api/cartApi';
 
 import toast from 'react-hot-toast';
@@ -45,10 +47,10 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCart = async () => {
-      // Only fetch cart if user is authenticated
       if (!user) {
         setCart([]);
         return;
@@ -68,6 +70,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addItem = async (bookId: string) => {
     if (!user) {
       toast.error('Please log in to add items');
+      navigate('/login');
       return;
     }
     if (!bookId) {
@@ -83,10 +86,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const status = (error as any)?.response?.status;
       if (status === 401) {
         toast.error('Unauthorized. Please log in again.');
+        navigate('/login');
       } else if (status === 404) {
         toast.error('Book not found. Refresh books.');
       } else {
-        toast.error('Failed to add item ❌');
+        toast.error('Failed to add item ');
       }
     }
   };
@@ -110,7 +114,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (status === 401) {
         toast.error('Unauthorized. Please log in again.');
       } else {
-        toast.error('Failed to remove item ❌');
+        toast.error('Failed to remove item ');
       }
     }
   };
@@ -133,7 +137,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const updatedCart = await updateCartItemApi(bookId, quantity);
       setCart(updatedCart.items || []);
-      toast.success(`📦 Quantity updated to ${quantity}`);
+      toast.success(`Quantity updated to ${quantity}`);
     } catch (err) {
       console.error('Failed to update quantity:', err);
       const status = (err as any)?.response?.status;
@@ -144,7 +148,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       } else if (status === 404) {
         toast.error('Book not found in cart');
       } else {
-        toast.error('Update failed ❌');
+        toast.error('Update failed ');
       }
     }
   };
@@ -153,10 +157,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       await clearCartApi();
       setCart([]);
-      toast('Cart cleared', { icon: '🧹' });
+      toast('Purchased successfully! ', { icon: '🛒' });
     } catch (error) {
       console.error('Failed to clear cart:', error);
-      toast.error('Failed to clear cart ❌');
+      toast.error('Failed to clear cart ');
     }
   };
 
