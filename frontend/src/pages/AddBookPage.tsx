@@ -76,9 +76,13 @@ export default function AddBookPage() {
         });
         console.log('Update response:', response);
         setMessage(`✅ Book "${title}" updated successfully!`);
-        // Refresh list before clearing edit state
-        await fetchBooks();
+        // Clear form and refresh list
+        setTitle('');
+        setAuthor('');
+        setPrice('');
+        setStock('');
         setEditingId(null);
+        await fetchBooks();
       } else {
         // Add new book
         console.log('Adding new book');
@@ -90,14 +94,13 @@ export default function AddBookPage() {
         });
         console.log('Add response:', res);
         setMessage(`✅ Book "${res.data.title}" added successfully!`);
+        // Clear form and refresh books
+        setTitle('');
+        setAuthor('');
+        setPrice('');
+        setStock('');
+        await fetchBooks();
       }
-
-      // Clear form and refresh books
-      setTitle('');
-      setAuthor('');
-      setPrice('');
-      setStock('');
-      await fetchBooks();
     } catch (error: unknown) {
       const err = error as { response?: { status?: number } };
       if (err.response?.status === 403) {
@@ -106,7 +109,7 @@ export default function AddBookPage() {
         await fetchBooks();
         const exists = books.some((b) => (b.id || b._id) === editingId);
         if (exists) {
-          setMessage(`✅ Book updated (list refreshed).`);
+          setMessage(`✅ Book updated successfully!`);
         } else {
           setMessage('❌ Book not found. Refreshing list…');
         }
@@ -132,6 +135,7 @@ export default function AddBookPage() {
     console.log('Editing book with ID:', bookId);
     // Scroll to form
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
   };
 
   const handleCancelEdit = () => {
