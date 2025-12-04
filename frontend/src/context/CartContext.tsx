@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-refresh/only-export-components */
 /* @refresh reload */
 
@@ -14,7 +15,7 @@ import {
   addToCart as addToCartApi,
   removeFromCart as removeFromCartApi,
   clearCart as clearCartApi,
-  updateCartItem as updateCartItemApi, // new backend endpoint to update quantity
+  updateCartItem as updateCartItemApi, 
 } from '../api/cartApi';
 
 import toast from 'react-hot-toast';
@@ -50,7 +51,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const fetchCart = async () => {
-      // Only fetch cart if user is authenticated
       if (!user) {
         setCart([]);
         return;
@@ -90,7 +90,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       } else if (status === 404) {
         toast.error('Book not found. Refresh books.');
       } else {
-        toast.error('Failed to add item ❌');
+        toast.error('Failed to add item ');
       }
     }
   };
@@ -114,7 +114,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (status === 401) {
         toast.error('Unauthorized. Please log in again.');
       } else {
-        toast.error('Failed to remove item ❌');
+        toast.error('Failed to remove item ');
       }
     }
   };
@@ -137,7 +137,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const updatedCart = await updateCartItemApi(bookId, quantity);
       setCart(updatedCart.items || []);
-      toast.success(`📦 Quantity updated to ${quantity}`);
+      toast.success(`Quantity updated to ${quantity}`);
     } catch (err) {
       console.error('Failed to update quantity:', err);
       const status = (err as any)?.response?.status;
@@ -148,7 +148,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       } else if (status === 404) {
         toast.error('Book not found in cart');
       } else {
-        toast.error('Update failed ❌');
+        toast.error('Update failed ');
       }
     }
   };
@@ -157,10 +157,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       await clearCartApi();
       setCart([]);
-      toast('Cart cleared', { icon: '🧹' });
+      toast('Purchased successfully! ', { icon: '🛒' });
     } catch (error) {
       console.error('Failed to clear cart:', error);
-      toast.error('Failed to clear cart ❌');
+      toast.error('Failed to clear cart ');
     }
   };
 

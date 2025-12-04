@@ -35,7 +35,7 @@ export default function AddBookPage() {
     if (!user) {
       navigate('/login');
     } else if (!isAdmin(user.email)) {
-      toast.error('❌ Access denied. You must be an admin to add books.');
+      toast.error('Access denied. You must be an admin to add books.');
     } else {
       // Load books if admin
       fetchBooks();
@@ -56,14 +56,14 @@ export default function AddBookPage() {
 
     // Double check admin status
     if (!user || !isAdmin(user.email)) {
-      toast.error('❌ Access denied. Admin privileges required.');
+      toast.error('Access denied. Admin privileges required.');
       return;
     }
 
     try {
       if (editingId) {
         if (!editingId || editingId.length === 0) {
-          toast.error('❌ No book selected to update.');
+          toast.error('No book selected to update.');
           return;
         }
         // Update existing book
@@ -75,7 +75,7 @@ export default function AddBookPage() {
           stock: Number(stock),
         });
         console.log('Update response:', response);
-        toast.success(`✅ Book "${title}" updated successfully!`);
+        toast.success(`Book "${title}" updated successfully!`);
         // Clear form and refresh list
         setTitle('');
         setAuthor('');
@@ -93,7 +93,7 @@ export default function AddBookPage() {
           stock: Number(stock),
         });
         console.log('Add response:', res);
-        toast.success(`✅ Book "${res.data.title}" added successfully!`);
+        toast.success(`Book "${res.data.title}" added successfully!`);
         // Clear form and refresh books
         setTitle('');
         setAuthor('');
@@ -104,18 +104,18 @@ export default function AddBookPage() {
     } catch (error: unknown) {
       const err = error as { response?: { status?: number } };
       if (err.response?.status === 403) {
-        toast.error('❌ Access denied. Admin privileges required.');
+        toast.error(' Access denied. Admin privileges required.');
       } else if (err.response?.status === 404) {
         await fetchBooks();
         const exists = books.some((b) => (b.id || b._id) === editingId);
         if (exists) {
-          toast.success(`✅ Book updated successfully!`);
+          toast.success(`Book updated successfully!`);
         } else {
-          toast.error('❌ Book not found. Refreshing list…');
+          toast.error(' Book not found. Refreshing list…');
         }
       } else {
         toast.error(
-          `❌ Failed to ${
+          `Failed to ${
             editingId ? 'update' : 'add'
           } book. Check console for details.`
         );
@@ -134,7 +134,6 @@ export default function AddBookPage() {
     console.log('Editing book with ID:', bookId);
     // Scroll to form
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
   };
 
   const handleCancelEdit = () => {
@@ -146,54 +145,59 @@ export default function AddBookPage() {
   };
 
   const handleDelete = async (id: string, title: string) => {
-    toast((t) => (
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-        <span>Delete "{title}"?</span>
-        <button
-          onClick={async () => {
-            toast.dismiss(t.id);
-            try {
-              await deleteBook(id);
-              toast.success(`✅ Book "${title}" deleted successfully!`);
-              await fetchBooks();
-            } catch (error: unknown) {
-              const err = error as { response?: { status?: number } };
-              if (err.response?.status === 403) {
-                toast.error('❌ Access denied. Admin privileges required.');
-              } else {
-                toast.error('❌ Failed to delete book. Check console for details.');
+    toast(
+      (t) => (
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          <span>Delete "{title}"?</span>
+          <button
+            onClick={async () => {
+              toast.dismiss(t.id);
+              try {
+                await deleteBook(id);
+                toast.success(`Book "${title}" deleted successfully!`);
+                await fetchBooks();
+              } catch (error: unknown) {
+                const err = error as { response?: { status?: number } };
+                if (err.response?.status === 403) {
+                  toast.error(' Access denied. Admin privileges required.');
+                } else {
+                  toast.error(
+                    'Failed to delete book. Check console for details.'
+                  );
+                }
+                console.error(error);
               }
-              console.error(error);
-            }
-          }}
-          style={{
-            padding: '0.3rem 0.8rem',
-            backgroundColor: '#ff4444',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '0.9rem',
-          }}
-        >
-          Yes, Delete
-        </button>
-        <button
-          onClick={() => toast.dismiss(t.id)}
-          style={{
-            padding: '0.3rem 0.8rem',
-            backgroundColor: '#666',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '0.9rem',
-          }}
-        >
-          Cancel
-        </button>
-      </div>
-    ), { duration: 10000 });
+            }}
+            style={{
+              padding: '0.3rem 0.8rem',
+              backgroundColor: '#ff4444',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '0.9rem',
+            }}
+          >
+            Yes, Delete
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            style={{
+              padding: '0.3rem 0.8rem',
+              backgroundColor: '#666',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '0.9rem',
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+      ),
+      { duration: 10000 }
+    );
   };
 
   // Show access denied if not admin

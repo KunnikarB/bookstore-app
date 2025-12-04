@@ -20,13 +20,12 @@ export default function Checkout() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [discountCode, setDiscountCode] = useState('');
-  const [books, setBooks] = useState<Book[]>([]); // Available books to add
+  const [books, setBooks] = useState<Book[]>([]); 
 
-  // Fetch available books for “Add More Items”
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/books'); // backend books endpoint
+        const res = await fetch('http://localhost:3000/api/books'); 
         const data = await res.json();
         setBooks(data || []);
       } catch (err) {
@@ -59,7 +58,7 @@ export default function Checkout() {
 
     try {
       const data = await checkoutCart(cart, discountCode);
-      setMessage(`✅ ${data.message}. Total: $${data.total}`);
+      setMessage(`${data.message}. Total: $${data.total}`);
       clearCart();
       setDiscountCode('');
     } catch (err: any) {
@@ -83,7 +82,7 @@ export default function Checkout() {
         }}
       >
         Thanks for your purchase!
-        <br /><span style={{color: 'white'}}>Your order has been completed successfully 🎉</span>
+        <br /><span style={{color: 'white'}}>Your order has been completed successfully 🛍️</span>
       </p>
     );
 

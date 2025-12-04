@@ -196,3 +196,4 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "name": "PrismaClientKnownRequestError"
 }
 2025-12-04 07:39:31 [error]: Failed to update book: Cannot read properties of null (reading 'value')
+2025-12-04 16:46:54 [error]: Failed to update book: Cannot read properties of null (reading 'value')
