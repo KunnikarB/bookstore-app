@@ -84,7 +84,7 @@ export const addToCart = async (req: Request, res: Response) => {
       await carts.updateOne(
         { userId: USER_ID },
         {
-          $push: { items: { bookId, quantity } },
+          $push: { items: { bookId, quantity } } as any,
           $set: { updatedAt: new Date() },
         }
       );
@@ -130,7 +130,7 @@ export const removeFromCart = async (req: Request, res: Response) => {
 
     await carts.updateOne(
       { userId: USER_ID },
-      { $pull: { items: { bookId } }, $set: { updatedAt: new Date() } }
+      { $pull: { items: { bookId } } as any, $set: { updatedAt: new Date() } }
     );
 
     const cartDoc = await carts.findOne({ userId: USER_ID });
@@ -203,7 +203,7 @@ export const updateCartItemController = async (req: Request, res: Response) => {
     if (quantity <= 0) {
       await carts.updateOne(
         { userId: USER_ID },
-        { $pull: { items: { bookId } }, $set: { updatedAt: new Date() } }
+        { $pull: { items: { bookId } } as any, $set: { updatedAt: new Date() } }
       );
     } else {
       const available = book.stock ?? Infinity;
@@ -218,7 +218,7 @@ export const updateCartItemController = async (req: Request, res: Response) => {
       if (updateExisting.matchedCount === 0) {
         await carts.updateOne(
           { userId: USER_ID },
-          { $push: { items: { bookId, quantity } }, $set: { updatedAt: new Date() } },
+          { $push: { items: { bookId, quantity } } as any, $set: { updatedAt: new Date() } },
           { upsert: true }
         );
       }
