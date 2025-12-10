@@ -120,6 +120,7 @@ export default function Login() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
