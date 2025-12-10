@@ -3,7 +3,7 @@ services:
     name: bookstore-api
     runtime: node
     buildCommand: 'cd backend && npm ci --include=dev && npm run build'
-    startCommand: 'cd backend && npm start'
+    startCommand: 'node backend/dist/server/server.js'
     envVars:
       - key: NODE_ENV
         value: production
