@@ -4,6 +4,8 @@ import { useCart } from '../context/CartContext';
 import { checkoutCart } from '../api/checkoutapi';
 import '../index.css';
 
+const API_BASE = (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+
 type Book = {
   id: string;
   title: string;
@@ -25,7 +27,7 @@ export default function Checkout() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/books'); 
+        const res = await fetch(`${API_BASE}/books`); 
         const data = await res.json();
         setBooks(data || []);
       } catch (err) {

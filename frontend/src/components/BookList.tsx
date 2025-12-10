@@ -3,6 +3,8 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import { useCart } from '../context/CartContext';
 
+const API_BASE = (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+
 type Book = {
   id: string;
   title: string;
@@ -17,7 +19,7 @@ export default function BookList() {
 
   const fetchBooks = async (query?: string) => {
     try {
-      const res = await axios.get('http://localhost:3000/api/books', {
+      const res = await axios.get(`${API_BASE}/books`, {
         params: query ? { search: query } : {},
       });
       setBooks(res.data);

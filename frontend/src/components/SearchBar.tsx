@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_BASE = (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+
 type Book = {
   id: string;
   title: string;
@@ -25,7 +27,7 @@ export default function SearchBar({ onSelect }: Props) {
     const timer = setTimeout(async () => {
       try {
         setLoading(true);
-        const res = await axios.get('http://localhost:3000/api/books', {
+        const res = await axios.get(`${API_BASE}/books`, {
           params: { search: query },
         });
         setSuggestions(res.data.slice(0, 5)); // limit to 5 suggestions
