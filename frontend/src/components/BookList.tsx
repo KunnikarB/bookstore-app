@@ -3,7 +3,8 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import { useCart } from '../context/CartContext';
 
-const API_BASE = (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+const API_BASE =
+  (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
 
 type Book = {
   id: string;

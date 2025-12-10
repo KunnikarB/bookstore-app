@@ -4,7 +4,8 @@ import { useCart } from '../context/CartContext';
 import { checkoutCart } from '../api/checkoutapi';
 import '../index.css';
 
-const API_BASE = (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+const API_BASE =
+  (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
 
 type Book = {
   id: string;
@@ -22,12 +23,12 @@ export default function Checkout() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [discountCode, setDiscountCode] = useState('');
-  const [books, setBooks] = useState<Book[]>([]); 
+  const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await fetch(`${API_BASE}/books`); 
+        const res = await fetch(`${API_BASE}/books`);
         const data = await res.json();
         setBooks(data || []);
       } catch (err) {
@@ -84,7 +85,10 @@ export default function Checkout() {
         }}
       >
         Thanks for your purchase!
-        <br /><span style={{color: 'white'}}>Your order has been completed successfully 🛍️</span>
+        <br />
+        <span style={{ color: 'white' }}>
+          Your order has been completed successfully 🛍️
+        </span>
       </p>
     );
 
