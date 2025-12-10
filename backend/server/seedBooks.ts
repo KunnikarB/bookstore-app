@@ -1,6 +1,8 @@
-import prisma from './prisma.js';
+import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import { MongoClient } from 'mongodb';
+
+const prisma = new PrismaClient();
 
 dotenv.config();
 
