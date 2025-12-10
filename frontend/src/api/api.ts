@@ -9,6 +9,8 @@ const API = axios.create({
 // Add Firebase auth token to all requests
 API.interceptors.request.use(
   async (config) => {
+    console.log('🔍 API: Waiting for auth...');
+    
     // Wait for auth to be ready
     await new Promise((resolve) => {
       const unsubscribe = auth.onAuthStateChanged(() => {
@@ -18,15 +20,20 @@ API.interceptors.request.use(
     });
 
     const user = auth.currentUser;
+    console.log('🔍 API: Current user:', user?.email || 'Not logged in');
+    
     if (user) {
       try {
         // Force refresh to ensure token is valid
         const token = await user.getIdToken(true);
         config.headers.Authorization = `Bearer ${token}`;
+        console.log('✅ API: Token attached for', config.url);
       } catch (error) {
-        console.error('Failed to get auth token:', error);
+        console.error('❌ API: Failed to get auth token:', error);
         // Don't block the request, let backend handle unauthorized
       }
+    } else {
+      console.warn('⚠️ API: No user logged in for', config.url);
     }
     return config;
   },

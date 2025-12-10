@@ -10,6 +10,8 @@ const API = axios.create({
 // Add Firebase auth token to all cart requests
 API.interceptors.request.use(
   async (config) => {
+    console.log('🔍 Cart API: Waiting for auth...');
+    
     // Wait for auth to be ready
     await new Promise((resolve) => {
       const unsubscribe = auth.onAuthStateChanged(() => {
@@ -19,14 +21,19 @@ API.interceptors.request.use(
     });
 
     const user = auth.currentUser;
+    console.log('🔍 Cart API: Current user:', user?.email || 'Not logged in');
+    
     if (user) {
       try {
         // Force refresh to ensure token is valid
         const token = await user.getIdToken(true);
         config.headers.Authorization = `Bearer ${token}`;
+        console.log('✅ Cart API: Token attached');
       } catch (error) {
-        console.error('Failed to get auth token:', error);
+        console.error('❌ Cart API: Failed to get auth token:', error);
       }
+    } else {
+      console.warn('⚠️ Cart API: No user logged in, request will fail');
     }
     return config;
   },
