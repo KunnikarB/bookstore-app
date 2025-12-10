@@ -12,11 +12,14 @@ if (!admin.apps.length) {
     console.log('⚙️ Using Firebase credentials from environment variable');
     try {
       const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS_JSON);
+      console.log('✅ Firebase credentials parsed successfully');
+      console.log('📝 Project ID:', serviceAccount.project_id);
       admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
       });
+      console.log('✅ Firebase Admin SDK initialized successfully');
     } catch (error) {
-      console.error('Failed to parse FIREBASE_CREDENTIALS_JSON:', error);
+      console.error('❌ Failed to parse FIREBASE_CREDENTIALS_JSON:', error);
       throw error;
     }
   } else if (process.env.NODE_ENV === 'production') {
