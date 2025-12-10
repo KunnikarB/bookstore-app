@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,3 +14,12 @@ console.log('Firebase config:', firebaseConfig);
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+// Use localStorage only (avoid IndexedDB issues in production)
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    console.log('✅ Firebase persistence set to localStorage');
+  })
+  .catch((error) => {
+    console.error('❌ Failed to set Firebase persistence:', error);
+  });

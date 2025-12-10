@@ -11,7 +11,7 @@ const API = axios.create({
 API.interceptors.request.use(
   async (config) => {
     console.log('🔍 Cart API: Waiting for auth...');
-    
+
     // Wait for auth to be ready
     await new Promise((resolve) => {
       const unsubscribe = auth.onAuthStateChanged(() => {
@@ -22,7 +22,7 @@ API.interceptors.request.use(
 
     const user = auth.currentUser;
     console.log('🔍 Cart API: Current user:', user?.email || 'Not logged in');
-    
+
     if (user) {
       try {
         // Force refresh to ensure token is valid

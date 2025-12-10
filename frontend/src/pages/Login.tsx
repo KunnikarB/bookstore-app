@@ -106,6 +106,7 @@ export default function Login() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
