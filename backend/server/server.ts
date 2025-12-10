@@ -8,6 +8,7 @@ import logger from './config/logger.js';
 import prisma from './prisma.js';
 import verifyToken from './middleware/auth.js';
 import './firebase.js'; // Initialize Firebase Admin SDK
+import { seedDatabase } from './seedDatabase.js';
 
 dotenv.config();
 
@@ -64,6 +65,20 @@ app.use('/api/checkout', verifyToken, checkoutRoutes);
 
 app.get('/', (req, res) => {
   res.send('Bookstore API is running');
+});
+
+// Seed endpoint (call once to populate database)
+app.post('/seed', async (req, res) => {
+  try {
+    const dbUrl = process.env.DATABASE_URL;
+    if (!dbUrl) {
+      return res.status(400).json({ error: 'DATABASE_URL not set' });
+    }
+    const message = await seedDatabase(dbUrl);
+    res.json({ message });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || 'Seed failed' });
+  }
 });
 
 const PORT = process.env.PORT || 3000;
