@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import bookRoutes from './routes/Books.js';
-import cartRoutes from './routes/Cart.js';
+import cartRoutes from './routes/cart.js';
 import checkoutRoutes from './routes/Checkout.js';
 import logger from './config/logger.js';
 import prisma from './prisma.js';
