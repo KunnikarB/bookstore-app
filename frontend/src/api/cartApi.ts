@@ -12,8 +12,13 @@ API.interceptors.request.use(
   async (config) => {
     const user = auth.currentUser;
     if (user) {
-      const token = await user.getIdToken();
-      config.headers.Authorization = `Bearer ${token}`;
+      try {
+        // Force refresh to ensure token is valid
+        const token = await user.getIdToken(true);
+        config.headers.Authorization = `Bearer ${token}`;
+      } catch (error) {
+        console.error('Failed to get auth token:', error);
+      }
     }
     return config;
   },

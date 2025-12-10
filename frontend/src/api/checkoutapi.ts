@@ -4,7 +4,8 @@ import { API_BASE } from './apiBase';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const checkoutCart = async (cart: any, discountCode?: string) => {
   const user = auth.currentUser;
-  const token = user ? await user.getIdToken() : null;
+  // Force refresh to ensure token is valid
+  const token = user ? await user.getIdToken(true) : null;
 
   const res = await fetch(`${API_BASE}/checkout`, {
     method: 'POST',
