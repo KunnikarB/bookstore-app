@@ -7220,3 +7220,9 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "ip": "::1",
   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
 }
+2025-12-10 04:33:53 [info]: Prisma connected to MongoDB successfully
+2025-12-10 04:33:53 [info]: 🚀 Server running on port 3000
+2025-12-10 04:33:53 [info]: Environment: development
+2025-12-10 04:36:14 [info]: Prisma connected to MongoDB successfully
+2025-12-10 04:36:14 [info]: 🚀 Server running on port 3000
+2025-12-10 04:36:14 [info]: Environment: development
