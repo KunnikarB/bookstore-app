@@ -67,6 +67,18 @@ app.get('/', (req, res) => {
   res.send('Bookstore API is running');
 });
 
+// Debug endpoint to check Firebase status
+app.get('/debug/firebase', (req, res) => {
+  const firebaseStatus = {
+    appInitialized: require('./firebase.js'),
+    nodeEnv: process.env.NODE_ENV,
+    hasFirebaseCredentialsJson: !!process.env.FIREBASE_CREDENTIALS_JSON,
+    firebaseCredentialsJsonLength: process.env.FIREBASE_CREDENTIALS_JSON?.length || 0,
+    hasFirebaseKeyPath: !!process.env.FIREBASE_KEY_PATH,
+  };
+  res.json(firebaseStatus);
+});
+
 // Seed endpoint (call once to populate database)
 app.post('/seed', async (req, res) => {
   try {
