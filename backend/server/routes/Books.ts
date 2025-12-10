@@ -93,15 +93,22 @@ router.put('/:id', verifyAdmin, async (req, res) => {
     const url = new URL(process.env.DATABASE_URL || 'mongodb://localhost:27017/bookstore');
     const dbName = url.pathname.replace(/^\//, '') || 'bookstore';
     const db = client.db(dbName);
-    const collection = db.collection('Book');
 
-    const _id = new ObjectId(id);
+    const collection = db.collection('books');
 
-    // Convert empty strings to numbers
+    let _id: ObjectId | string = id;
+    try {
+      _id = new ObjectId(id);
+    } catch {
+      return res.status(400).json({ error: 'Invalid book ID format' });
+    }
+
     const updateDoc: any = { ...validatedData };
     if (updateDoc.price !== undefined) updateDoc.price = Number(updateDoc.price);
     if (updateDoc.stock !== undefined) updateDoc.stock = Number(updateDoc.stock);
     updateDoc.updatedAt = new Date();
+
+    console.log('Updating book on Render:', _id, updateDoc);
 
     const result = await collection.findOneAndUpdate(
       { _id },
@@ -118,11 +125,10 @@ router.put('/:id', verifyAdmin, async (req, res) => {
     if (error instanceof ZodError) {
       return res.status(400).json({ error: 'Validation failed', details: error.issues });
     }
-    console.error('Failed to update book:', error);
+    console.error('Failed to update book on Render:', error);
     res.status(500).json({ error: 'Failed to update book', message: (error as any)?.message });
   }
 });
-
 
 // DELETE /api/books/:id - Delete a book (Admin only)
 router.delete('/:id', verifyAdmin, async (req, res) => {
