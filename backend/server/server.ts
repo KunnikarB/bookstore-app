@@ -7,8 +7,7 @@ import checkoutRoutes from './routes/Checkout.js';
 import logger from './config/logger.js';
 import prisma from './prisma.js';
 import verifyToken from './middleware/auth.js';
-import './firebase.js'; // Initialize Firebase Admin SDK
-import { seedDatabase } from './seedDatabase.js';
+import './firebase.js';
 
 dotenv.config();
 
@@ -22,32 +21,32 @@ declare global {
 
 const app = express();
 
-// CORS Configuration
+// CORS (Render compatible)
 const allowedOrigins = [
   'http://localhost:5173',
-  'http://localhost:3000',
+  'https://bookstore-app-1-uhqx.onrender.com',
   process.env.FRONTEND_URL || '',
 ].filter(Boolean);
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      const isVercel = origin ? origin.endsWith('.vercel.app') : false;
-      const isRender = origin ? origin.endsWith('.onrender.com') : false;
-      if (!origin || isVercel || isRender || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
+      if (!origin) return callback(null, true); // server-to-server or curl
+      const isRender = origin.includes('.onrender.com');
+      if (allowedOrigins.includes(origin) || isRender) {
+        return callback(null, true);
       }
+      callback(new Error(`Not allowed by CORS: ${origin}`));
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
+
 app.use(express.json());
 
-// Request logging middleware
+// Logger
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.path}`, {
     ip: req.ip,
@@ -56,52 +55,26 @@ app.use((req, res, next) => {
   next();
 });
 
-// Public routes (no auth required)
+// Public routes
 app.use('/api/books', bookRoutes);
 
-// Protected routes (require authentication)
+// Protected routes
 app.use('/api/cart', verifyToken, cartRoutes);
 app.use('/api/checkout', verifyToken, checkoutRoutes);
 
+// Health check
 app.get('/', (req, res) => {
   res.send('Bookstore API is running');
 });
 
-// Debug endpoint to check Firebase status
-app.get('/debug/firebase', (req, res) => {
-  const firebaseStatus = {
-    nodeEnv: process.env.NODE_ENV,
-    hasFirebaseCredentialsJson: !!process.env.FIREBASE_CREDENTIALS_JSON,
-    firebaseCredentialsJsonLength: process.env.FIREBASE_CREDENTIALS_JSON?.length || 0,
-    hasFirebaseKeyPath: !!process.env.FIREBASE_KEY_PATH,
-  };
-  res.json(firebaseStatus);
-});
-
-// Seed endpoint (call once to populate database)
-app.post('/seed', async (req, res) => {
-  try {
-    const dbUrl = process.env.DATABASE_URL;
-    if (!dbUrl) {
-      return res.status(400).json({ error: 'DATABASE_URL not set' });
-    }
-    const message = await seedDatabase(dbUrl);
-    res.json({ message });
-  } catch (err: any) {
-    res.status(500).json({ error: err.message || 'Seed failed' });
-  }
-});
-
 const PORT = process.env.PORT || 3000;
 
-// Connect to Prisma
 prisma
   .$connect()
   .then(() => {
     logger.info('Prisma connected to MongoDB successfully');
     app.listen(PORT, () => {
       logger.info(`🚀 Server running on port ${PORT}`);
-      logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
     });
   })
   .catch((err) => {
