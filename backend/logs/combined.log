@@ -7296,3 +7296,26 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
 2025-12-10 08:33:10 [info]: Prisma connected to MongoDB successfully
 2025-12-10 08:33:10 [info]: 🚀 Server running on port 3000
 2025-12-10 08:33:10 [info]: Environment: development
+2025-12-10 10:47:31 [info]: Prisma connected to MongoDB successfully
+2025-12-10 10:47:31 [info]: 🚀 Server running on port 3000
+2025-12-10 10:47:31 [info]: Environment: development
+2025-12-10 10:47:55 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 10:47:56 [info]: Found 0 books for search: ""
+2025-12-10 10:47:56 [info]: GET /favicon.ico
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 10:53:02 [info]: Prisma connected to MongoDB successfully
+2025-12-10 10:53:02 [info]: 🚀 Server running on port 3000
+2025-12-10 10:53:02 [info]: Environment: development
+2025-12-10 10:53:09 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 10:53:09 [info]: Found 6 books for search: ""
