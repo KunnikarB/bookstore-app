@@ -7690,3 +7690,547 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
 }
 2025-12-10 17:00:08 [info]: Found 6 books for search: ""
+2025-12-10 20:24:04 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:24:04 [info]: Server running on port 3000
+2025-12-10 20:24:26 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:24:37 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:24:37 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:24:47 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:26:45 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:26:45 [info]: Server running on port 3000
+2025-12-10 20:27:21 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:27:21 [info]: Server running on port 3000
+2025-12-10 20:27:27 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:27:27 [info]: Server running on port 3000
+2025-12-10 20:31:43 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:31:43 [info]: Server running on port 3000
+2025-12-10 20:31:56 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:32:06 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:32:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:32:16 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:35:04 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:35:04 [info]: Server running on port 3000
+2025-12-10 20:35:11 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:35:11 [info]: Server running on port 3000
+2025-12-10 20:35:24 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:35:24 [info]: Server running on port 3000
+2025-12-10 20:35:31 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:35:31 [info]: Server running on port 3000
+2025-12-10 20:50:14 [info]: Prisma connected to MongoDB successfully
+2025-12-10 20:50:14 [info]: Server running on port 3000
+2025-12-10 20:51:07 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:51:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:51:08 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:51:17 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:51:18 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:51:18 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 20:51:18 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 20:51:28 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 21:11:35 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:11:35 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:11:45 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 21:11:45 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 21:12:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:12:07 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:12:16 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 21:12:16 [error]: Failed to fetch books: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.book.findMany()`[22m invocation in[39m
+[4m/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:37[24m
+
+  [2m[90m18[39m [36mconst[39m validatedQuery = searchQuerySchema[34m.[39m[36mparse[39m[34m([39mreq[34m.[39mquery[34m)[39m[34m;[39m[22m
+  [2m[90m19[39m [36mconst[39m search = validatedQuery[34m.[39msearch || [1m[32m''[39m[22m[2m[34m;[39m[22m
+  [2m[90m20[39m [22m
+[1m[31m→[39m[22m [2m[90m21[39m [36mconst[39m books = [36mawait[39m prisma[34m.[39mbook[34m.[39m[36mfindMany[39m[34m([39m[22m
+Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None`
+    at ei.handleRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+    at ei.request (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+    at async a (/Users/kunnikar/Desktop/bookstore-app/backend/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+    at async <anonymous> (/Users/kunnikar/Desktop/bookstore-app/backend/server/routes/Books.ts:21:19)
+{
+  "code": "P2010",
+  "meta": {
+    "modelName": "Book",
+    "code": "unknown",
+    "message": "Kind: Server selection timeout: No available servers. Topology: { Type: ReplicaSetNoPrimary, Set Name: atlas-12tgik-shard-0, Servers: [ { Address: ac-kezlqjt-shard-00-00.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-01.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None }, { Address: ac-kezlqjt-shard-00-02.gwixi9s.mongodb.net:27017, Type: Unknown, Error: Kind: I/O error: received fatal alert: InternalError, labels: {}, source: None } ] }, labels: {}, source: None"
+  },
+  "clientVersion": "6.19.0",
+  "name": "PrismaClientKnownRequestError"
+}
+2025-12-10 21:30:14 [info]: Prisma connected to MongoDB successfully
+2025-12-10 21:30:14 [info]: Server running on port 3000
+2025-12-10 21:37:26 [info]: Prisma connected to MongoDB successfully
+2025-12-10 21:37:26 [info]: Server running on port 3000
+2025-12-10 21:37:37 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:37:37 [info]: Found 7 books for search: ""
+2025-12-10 21:37:37 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:37:37 [info]: Found 7 books for search: ""
+2025-12-10 21:38:06 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:06 [info]: Found 7 books for search: ""
+2025-12-10 21:38:06 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:06 [info]: Found 7 books for search: ""
+2025-12-10 21:38:11 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:11 [info]: Found 7 books for search: ""
+2025-12-10 21:38:11 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:11 [info]: Found 7 books for search: ""
+2025-12-10 21:38:24 [info]: PUT /api/books/6939d7d734fda41a80303707
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:25 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:25 [info]: Found 7 books for search: ""
+2025-12-10 21:38:37 [info]: DELETE /api/books/6939d7d734fda41a80303707
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:37 [info]: Deleted book with id: 6939d7d734fda41a80303707
+2025-12-10 21:38:38 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 21:38:38 [info]: Found 6 books for search: ""

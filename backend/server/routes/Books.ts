@@ -123,6 +123,7 @@ router.put('/:id', verifyAdmin, async (req, res) => {
   }
 });
 
+
 // DELETE /api/books/:id - Delete a book (Admin only)
 router.delete('/:id', verifyAdmin, async (req, res) => {
   try {

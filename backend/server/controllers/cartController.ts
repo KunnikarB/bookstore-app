@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type { Request, Response } from 'express';
-import prisma from '../prisma.js';
 import { MongoClient, ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const USER_ID = 'demo-user'; // for simplicity
+const USER_ID = 'demo-user';
 
 // Get cart
 export const getCart = async (_req: Request, res: Response) => {
