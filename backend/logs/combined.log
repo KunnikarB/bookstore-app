@@ -7343,3 +7343,6 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
 2025-12-10 12:00:31 [info]: Prisma connected to MongoDB successfully
 2025-12-10 12:00:31 [info]: 🚀 Server running on port 3000
 2025-12-10 12:00:31 [info]: Environment: development
+2025-12-10 12:02:42 [info]: Prisma connected to MongoDB successfully
+2025-12-10 12:02:42 [info]: 🚀 Server running on port 3000
+2025-12-10 12:02:42 [info]: Environment: development

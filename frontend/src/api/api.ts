@@ -9,6 +9,14 @@ const API = axios.create({
 // Add Firebase auth token to all requests
 API.interceptors.request.use(
   async (config) => {
+    // Wait for auth to be ready
+    await new Promise((resolve) => {
+      const unsubscribe = auth.onAuthStateChanged(() => {
+        unsubscribe();
+        resolve(undefined);
+      });
+    });
+
     const user = auth.currentUser;
     if (user) {
       try {
