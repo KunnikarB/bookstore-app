@@ -7482,3 +7482,121 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
   "ip": "::1",
   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
 }
+2025-12-10 16:35:19 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:20 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:20 [info]: Found 6 books for search: ""
+2025-12-10 16:35:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:20 [info]: Found 6 books for search: ""
+2025-12-10 16:35:27 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:27 [info]: Found 6 books for search: ""
+2025-12-10 16:35:27 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:27 [info]: Found 6 books for search: ""
+2025-12-10 16:35:46 [info]: POST /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:47 [info]: Created new book: Admin Test by Admin
+2025-12-10 16:35:47 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:47 [info]: Found 7 books for search: ""
+2025-12-10 16:35:56 [info]: PUT /api/books/69399353a12345af90988a18
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:35:57 [error]: Failed to update book: Database name bookstore?retryWrites=true&w=majority&serverSelectionTimeoutMS=10000&connectTimeoutMS=30000&socketTimeoutMS=45000 is too long.  Max database name length is 38 bytes.
+2025-12-10 16:44:26 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:44:26 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:44:26 [info]: Server running on port 3000
+2025-12-10 16:44:26 [info]: Server running on port 3000
+2025-12-10 16:44:28 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:44:28 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:44:28 [info]: Server running on port 3000
+2025-12-10 16:44:28 [info]: Server running on port 3000
+2025-12-10 16:44:37 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:44:38 [info]: Server running on port 3000
+2025-12-10 16:44:37 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:44:38 [info]: Server running on port 3000
+2025-12-10 16:45:05 [info]: Prisma connected to MongoDB successfully
+2025-12-10 16:45:05 [info]: Server running on port 3000
+2025-12-10 16:45:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:20 [info]: Found 7 books for search: ""
+2025-12-10 16:45:20 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:21 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:21 [info]: Found 7 books for search: ""
+2025-12-10 16:45:22 [info]: GET /api/cart/
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:32 [info]: Found 7 books for search: ""
+2025-12-10 16:45:32 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:32 [info]: Found 7 books for search: ""
+2025-12-10 16:45:40 [info]: PUT /api/books/69399353a12345af90988a18
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:42 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:42 [info]: Found 7 books for search: ""
+2025-12-10 16:45:51 [info]: DELETE /api/books/69399353a12345af90988a18
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:52 [info]: Deleted book with id: 69399353a12345af90988a18
+2025-12-10 16:45:52 [info]: GET /api/books
+{
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+}
+2025-12-10 16:45:52 [info]: Found 6 books for search: ""

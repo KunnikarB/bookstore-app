@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import express from 'express';
 import prisma from '../prisma.js';
 import { createBookSchema, searchQuerySchema } from '../validation/bookSchema.js';
@@ -88,14 +89,19 @@ router.put('/:id', verifyAdmin, async (req, res) => {
 
     const client = new MongoClient(process.env.DATABASE_URL || '');
     await client.connect();
-    const dbNameFromUrl = (process.env.DATABASE_URL || '').split('/').pop() || 'bookstore';
-    const db = client.db(dbNameFromUrl);
+
+    const url = new URL(process.env.DATABASE_URL || 'mongodb://localhost:27017/bookstore');
+    const dbName = url.pathname.replace(/^\//, '') || 'bookstore';
+    const db = client.db(dbName);
     const collection = db.collection('Book');
 
     const _id = new ObjectId(id);
 
-    const now = new Date();
-    const updateDoc = { ...validatedData, updatedAt: now };
+    // Convert empty strings to numbers
+    const updateDoc: any = { ...validatedData };
+    if (updateDoc.price !== undefined) updateDoc.price = Number(updateDoc.price);
+    if (updateDoc.stock !== undefined) updateDoc.stock = Number(updateDoc.stock);
+    updateDoc.updatedAt = new Date();
 
     const result = await collection.findOneAndUpdate(
       { _id },
@@ -105,20 +111,14 @@ router.put('/:id', verifyAdmin, async (req, res) => {
 
     await client.close();
 
-    if (!result.value) {
-      return res.status(404).json({ error: 'Book not found' });
-    }
+    if (!result.value) return res.status(404).json({ error: 'Book not found' });
 
-    // Normalize id field
-    const updated = { id: result.value._id.toString(), ...result.value };
-    logger.info(`Updated book: ${updated.title} by ${updated.author}`);
-    res.json(updated);
+    res.json({ id: result.value._id.toString(), ...result.value });
   } catch (error) {
     if (error instanceof ZodError) {
-      logger.warn('Invalid book data:', error.issues);
       return res.status(400).json({ error: 'Validation failed', details: error.issues });
     }
-    logger.error('Failed to update book:', { message: (error as any)?.message });
+    console.error('Failed to update book:', error);
     res.status(500).json({ error: 'Failed to update book', message: (error as any)?.message });
   }
 });

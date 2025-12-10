@@ -197,3 +197,4 @@ Prisma needs to perform transactions, which requires your MongoDB server to be r
 }
 2025-12-04 07:39:31 [error]: Failed to update book: Cannot read properties of null (reading 'value')
 2025-12-04 16:46:54 [error]: Failed to update book: Cannot read properties of null (reading 'value')
+2025-12-10 16:35:57 [error]: Failed to update book: Database name bookstore?retryWrites=true&w=majority&serverSelectionTimeoutMS=10000&connectTimeoutMS=30000&socketTimeoutMS=45000 is too long.  Max database name length is 38 bytes.
