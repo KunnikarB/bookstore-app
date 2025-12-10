@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchBar from './SearchBar';
 import { useCart } from '../context/CartContext';
-
-const API_BASE =
-  (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+import { API_BASE } from '../api/apiBase';
 
 type Book = {
   id: string;

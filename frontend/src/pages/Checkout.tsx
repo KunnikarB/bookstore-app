@@ -3,9 +3,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { checkoutCart } from '../api/checkoutapi';
 import '../index.css';
-
-const API_BASE =
-  (import.meta as any)?.env?.VITE_API_URL || 'http://localhost:3000/api';
+import { API_BASE } from '../api/apiBase';
 
 type Book = {
   id: string;
