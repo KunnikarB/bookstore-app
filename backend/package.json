@@ -5,8 +5,8 @@
   "main": "server/server.ts",
   "scripts": {
     "dev": "tsx watch server/server.ts",
-    "build": "tsc && ls -la dist/",
-    "start": "pwd && ls -la && node dist/server/server.js",
+    "build": "tsc && ls -la dist/ && find dist -type f",
+    "start": "ls -la dist/ && find dist -type f && node dist/server/server.js",
     "seed": "ts-node ./server/seedBooks.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --silent",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
