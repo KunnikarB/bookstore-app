@@ -32,7 +32,8 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const isVercel = origin ? origin.endsWith('.vercel.app') : false;
-      if (!origin || isVercel || allowedOrigins.includes(origin)) {
+      const isRender = origin ? origin.endsWith('.onrender.com') : false;
+      if (!origin || isVercel || isRender || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));
