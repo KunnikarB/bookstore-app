@@ -7,7 +7,7 @@ import checkoutRoutes from './routes/Checkout.js';
 import logger from './config/logger.js';
 import prisma from './prisma.js';
 import verifyToken from './middleware/auth.js';
-import './firebase.js';
+import './firebase';
 
 dotenv.config();
 
@@ -31,7 +31,7 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // server-to-server or curl
+      if (!origin) return callback(null, true);
       const isRender = origin.includes('.onrender.com');
       if (allowedOrigins.includes(origin) || isRender) {
         return callback(null, true);
@@ -74,7 +74,7 @@ prisma
   .then(() => {
     logger.info('Prisma connected to MongoDB successfully');
     app.listen(PORT, () => {
-      logger.info(`🚀 Server running on port ${PORT}`);
+      logger.info(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {

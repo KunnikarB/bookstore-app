@@ -21,7 +21,13 @@ export default function Login() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      toast.success('Logged in successfully! 🎉');
+
+      const user = auth.currentUser;
+      if (user) {
+        await user.getIdToken(true); 
+      }
+
+      toast.success('Logged in successfully! ');
       navigate('/');
     } catch (err: any) {
       const errorMessage = err.message || 'Login failed';
@@ -29,6 +35,7 @@ export default function Login() {
       toast.error(errorMessage);
     }
   };
+
 
   const handleSignupNavigate = () => {
     navigate('/signup');
@@ -38,7 +45,11 @@ export default function Login() {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      toast.success('Logged in with Google! 🎉');
+
+      const user = auth.currentUser;
+      if (user) await user.getIdToken(true);
+
+      toast.success('Logged in with Google! ');
       navigate('/');
     } catch (err: any) {
       const errorMessage = err.message || 'Google login failed';
@@ -46,12 +57,15 @@ export default function Login() {
       toast.error(errorMessage);
     }
   };
-
   const handleGithubLogin = async () => {
     const provider = new GithubAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      toast.success('Logged in with GitHub! 🎉');
+
+      const user = auth.currentUser;
+      if (user) await user.getIdToken(true);
+
+      toast.success('Logged in with GitHub! ');
       navigate('/');
     } catch (err: any) {
       const errorMessage = err.message || 'GitHub login failed';

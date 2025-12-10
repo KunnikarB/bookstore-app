@@ -22,11 +22,15 @@ backend/.env
 .env.*.local
 .env.production
 .env.production.local
+backend/.env.production
+
+
 
 
 # Firebase credentials
 backend/server/serviceAccountKey.json
 serviceAccountKey.json
+FIREBASE_CREDENTIALS_JSON
 
 !package.json
 !tsconfig.json
