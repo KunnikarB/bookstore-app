@@ -70,7 +70,6 @@ app.get('/', (req, res) => {
 // Debug endpoint to check Firebase status
 app.get('/debug/firebase', (req, res) => {
   const firebaseStatus = {
-    appInitialized: require('./firebase.js'),
     nodeEnv: process.env.NODE_ENV,
     hasFirebaseCredentialsJson: !!process.env.FIREBASE_CREDENTIALS_JSON,
     firebaseCredentialsJsonLength: process.env.FIREBASE_CREDENTIALS_JSON?.length || 0,
