@@ -7,8 +7,14 @@ dotenv.config();
 const require = createRequire(import.meta.url);
 
 if (!admin.apps.length) {
+  console.log('🔍 Checking Firebase initialization...');
+  console.log('📝 FIREBASE_CREDENTIALS_JSON exists:', !!process.env.FIREBASE_CREDENTIALS_JSON);
+  console.log('📝 FIREBASE_CREDENTIALS_JSON length:', process.env.FIREBASE_CREDENTIALS_JSON?.length || 0);
+  console.log('📝 NODE_ENV:', process.env.NODE_ENV);
+  console.log('📝 FIREBASE_KEY_PATH exists:', !!process.env.FIREBASE_KEY_PATH);
+  
   // Try Firebase credentials from environment variable first (for Render)
-  if (process.env.FIREBASE_CREDENTIALS_JSON) {
+  if (process.env.FIREBASE_CREDENTIALS_JSON && process.env.FIREBASE_CREDENTIALS_JSON.trim().length > 0) {
     console.log('⚙️ Using Firebase credentials from environment variable');
     try {
       const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS_JSON);
