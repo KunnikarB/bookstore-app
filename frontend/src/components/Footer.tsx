@@ -6,7 +6,7 @@ export default function Footer() {
       style={{
         width: '100%',
         textAlign: 'center',
-        color: '#fff',
+        color: 'var(--text-primary)',
         padding: '1rem',
         marginTop: 'auto',
         
@@ -19,7 +19,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: 'hotpink',
+            color: 'var(--accent)',
             textDecoration: 'none',
             fontWeight: 'bold',           
           }}

@@ -1,13 +1,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&family=Pacifico&display=swap');
 
+:root {
+  --bg: #261e28;
+  --surface: #2d262e;
+  --surface-muted: #342b36;
+  --text-primary: #f9fafb;
+  --text-muted: #e5e7eb;
+  --accent: #ec4899;
+  --accent-strong: #6c46dd;
+  --border: #4b5563;
+  --shadow: rgba(0, 0, 0, 0.45);
+}
+
+:root.theme-light {
+  --bg: #f8f7fb;
+  --surface: #ffffff;
+  --surface-muted: #f3edf7;
+  --text-primary: #1f2937;
+  --text-muted: #4b5563;
+  --accent: #ec4899;
+  --accent-strong: #6c46dd;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #261e28; 
+  background-color: var(--bg);
+  color: var(--text-primary);
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Roboto', system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
