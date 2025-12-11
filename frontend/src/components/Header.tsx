@@ -5,7 +5,12 @@ import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import '../index.css';
 
-export default function Header() {
+type HeaderProps = {
+  theme: 'light' | 'dark';
+  onToggleTheme: () => void;
+};
+
+export default function Header({ theme, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation(); // <--- get current path
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -32,8 +37,12 @@ export default function Header() {
     fontWeight: 'bold',
     fontSize: '1.5rem',
     fontFamily: '"Playfair Display", serif',
-    color: location.pathname === path ? 'hotpink' : '#fff', // active color
-    borderBottom: location.pathname === path ? '2px solid hotpink' : 'none', // active border
+    color:
+      location.pathname === path
+        ? 'var(--accent)'
+        : 'var(--text-primary)', // active color
+    borderBottom:
+      location.pathname === path ? '2px solid var(--accent)' : 'none', // active border
     paddingBottom: '4px',
     transition: 'color 0.2s, border-bottom 0.2s',
   });
@@ -44,7 +53,7 @@ export default function Header() {
         maxWidth: '1000px',
         margin: '30px auto',
         padding: '1rem',
-        borderBottom: '1px solid hotpink',
+        borderBottom: '1px solid var(--accent)',
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
@@ -60,44 +69,61 @@ export default function Header() {
         📖 Add Book
       </Link>
 
-      <div style={{ position: 'relative' }}>
-        <Link to="/cart" style={linkStyle('/cart')}>
-          🛒 Cart
-        </Link>
-        {itemCount > 0 && (
-          <span
-            style={{
-              position: 'absolute',
-              top: '-12px',
-              right: '-24px',
-              backgroundColor: 'hotpink',
-              color: 'white',
-              borderRadius: '50%',
-              padding: '4px 8px',
-              fontSize: '0.9rem',
-              fontWeight: 'bold',
-              boxShadow: '0 0 6px rgba(0,0,0,0.3)',
-              transform: 'scale(1)',
-              transition: 'transform 0.2s ease',
-            }}
-          >
-            {itemCount}
-          </span>
-        )}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ position: 'relative' }}>
+          <Link to="/cart" style={linkStyle('/cart')}>
+            🛒 Cart
+          </Link>
+          {itemCount > 0 && (
+            <span
+              style={{
+                position: 'absolute',
+                top: '-12px',
+                right: '-24px',
+                backgroundColor: 'var(--accent)',
+                color: 'var(--text-primary)',
+                borderRadius: '50%',
+                padding: '4px 8px',
+                fontSize: '0.9rem',
+                fontWeight: 'bold',
+                boxShadow: '0 0 6px rgba(0,0,0,0.3)',
+                transform: 'scale(1)',
+                transition: 'transform 0.2s ease',
+              }}
+            >
+              {itemCount}
+            </span>
+          )}
+        </div>
+        <button
+          onClick={onToggleTheme}
+          style={{
+            backgroundColor: 'var(--surface-muted)',
+            color: 'var(--text-primary)',
+            border: '1px solid var(--border)',
+            padding: '0.4rem 0.8rem',
+            borderRadius: '999px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontSize: '0.95rem',
+          }}
+        >
+          {theme === 'dark' ? '🌙 Dark' : '☀️ Light'}
+        </button>
       </div>
 
       {/* Auth Links */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ color: '#fff', fontWeight: 'bold' }}>
+            <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>
               👤 {user.displayName || user.email}
             </span>
             <button
               onClick={handleLogout}
               style={{
-                background: 'hotpink',
-                color: 'white',
+                background: 'var(--accent)',
+                color: 'var(--text-primary)',
                 border: 'none',
                 padding: '0.4rem 0.8rem',
                 borderRadius: '4px',
@@ -114,8 +140,8 @@ export default function Header() {
             <button
               onClick={() => navigate('/login')}
               style={{
-                background: '#6c46dd',
-                color: 'white',
+                background: 'var(--accent-strong)',
+                color: 'var(--text-primary)',
                 border: 'none',
                 padding: '0.4rem 0.8rem',
                 borderRadius: '4px',
@@ -129,8 +155,8 @@ export default function Header() {
             <button
               onClick={() => navigate('/signup')}
               style={{
-                background: 'hotpink',
-                color: 'white',
+                background: 'var(--accent)',
+                color: 'var(--text-primary)',
                 border: 'none',
                 padding: '0.4rem 0.8rem',
                 borderRadius: '4px',

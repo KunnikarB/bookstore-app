@@ -81,27 +81,31 @@ export default function Login() {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '100vh',
-        backgroundColor: '#1c1b1f',
+        backgroundColor: 'var(--bg)',
         padding: '1rem',
       }}
     >
       <div
         style={{
-          backgroundColor: '#2d262e',
+          backgroundColor: 'var(--surface)',
           padding: '3rem',
           borderRadius: '12px',
-          boxShadow: '0 0 20px hotpink',
+          boxShadow: `0 0 20px ${'var(--accent)'}`,
           maxWidth: '400px',
           width: '100%',
           textAlign: 'center',
-          color: '#fff',
+          color: 'var(--text-primary)',
           display: 'flex',
           flexDirection: 'column',
           gap: '1.5rem',
         }}
       >
         <h2
-          style={{ color: 'hotpink', marginBottom: '1rem', fontSize: '2rem' }}
+          style={{
+            color: 'var(--accent)',
+            marginBottom: '1rem',
+            fontSize: '2rem',
+          }}
         >
           👩🏻‍💻 Login
         </h2>
@@ -124,9 +128,11 @@ export default function Login() {
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
-              border: '1px solid #ccc',
+              border: `1px solid var(--border)`,
               width: '100%',
               fontSize: '1rem',
+              backgroundColor: 'var(--surface-muted)',
+              color: 'var(--text-primary)',
             }}
             required
           />
@@ -139,9 +145,11 @@ export default function Login() {
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
-              border: '1px solid #ccc',
+              border: `1px solid var(--border)`,
               width: '100%',
               fontSize: '1rem',
+              backgroundColor: 'var(--surface-muted)',
+              color: 'var(--text-primary)',
             }}
             required
           />
@@ -158,8 +166,8 @@ export default function Login() {
             <button
               type="submit"
               style={{
-                backgroundColor: '#6c46dd',
-                color: 'white',
+                backgroundColor: 'var(--accent-strong)',
+                color: 'var(--text-primary)',
                 padding: '0.75rem',
                 border: 'none',
                 borderRadius: '6px',
@@ -175,8 +183,8 @@ export default function Login() {
               type="button"
               onClick={handleSignupNavigate}
               style={{
-                backgroundColor: '#dd46a8',
-                color: 'white',
+                backgroundColor: 'var(--accent)',
+                color: 'var(--text-primary)',
                 padding: '0.75rem',
                 border: 'none',
                 borderRadius: '6px',
@@ -206,7 +214,7 @@ export default function Login() {
             onClick={handleGoogleLogin}
             style={{
               backgroundColor: '#658d51',
-              color: 'white',
+              color: 'var(--text-primary)',
               padding: '0.75rem',
               border: 'none',
               borderRadius: '6px',
@@ -223,7 +231,7 @@ export default function Login() {
             onClick={handleGithubLogin}
             style={{
               backgroundColor: '#333',
-              color: 'white',
+              color: 'var(--text-primary)',
               padding: '0.75rem',
               border: 'none',
               borderRadius: '6px',

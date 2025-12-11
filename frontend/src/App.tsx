@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.tsx';
 import Home from './pages/Home.tsx';
@@ -14,6 +15,29 @@ import { Toaster } from 'react-hot-toast';
 import './index.css';
 
 export default function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      setTheme(saved);
+      return;
+    }
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove('theme-light', 'theme-dark');
+    root.classList.add(theme === 'dark' ? 'theme-dark' : 'theme-light');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
@@ -21,7 +45,7 @@ export default function App() {
       <AuthProvider>
         <CartProvider>
         
-        <Header />
+        <Header theme={theme} onToggleTheme={toggleTheme} />
         <div
           style={{
             display: 'flex',

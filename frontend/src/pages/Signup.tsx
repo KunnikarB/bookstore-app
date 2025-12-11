@@ -45,27 +45,31 @@ export default function Signup() {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '100vh',
-        backgroundColor: '#1c1b1f',
+        backgroundColor: 'var(--bg)',
         padding: '1rem',
       }}
     >
       <div
         style={{
-          backgroundColor: '#2d262e',
+          backgroundColor: 'var(--surface)',
           padding: '3rem',
           borderRadius: '12px',
-          boxShadow: '0 0 20px hotpink',
+          boxShadow: `0 0 20px ${'var(--accent)'}`,
           maxWidth: '400px',
           width: '100%',
           textAlign: 'center',
-          color: '#fff',
+          color: 'var(--text-primary)',
           display: 'flex',
           flexDirection: 'column',
           gap: '1.5rem',
         }}
       >
         <h2
-          style={{ color: 'hotpink', marginBottom: '1rem', fontSize: '2rem' }}
+          style={{
+            color: 'var(--accent)',
+            marginBottom: '1rem',
+            fontSize: '2rem',
+          }}
         >
           Create Account
         </h2>
@@ -88,8 +92,10 @@ export default function Signup() {
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
-              border: '1px solid #ccc',
+              border: `1px solid var(--border)`,
               width: '100%',
+              backgroundColor: 'var(--surface-muted)',
+              color: 'var(--text-primary)',
             }}
             required
           />
@@ -102,8 +108,10 @@ export default function Signup() {
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
-              border: '1px solid #ccc',
+              border: `1px solid var(--border)`,
               width: '100%',
+              backgroundColor: 'var(--surface-muted)',
+              color: 'var(--text-primary)',
             }}
             required
           />
@@ -116,16 +124,18 @@ export default function Signup() {
             style={{
               padding: '0.75rem',
               borderRadius: '6px',
-              border: '1px solid #ccc',
+              border: `1px solid var(--border)`,
               width: '100%',
+              backgroundColor: 'var(--surface-muted)',
+              color: 'var(--text-primary)',
             }}
             required
           />
           <button
             type="submit"
             style={{
-              backgroundColor: '#6c46dd',
-              color: 'white',
+              backgroundColor: 'var(--accent-strong)',
+              color: 'var(--text-primary)',
               padding: '0.75rem',
               border: 'none',
               borderRadius: '6px',
@@ -142,12 +152,12 @@ export default function Signup() {
 
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
-        <p style={{ marginTop: '1rem', color: '#fff' }}>
+        <p style={{ marginTop: '1rem', color: 'var(--text-primary)' }}>
           Already have an account?{' '}
           <span
             onClick={() => navigate('/login')}
             style={{
-              color: 'hotpink',
+              color: 'var(--accent)',
               cursor: 'pointer',
               textDecoration: 'underline',
               fontWeight: 'bold',
