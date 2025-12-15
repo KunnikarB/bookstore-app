@@ -216,7 +216,7 @@ export default function AddBookPage() {
         }}
       >
         <h2 style={{ color: 'hotpink', marginBottom: '1rem' }}>
-          🔒 Access Denied
+           Access Denied
         </h2>
         <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
           You must be an admin to access this page.
