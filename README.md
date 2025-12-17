@@ -4,38 +4,38 @@ Users can browse books, add them to the cart, securely check out, discount syste
 
 ## Features
 
-### 👥 User Features
-- 🔐 **User Authentication** (Sign up, Login, Logout with Firebase)
-- 🛒 **Cart Management** — Add, remove, and view cart items
-- 💳 **Checkout Page** with summary total and apply coupon codes
-- 📚 **Browse and Search Books**
-- 🌙 **Modern UI** with pink-purple theme and responsive design
+###  User Features
+-  **User Authentication** (Sign up, Login, Logout with Firebase)
+- **Cart Management** — Add, remove, and view cart items
+- **Checkout Page** with summary total and apply coupon codes
+-  **Browse and Search Books**
+-  **Modern UI** with pink-purple theme and responsive design
 
-### ⚙️ Admin Features
-- 📖 **Add New Books** (title, author, price, and stock)
-- 💾 **Instant Database Update** via Express + MongoDB
+### Admin Features
+-  **Add New Books** (title, author, price, and stock)
+-  **Instant Database Update** via Express + MongoDB
 
-### 🔥 Advanced Features
+### Advanced Features
 - Discount System: Apply coupon codes like SAVE10, SAVE20
-- Inventory Alerts ⚠️: Notify when stock is low after purchase 
+- Inventory Alerts : Notify when stock is low after purchase 
 
 --- 
 
-## 🧰 Tech Stack
+## Tech Stack
 
 ### Frontend
-- ⚛️ **React (Vite) + TypeScript**
-- 🎨 **CSS / Inline Styles** (Hotpink and Deep Purple theme)
-- 🔥 **Firebase Authentication**
-- 🍞 **React Hot Toast** for notifications
-- 🛍️ **Context API** for Cart and Auth management
+-  **React (Vite) + TypeScript**
+-  **CSS / Inline Styles** (Hotpink and Deep Purple theme)
+-  **Firebase Authentication**
+-  **React Hot Toast** for notifications
+- **Context API** for Cart and Auth management
 
 ### Backend
-- 🧠 **Node.js + Express**
-- 🗄️ **MongoDB (Mongoose ORM)**
-- 🌐 **RESTful API** endpoints for books
+-  **Node.js + Express**
+-  **MongoDB (Mongoose ORM)**
+- **RESTful API** endpoints for books
 
-### 🔐 Authentication
+###  Authentication
 
 - Uses Firebase Authentication for user login/signup
 
@@ -43,19 +43,30 @@ Users can browse books, add them to the cart, securely check out, discount syste
 
 - Supports logout and redirects using React Router
 
-### 💡 Future Improvements
+###  Future Improvements
 
-- 🖼️ Add Book Cover Upload (Firebase Storage)
+- Add Book Cover Upload
 
-- ⭐ Add Reviews and Ratings
+-  Add Reviews and Ratings
 
-- 🔍 Add Search and Filter Functionality
+-  Add Search and Filter Functionality
 
-- 💰 Integrate Stripe for Real Payment
+-  Integrate Stripe for Real Payment
 
-- 🧑‍💼 Admin Dashboard for managing inventory
+-  Admin Dashboard for managing inventory
   
 ---
+
+### Entity-Relationship (ER) Diagram
+- This ER diagram represents a bookstore database consisting of five entities: Book, Cart, CartItem, Order, and OrderItem.
+  - Each Book can appear in many CartItems and OrderItems.
+  - Each Order contains multiple OrderItems.
+  - Each Cart contains multiple CartItems.
+  - CartItem and OrderItem are associative entities that resolve many-to-many relationships.
+    
+
+<img width="724" height="851" alt="bookstore drawio" src="https://github.com/user-attachments/assets/77f76d37-7c8e-4052-9cd2-a40270242d71" />
+
 
 - Login page
 <img width="1198" height="941" alt="Screenshot 2025-11-12 at 09 36 26" src="https://github.com/user-attachments/assets/358491e2-d830-4a29-9085-46e4c2d16e4d" />
