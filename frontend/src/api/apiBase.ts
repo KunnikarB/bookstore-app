@@ -6,4 +6,5 @@ const normalizeBase = (val?: string) => {
   return `${trimmed}/api`;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const API_BASE = normalizeBase((import.meta as any)?.env?.VITE_API_URL);
