@@ -2,6 +2,41 @@
 A modern full-stack **Bookstore web application** built with React (Vite), Node.js, Express, MongoDB, and Firebase Authentication.  
 Users can browse books, add them to the cart, securely check out, discount system, and inventory alerts. — with admin functionality for adding new books. Includes integration tests with Jest.
 
+## Live Demo
+https://bookstore-app-1-uhqx.onrender.com
+
+## Preview
+
+- Login page
+<img width="1198" height="941" alt="Screenshot 2025-11-12 at 09 36 26" src="https://github.com/user-attachments/assets/358491e2-d830-4a29-9085-46e4c2d16e4d" />
+
+---
+
+- Signup page
+<img width="1132" height="930" alt="Screenshot 2025-11-12 at 09 36 05" src="https://github.com/user-attachments/assets/278b93f3-3033-41f5-a325-3d8c55dc2f83" />
+
+--- 
+
+- Home page
+<img width="1191" height="729" alt="Screenshot 2025-11-12 at 09 28 24" src="https://github.com/user-attachments/assets/4ef625b1-ced5-4e9d-ad45-927f49da8afc" />
+
+---
+
+- Add Book
+<img width="1084" height="919" alt="Screenshot 2025-11-12 at 09 25 43" src="https://github.com/user-attachments/assets/e5d4fa46-2317-4118-a024-8572e25ccc77" />
+
+
+- Cart page
+<img width="1135" height="929" alt="Screenshot 2025-11-12 at 09 25 57" src="https://github.com/user-attachments/assets/da900aed-f967-4dd6-bc5b-30af56468956" />
+
+
+---
+
+- Checkout page
+<img width="1103" height="966" alt="Screenshot 2025-11-12 at 09 31 17" src="https://github.com/user-attachments/assets/5ba69987-61a7-400d-96c3-953ce9281d7d" />
+
+---
+
 ## Features
 
 ###  User Features
@@ -66,35 +101,6 @@ Users can browse books, add them to the cart, securely check out, discount syste
     
 
 <img width="724" height="851" alt="bookstore drawio" src="https://github.com/user-attachments/assets/77f76d37-7c8e-4052-9cd2-a40270242d71" />
-
-
-- Login page
-<img width="1198" height="941" alt="Screenshot 2025-11-12 at 09 36 26" src="https://github.com/user-attachments/assets/358491e2-d830-4a29-9085-46e4c2d16e4d" />
-
----
-
-- Signup page
-<img width="1132" height="930" alt="Screenshot 2025-11-12 at 09 36 05" src="https://github.com/user-attachments/assets/278b93f3-3033-41f5-a325-3d8c55dc2f83" />
-
---- 
-
-- Home page
-<img width="1191" height="729" alt="Screenshot 2025-11-12 at 09 28 24" src="https://github.com/user-attachments/assets/4ef625b1-ced5-4e9d-ad45-927f49da8afc" />
-
----
-
-- Add Book
-<img width="1084" height="919" alt="Screenshot 2025-11-12 at 09 25 43" src="https://github.com/user-attachments/assets/e5d4fa46-2317-4118-a024-8572e25ccc77" />
-
-
-- Cart page
-<img width="1135" height="929" alt="Screenshot 2025-11-12 at 09 25 57" src="https://github.com/user-attachments/assets/da900aed-f967-4dd6-bc5b-30af56468956" />
-
-
----
-
-- Checkout page
-<img width="1103" height="966" alt="Screenshot 2025-11-12 at 09 31 17" src="https://github.com/user-attachments/assets/5ba69987-61a7-400d-96c3-953ce9281d7d" />
 
 
 ---
