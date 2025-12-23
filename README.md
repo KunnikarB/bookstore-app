@@ -18,22 +18,31 @@ https://bookstore-app-1-uhqx.onrender.com
 --- 
 
 - Home page
-<img width="1191" height="729" alt="Screenshot 2025-11-12 at 09 28 24" src="https://github.com/user-attachments/assets/4ef625b1-ced5-4e9d-ad45-927f49da8afc" />
+<img width="1082" height="669" alt="Screenshot 2025-12-23 at 10 57 32" src="https://github.com/user-attachments/assets/2a45f29a-df43-4032-b2a1-ec1d74b5cdb7" />
+
+<img width="1079" height="692" alt="Screenshot 2025-12-23 at 10 57 53" src="https://github.com/user-attachments/assets/1881ad9c-4a9c-4099-b11a-620674dacb93" />
 
 ---
 
 - Add Book
-<img width="1084" height="919" alt="Screenshot 2025-11-12 at 09 25 43" src="https://github.com/user-attachments/assets/e5d4fa46-2317-4118-a024-8572e25ccc77" />
 
+<img width="1101" height="705" alt="Screenshot 2025-12-23 at 11 18 14" src="https://github.com/user-attachments/assets/d357ac54-8fa9-4f40-8561-2ac904c4c855" />
+
+---
 
 - Cart page
-<img width="1135" height="929" alt="Screenshot 2025-11-12 at 09 25 57" src="https://github.com/user-attachments/assets/da900aed-f967-4dd6-bc5b-30af56468956" />
-
+<img width="1107" height="664" alt="Screenshot 2025-12-23 at 11 13 56" src="https://github.com/user-attachments/assets/d20d52ce-67c5-47f7-95c4-d8d4ac386221" />
 
 ---
 
 - Checkout page
-<img width="1103" height="966" alt="Screenshot 2025-11-12 at 09 31 17" src="https://github.com/user-attachments/assets/5ba69987-61a7-400d-96c3-953ce9281d7d" />
+<img width="1088" height="723" alt="Screenshot 2025-12-23 at 11 00 04" src="https://github.com/user-attachments/assets/0571e236-ce4c-4b31-9e6b-3d0827c99ec2" />
+
+---
+
+- Order Completed
+  
+<img width="1113" height="300" alt="Screenshot 2025-12-23 at 11 00 30" src="https://github.com/user-attachments/assets/dc17f411-46f8-4001-a4e0-7e78a791932e" />
 
 ---
 
