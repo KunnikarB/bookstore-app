@@ -9920,3 +9920,17 @@ Raw query failed. Code: `unknown`. Message: `Kind: Server selection timeout: No 
   "ip": "::1",
   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
 }
+2025-12-23 13:45:48 [info]: Prisma connected to MongoDB successfully
+2025-12-23 13:45:48 [info]: Server running on port 3000
+2025-12-23 13:52:46 [info]: Prisma connected to MongoDB successfully
+2025-12-23 13:52:46 [info]: Server running on port 3000
+2025-12-23 14:01:55 [info]: Prisma connected to MongoDB successfully
+2025-12-23 14:01:55 [info]: Server running on port 3000
+2025-12-23 14:01:57 [info]: Prisma connected to MongoDB successfully
+2025-12-23 14:01:57 [info]: Server running on port 3000
+2025-12-23 14:07:09 [info]: Prisma connected to MongoDB successfully
+2025-12-23 14:07:09 [info]: Server running on port 3000
+2025-12-23 14:17:54 [info]: Prisma connected to MongoDB successfully
+2025-12-23 14:17:54 [info]: Server running on port 3000
+2025-12-23 14:22:04 [info]: Prisma connected to MongoDB successfully
+2025-12-23 14:22:04 [info]: Server running on port 3000
