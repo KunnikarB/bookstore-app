@@ -20,6 +20,14 @@ export default function BookList() {
   const fallbackCover =
     'https://placehold.co/400x550/2d262e/ffffff?text=No+Cover';
 
+  const coverFor = (book: Book) => {
+    if (!book.coverUrl) return fallbackCover;
+    if (book.coverUrl.startsWith('https://')) return book.coverUrl;
+    if (book.coverUrl.startsWith('http://'))
+      return book.coverUrl.replace(/^http:\/\//, 'https://');
+    return fallbackCover;
+  };
+
   const fetchBooks = async (query?: string) => {
     try {
       const res = await axios.get(`${API_BASE}/books`, {
@@ -100,7 +108,7 @@ export default function BookList() {
           >
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <img
-                src={book.coverUrl || fallbackCover}
+                src={coverFor(book)}
                 alt={`${book.title} cover`}
                 style={{
                   width: '100%',
@@ -110,6 +118,9 @@ export default function BookList() {
                   borderRadius: '8px',
                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.4)',
                   marginBottom: '1rem',
+                }}
+                onError={(e) => {
+                  e.currentTarget.src = fallbackCover;
                 }}
               />
             </div>
