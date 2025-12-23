@@ -108,8 +108,7 @@ https://bookstore-app-1-uhqx.onrender.com
   - Each Cart contains multiple CartItems.
   - CartItem and OrderItem are associative entities that resolve many-to-many relationships.
     
-
-<img width="724" height="851" alt="bookstore drawio" src="https://github.com/user-attachments/assets/77f76d37-7c8e-4052-9cd2-a40270242d71" />
+<img width="724" height="851" alt="bookstore drawio" src="https://github.com/user-attachments/assets/1e01e11c-87f6-4043-8663-97030fc00f74" />
 
 
 ---
