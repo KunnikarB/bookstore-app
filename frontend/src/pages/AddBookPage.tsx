@@ -26,7 +26,16 @@ export default function AddBookPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const { user } = useAuth();
   const navigate = useNavigate();
-  const fallbackCover = 'https://placehold.co/300x420/2d262e/ffffff?text=No+Cover';
+  const fallbackCover =
+    'https://placehold.co/300x420/2d262e/ffffff?text=No+Cover';
+
+  const coverFor = (book: Book) => {
+    if (!book.coverUrl) return fallbackCover;
+    if (book.coverUrl.startsWith('https://')) return book.coverUrl;
+    if (book.coverUrl.startsWith('http://'))
+      return book.coverUrl.replace(/^http:\/\//, 'https://');
+    return fallbackCover;
+  };
 
   // Helper to get book ID (handles both id and _id)
   const getBookId = (book: Book): string => {
@@ -225,7 +234,7 @@ export default function AddBookPage() {
         }}
       >
         <h2 style={{ color: 'hotpink', marginBottom: '1rem' }}>
-           Access Denied
+          Access Denied
         </h2>
         <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
           You must be an admin to access this page.
@@ -420,7 +429,7 @@ export default function AddBookPage() {
               >
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                   <img
-                    src={book.coverUrl || fallbackCover}
+                    src={coverFor(book)}
                     alt={`${book.title} cover`}
                     style={{
                       width: '100%',
@@ -429,6 +438,9 @@ export default function AddBookPage() {
                       objectFit: 'cover',
                       borderRadius: '6px',
                       boxShadow: '0 0 8px rgba(0, 0, 0, 0.3)',
+                    }}
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackCover;
                     }}
                   />
                 </div>

@@ -59,7 +59,9 @@ export default function Checkout() {
 
     try {
       const data = await checkoutCart(cart, discountCode);
-      setMessage(`${data.message}. Total: ${data.total} kr (including ${data.tax} kr tax)`);
+      setMessage(
+        `${data.message}. Total: ${data.total} kr (including ${data.tax} kr tax)`
+      );
       clearCart();
       setDiscountCode('');
     } catch (err: any) {
@@ -189,7 +191,9 @@ export default function Checkout() {
         }}
       >
         Subtotal:{' '}
-        <strong style={{ color: 'hotpink' }}>{total?.toFixed(2) || 0} kr</strong>
+        <strong style={{ color: 'hotpink' }}>
+          {total?.toFixed(2) || 0} kr
+        </strong>
       </p>
 
       {/* Discount code input */}
@@ -257,9 +261,7 @@ export default function Checkout() {
         }}
       >
         Total with tax:{' '}
-        <strong>
-          {(discountedTotal * 1.06).toFixed(2)} kr
-        </strong>
+        <strong>{(discountedTotal * 1.06).toFixed(2)} kr</strong>
       </p>
 
       {/* Checkout buttons */}
