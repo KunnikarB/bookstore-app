@@ -71,8 +71,10 @@ router.post('/', verifyAdmin, async (req, res) => {
     // Prefer raw MongoDB driver for create to avoid replica set transaction requirement
     const client = new MongoClient(process.env.DATABASE_URL || '');
     await client.connect();
-    // Use default DB from the connection string
-    const db = client.db();
+    // Use consistent DB selection from connection string
+    const url = new URL(process.env.DATABASE_URL || 'mongodb://localhost:27017/bookstore');
+    const dbName = url.pathname.replace(/^\//, '') || 'bookstore';
+    const db = client.db(dbName);
     const collection = db.collection('Book');
 
     const now = new Date();
@@ -156,8 +158,10 @@ router.delete('/:id', verifyAdmin, async (req, res) => {
     // Use MongoDB driver to avoid Prisma transaction requirements
     const client = new MongoClient(process.env.DATABASE_URL || '');
     await client.connect();
-    // Use default DB from connection string
-    const db = client.db();
+    // Use consistent DB selection from connection string
+    const url = new URL(process.env.DATABASE_URL || 'mongodb://localhost:27017/bookstore');
+    const dbName = url.pathname.replace(/^\//, '') || 'bookstore';
+    const db = client.db(dbName);
     const collection = db.collection('Book');
 
     const _id = new ObjectId(id);
