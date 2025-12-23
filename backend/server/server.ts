@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import bookRoutes from './routes/Books';
-import cartRoutes from './routes/cart';
-import checkoutRoutes from './routes/Checkout';
+import bookRoutes from './routes/Books.js';
+import cartRoutes from './routes/cart.js';
+import checkoutRoutes from './routes/Checkout.js';
 import logger from './config/logger';
 import verifyToken from './middleware/auth.js';
 import { PrismaClient } from '@prisma/client';
