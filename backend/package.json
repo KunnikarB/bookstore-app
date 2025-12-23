@@ -7,6 +7,7 @@
     "dev": "tsx watch server/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
+    "postinstall": "prisma generate",
     "seed": "ts-node ./server/seedBooks.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --silent",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
