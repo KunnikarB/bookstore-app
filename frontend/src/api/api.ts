@@ -64,6 +64,7 @@ export const addBook = (bookData: {
   author: string;
   price: number;
   stock: number;
+  coverUrl?: string;
 }) => API.post('/books', bookData);
 
 export const updateBook = (
@@ -73,6 +74,7 @@ export const updateBook = (
     author: string;
     price: number;
     stock: number;
+    coverUrl?: string;
   }>
 ) => API.put(`/books/${id}`, bookData);
 

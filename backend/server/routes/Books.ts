@@ -101,11 +101,15 @@ router.put('/:id', verifyAdmin, async (req, res) => {
     const updateDoc: any = { ...validatedData };
     if (updateDoc.price !== undefined) updateDoc.price = Number(updateDoc.price);
     if (updateDoc.stock !== undefined) updateDoc.stock = Number(updateDoc.stock);
-    updateDoc.updatedAt = new Date();
+
+    const normalizedDoc = Object.fromEntries(
+      Object.entries(updateDoc).filter(([, value]) => value !== undefined)
+    );
+    normalizedDoc.updatedAt = new Date();
 
     const result = await collection.findOneAndUpdate(
       { _id },
-      { $set: updateDoc },
+      { $set: normalizedDoc },
       { returnDocument: 'after' }
     );
 

@@ -11,6 +11,7 @@ model Book {
   id         String      @id @default(auto()) @map("_id") @db.ObjectId
   title      String
   author     String
+  coverUrl   String?
   price      Float
   stock      Int
   createdAt  DateTime    @default(now())
