@@ -64,9 +64,13 @@ app.use('/api/books', bookRoutes);
 app.use('/api/cart', verifyToken, cartRoutes);
 app.use('/api/checkout', verifyToken, checkoutRoutes);
 
-// Health check
+// Health check + debug
 app.get('/', (req, res) => {
-  res.send('Bookstore API is running');
+  res.json({
+    message: 'Bookstore API is running',
+    databaseUrl: process.env.DATABASE_URL || 'not set',
+    env: process.env.NODE_ENV || 'development',
+  });
 });
 
 const PORT = process.env.PORT || 3000;
