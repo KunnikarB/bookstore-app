@@ -4,10 +4,10 @@ import dotenv from 'dotenv';
 import bookRoutes from './routes/Books.js';
 import cartRoutes from './routes/cart.js';
 import checkoutRoutes from './routes/Checkout.js';
-import logger from './config/logger';
+import logger from './config/logger.js';
 import verifyToken from './middleware/auth.js';
 import { PrismaClient } from '@prisma/client';
-import './firebase';
+import './firebase.js';
 
 const prisma = new PrismaClient();
 
