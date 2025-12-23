@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import express from 'express';
-import prisma from '../prisma.js';
 import { createBookSchema, searchQuerySchema } from '../validation/bookSchema.js';
 import logger from '../config/logger.js';
 import verifyAdmin from '../middleware/adminAuth.js';
@@ -18,19 +17,42 @@ router.get('/', async (req, res) => {
     const validatedQuery = searchQuerySchema.parse(req.query);
     const search = validatedQuery.search || '';
 
-    const books = await prisma.book.findMany({
-      where: search
-        ? {
-            OR: [
-              { title: { contains: search, mode: 'insensitive' } },
-              { author: { contains: search, mode: 'insensitive' } },
-            ],
-          }
-        : {},
-    });
+    const client = new MongoClient(process.env.DATABASE_URL || '');
+    await client.connect();
 
-    logger.info(`Found ${books.length} books for search: "${search}"`);
-    res.json(books);
+    const url = new URL(process.env.DATABASE_URL || 'mongodb://localhost:27017/bookstore');
+    const dbName = url.pathname.replace(/^\//, '') || 'bookstore';
+    const db = client.db(dbName);
+    const collection = db.collection('Book');
+
+    const filter = search
+      ? {
+          $or: [
+            { title: { $regex: search, $options: 'i' } },
+            { author: { $regex: search, $options: 'i' } },
+          ],
+        }
+      : {};
+
+    const books = await collection
+      .find(filter)
+      .project({
+        title: 1,
+        author: 1,
+        price: 1,
+        stock: 1,
+        coverUrl: 1,
+        createdAt: 1,
+        updatedAt: 1,
+      })
+      .toArray();
+
+    await client.close();
+
+    const normalized = books.map((b: any) => ({ id: b._id?.toString?.() || b.id, ...b }));
+
+    logger.info(`Found ${normalized.length} books for search: "${search}"`);
+    res.json(normalized);
   } catch (error) {
     if (error instanceof ZodError) {
       logger.warn('Invalid search query:', error.issues);
