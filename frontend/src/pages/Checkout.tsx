@@ -42,7 +42,7 @@ export default function Checkout() {
     let newTotal = total;
     if (discountCode === 'SAVE10') newTotal *= 0.9;
     if (discountCode === 'SAVE20') newTotal *= 0.8;
-    if (newTotal >= 300) newTotal *= 0.7; // 30% off for orders > $300
+    if (newTotal >= 3300) newTotal *= 0.7; // 30% off for orders > 3300 kr (~300 USD)
     return newTotal > 0 ? newTotal : 0;
   }, [total, discountCode]);
 
@@ -59,7 +59,7 @@ export default function Checkout() {
 
     try {
       const data = await checkoutCart(cart, discountCode);
-      setMessage(`${data.message}. Total: $${data.total}`);
+      setMessage(`${data.message}. Total: ${data.total} kr (including ${data.tax} kr tax)`);
       clearCart();
       setDiscountCode('');
     } catch (err: any) {
@@ -122,7 +122,7 @@ export default function Checkout() {
             }}
           >
             <div>
-              {item.book.title} - ${item.book.price} × {item.quantity}
+              {item.book.title} - {item.book.price} kr × {item.quantity}
             </div>
 
             <div>
@@ -189,7 +189,7 @@ export default function Checkout() {
         }}
       >
         Subtotal:{' '}
-        <strong style={{ color: 'hotpink' }}>${total?.toFixed(2) || 0}</strong>
+        <strong style={{ color: 'hotpink' }}>{total?.toFixed(2) || 0} kr</strong>
       </p>
 
       {/* Discount code input */}
@@ -224,15 +224,41 @@ export default function Checkout() {
           color: '#fff',
           fontWeight: 'bold',
           marginTop: '2rem',
-          marginBottom: '2rem',
+          marginBottom: '1rem',
           textAlign: 'center',
-          fontSize: '1.5rem',
+          fontSize: '1.3rem',
         }}
       >
-        Total after discount:{' '}
+        Subtotal after discount:{' '}
         <strong style={{ color: 'hotpink' }}>
-          {' '}
-          ${discountedTotal.toFixed(2)}
+          {discountedTotal.toFixed(2)} kr
+        </strong>
+      </p>
+      <p
+        style={{
+          color: '#ccc',
+          textAlign: 'center',
+          fontSize: '1rem',
+          marginBottom: '0.5rem',
+        }}
+      >
+        Tax (6%):{' '}
+        <strong style={{ color: '#fff' }}>
+          {(discountedTotal * 0.06).toFixed(2)} kr
+        </strong>
+      </p>
+      <p
+        style={{
+          color: 'hotpink',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          fontSize: '1.8rem',
+          marginBottom: '2rem',
+        }}
+      >
+        Total with tax:{' '}
+        <strong>
+          {(discountedTotal * 1.06).toFixed(2)} kr
         </strong>
       </p>
 
@@ -305,7 +331,7 @@ export default function Checkout() {
             }}
           >
             <p style={{ margin: 0, color: '#fff' }}>
-              {book.title} - ${book.price}{' '}
+              {book.title} - {book.price} kr{' '}
             </p>
             <button
               style={{

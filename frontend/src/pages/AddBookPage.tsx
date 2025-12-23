@@ -13,17 +13,20 @@ interface Book {
   author: string;
   price: number;
   stock: number;
+  coverUrl?: string;
 }
 
 export default function AddBookPage() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [coverUrl, setCoverUrl] = useState('');
   const [price, setPrice] = useState('');
   const [stock, setStock] = useState('');
   const [books, setBooks] = useState<Book[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const { user } = useAuth();
   const navigate = useNavigate();
+  const fallbackCover = 'https://placehold.co/300x420/2d262e/ffffff?text=No+Cover';
 
   // Helper to get book ID (handles both id and _id)
   const getBookId = (book: Book): string => {
@@ -73,12 +76,14 @@ export default function AddBookPage() {
           author,
           price: Number(price),
           stock: Number(stock),
+          coverUrl: coverUrl.trim() || undefined,
         });
         console.log('Update response:', response);
         toast.success(`Book "${title}" updated successfully!`);
         // Clear form and refresh list
         setTitle('');
         setAuthor('');
+        setCoverUrl('');
         setPrice('');
         setStock('');
         setEditingId(null);
@@ -91,12 +96,14 @@ export default function AddBookPage() {
           author,
           price: Number(price),
           stock: Number(stock),
+          coverUrl: coverUrl.trim() || undefined,
         });
         console.log('Add response:', res);
         toast.success(`Book "${res.data.title}" added successfully!`);
         // Clear form and refresh books
         setTitle('');
         setAuthor('');
+        setCoverUrl('');
         setPrice('');
         setStock('');
         await fetchBooks();
@@ -129,6 +136,7 @@ export default function AddBookPage() {
     setEditingId(bookId);
     setTitle(book.title);
     setAuthor(book.author);
+    setCoverUrl(book.coverUrl || '');
     setPrice(book.price.toString());
     setStock(book.stock.toString());
     console.log('Editing book with ID:', bookId);
@@ -140,6 +148,7 @@ export default function AddBookPage() {
     setEditingId(null);
     setTitle('');
     setAuthor('');
+    setCoverUrl('');
     setPrice('');
     setStock('');
   };
@@ -305,6 +314,19 @@ export default function AddBookPage() {
             width: '100%',
             fontSize: '1rem',
           }}
+          type="url"
+          placeholder="Cover image URL (optional)"
+          value={coverUrl}
+          onChange={(e) => setCoverUrl(e.target.value)}
+        />
+        <input
+          style={{
+            padding: '0.75rem',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            width: '100%',
+            fontSize: '1rem',
+          }}
           type="number"
           placeholder="Price"
           value={price}
@@ -396,6 +418,20 @@ export default function AddBookPage() {
                   gap: '0.75rem',
                 }}
               >
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <img
+                    src={book.coverUrl || fallbackCover}
+                    alt={`${book.title} cover`}
+                    style={{
+                      width: '100%',
+                      maxWidth: '180px',
+                      height: '240px',
+                      objectFit: 'cover',
+                      borderRadius: '6px',
+                      boxShadow: '0 0 8px rgba(0, 0, 0, 0.3)',
+                    }}
+                  />
+                </div>
                 <h4
                   style={{
                     color: 'hotpink',
@@ -409,7 +445,7 @@ export default function AddBookPage() {
                   <strong>Author:</strong> {book.author}
                 </p>
                 <p style={{ margin: 0 }}>
-                  <strong>Price:</strong> ${book.price}
+                  <strong>Price:</strong> {book.price} kr
                 </p>
                 <p style={{ margin: 0 }}>
                   <strong>Stock:</strong> {book.stock}

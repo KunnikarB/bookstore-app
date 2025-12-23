@@ -44,22 +44,29 @@ export const checkoutCart = async (req: Request, res: Response) => {
       );
     }
 
-    // Calculate total
-    let total = cart.reduce((sum, item) => sum + item.book.price * item.quantity, 0);
+    // Calculate subtotal (prices are in SEK)
+    let subtotal = cart.reduce((sum, item) => sum + item.book.price * item.quantity, 0);
 
     // Apply discount rules
-    if (discountCode === 'SAVE10') total *= 0.9;
-    if (discountCode === 'SAVE20') total *= 0.8;
-    if (total > 300) total *= 0.7; // 30% off for orders > $300
+    if (discountCode === 'SAVE10') subtotal *= 0.9;
+    if (discountCode === 'SAVE20') subtotal *= 0.8;
+    if (subtotal > 3300) subtotal *= 0.7; // 30% off for orders > 3300 SEK (~300 USD)
 
-    // Prevent negative total
-    if (total < 0) total = 0;
+    // Prevent negative subtotal
+    if (subtotal < 0) subtotal = 0;
+
+    // Swedish VAT for books is 6%
+    const taxRate = 0.06;
+    const tax = subtotal * taxRate;
+    const total = subtotal + tax;
 
     const orderId = `TXN-${Math.floor(Math.random() * 10000)}`;
 
     await client.close();
     return res.json({
       message: 'Purchase completed successfully',
+      subtotal: subtotal.toFixed(2),
+      tax: tax.toFixed(2),
       total: total.toFixed(2),
       orderId,
     });

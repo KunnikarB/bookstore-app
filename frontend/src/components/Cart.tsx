@@ -50,7 +50,7 @@ export default function Cart() {
             }}
             key={`${item.book?.id || 'unknown'}-${idx}`}
           >
-            {item.book?.title ?? 'Unknown'} - ${item.book?.price ?? 0} ×{' '}
+            {item.book?.title ?? 'Unknown'} - {item.book?.price ?? 0} kr ×{' '}
             {item.quantity}
             <button
               style={{
@@ -74,10 +74,29 @@ export default function Cart() {
           fontWeight: 'bold',
           color: '#fff',
           marginTop: '2rem',
+          fontSize: '1.3rem',
+        }}
+      >
+        Subtotal: {total.toFixed(2)} kr
+      </p>
+      <p
+        style={{
+          color: '#ccc',
+          fontSize: '1rem',
+          marginTop: '0.5rem',
+        }}
+      >
+        Tax (6%): {(total * 0.06).toFixed(2)} kr
+      </p>
+      <p
+        style={{
+          fontWeight: 'bold',
+          color: 'hotpink',
+          marginTop: '0.5rem',
           fontSize: '1.5rem',
         }}
       >
-        Subtotal: ${total.toFixed(2)}
+        Total: {(total * 1.06).toFixed(2)} kr
       </p>
 
       <button
